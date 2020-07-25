@@ -1,10 +1,14 @@
-# Create React Express App
+# Portfolio Builder - Project 3
 
-## About This Boilerplate
+## Project Name: 
+Portfolio Builder
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Project Description: 
+Portfolio builder is an interactive online portfolio template that allows you to plug in information and build a cohesive portfolio. 
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## User Story: 
+As a user, I would like to create a portfolio by choosing from an unrivaled set of best-in-class templates and to customize the design to fit my personal style and professional needs.
+
 
 ## Starting the app locally
 
