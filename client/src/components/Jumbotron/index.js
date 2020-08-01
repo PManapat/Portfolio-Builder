@@ -1,6 +1,5 @@
 import React from 'react' ;
 import "./style.css";
-
 import Button from '../Button';
 import { Jumbotron } from 'react-bootstrap';
 
