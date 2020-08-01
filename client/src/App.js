@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Navbar";
 import Card from "./components/Card";
 // import your component here
+import Jumbotron from "./components/Jumbotron";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <div>
       <Nav />
       <Switch>
+        <Jumbotron />
         <Route exact path={["/", "/home"]}>
         <Home />        
         </Route>
