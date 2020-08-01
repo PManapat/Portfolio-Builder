@@ -4,7 +4,10 @@ import Home from "./pages/Home";
 import Nav from "./components/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login"
-// import your component here
+import Carousel from "./components/Carousel" 
+import Footer from "./components/Footer";
+import Card from "./components/Card";
+import Jumbotron from "./components/Jumbotron";
 
 function App() {
   return (
@@ -12,6 +15,7 @@ function App() {
     <div>
       <Nav />
       <Switch>
+        <Jumbotron />
         <Route exact path={["/", "/home"]}>
         
         <Home />        
@@ -20,9 +24,40 @@ function App() {
           <Route exact path="/login" component={Login}/>
       </Switch>
     </div>
+    <div>
+    <Carousel />
+    </div>
+    <div>
+      <div className="MyCard">
+        <Card />
+        <Switch>
+          <Route exact path={["/", "/home"]}>
+          <Home />        
+          </Route>
+        </Switch>
+      </div>
+      <div className="MyCard">
+        <Card />
+        <Switch>
+          <Route exact path={["/", "/home"]}>
+          <Home />        
+          </Route>
+        </Switch>
+      </div>
+      <div className="MyCard">
+        <Card />
+        <Switch>
+          <Route exact path={["/", "/home"]}>
+          <Home />        
+          </Route>
+        </Switch>
+      </div>
+    </div>
+    <Footer />
   </Router>
    );
 }
 
 
 export default App;
+
