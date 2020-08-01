@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import "./style.css";
+import React from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 
 // function Data(props) {
@@ -10,8 +9,7 @@ import Carousel from 'react-bootstrap/Carousel'
 //     )
 // }
 
-export class BootstrapCarousel extends Component {
-    render() {
+export default function() {
         return (
             <div className="carousel container pb-4 pt-4">
                 <div className='container-fluid' >
@@ -54,6 +52,3 @@ export class BootstrapCarousel extends Component {
             </div>
         )
     }
-}
-
-export default BootstrapCarousel
