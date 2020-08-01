@@ -2,25 +2,53 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Nav from "./components/Navbar";
-//import Carousel from "./components/Carousel";
 import BootstrapCarousel from './components/Carousel' 
-
-// import your component here
+import Footer from "./components/Footer";
+import Card from "./components/Card";
+import Jumbotron from "./components/Jumbotron";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Nav />
+  <Router>
+    <div>
+      <Nav />
+      <Switch>
+        <Jumbotron />
+        <Route exact path={["/", "/home"]}>
+         <BootstrapCarousel></BootstrapCarousel>
+        <Home />        
+        </Route>
+      </Switch>
+    </div>
+    <div>
+      <div class="MyCard">
+        <Card />
         <Switch>
           <Route exact path={["/", "/home"]}>
-          <BootstrapCarousel></BootstrapCarousel>
-            <Home />
+          <Home />        
           </Route>
         </Switch>
       </div>
-    </Router>
-  );
+      <div class="MyCard">
+        <Card />
+        <Switch>
+          <Route exact path={["/", "/home"]}>
+          <Home />        
+          </Route>
+        </Switch>
+      </div>
+      <div class="MyCard">
+        <Card />
+        <Switch>
+          <Route exact path={["/", "/home"]}>
+          <Home />        
+          </Route>
+        </Switch>
+      </div>
+    </div>
+    <Footer />
+  </Router>
+   );
 }
 
 
