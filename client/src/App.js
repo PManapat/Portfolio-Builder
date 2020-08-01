@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Nav from "./components/Navbar";
+import BootstrapCarousel from './components/Carousel' 
 import Footer from "./components/Footer";
 import Card from "./components/Card";
-// import your component here
 import Jumbotron from "./components/Jumbotron";
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
       <Switch>
         <Jumbotron />
         <Route exact path={["/", "/home"]}>
+         <BootstrapCarousel></BootstrapCarousel>
         <Home />        
         </Route>
       </Switch>
@@ -52,3 +53,4 @@ function App() {
 
 
 export default App;
+
