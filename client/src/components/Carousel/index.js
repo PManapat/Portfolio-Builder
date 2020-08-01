@@ -19,7 +19,7 @@ export default function() {
                              </div>
                     </div>
                 </div>
-                <div className='container-fluid' fluid={true} style={{ textAlign: "center" }}>
+                <div className="container-fluid" fluid="true" style={{ textAlign: "center" }}>
                     <div>
                         <Carousel>
                             <Carousel.Item>
