@@ -3,7 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 
 function Home (){
 return(
-    <div>Test</div>
+    <div>This is from Home.js</div>
 )
 }
 
