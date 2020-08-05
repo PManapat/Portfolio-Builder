@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import { getProfile } from "../../utils/api.js";
+//  import jwt_decode from 'jwt-decode'
+import {getProfile} from "../../utils/api.js";
+
 function Profile() {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
+
+    const[firstName, setFirstName]=useState("");
+    const[lastName, setLastName]=useState("");
+    const[email, setEmail]=useState("");
+    
+ 
     useEffect(() => {
+       
         getProfile()
-            .then(res => {
-                console.log(res);
-                const { first_name, last_name, email } = res;
-                setFirstName({ first_name });
-                setLastName({ last_name });
-                setEmail({ email });
-            }
-            )
-            .catch(err => console.log(err));
-    }, [])
+        .then(res => {
+            console.log(res);
+            const{first_name, last_name, email}=res;
+            setFirstName({first_name});
+            setLastName({last_name});
+            setEmail({email});
+         
+        }
+          
+        )
+        .catch(err => console.log(err));
+    
+    },[])
+    
     return (
         <div className="container">
             <div className="jumbotron mt-5">
@@ -26,7 +36,9 @@ function Profile() {
                     <tbody>
                         <tr>
                             <td>Fist Name</td>
-                            <td>{firstName.first_name}</td>
+    <td>{firstName.first_name}</td>
+
+
                         </tr>
                         <tr>
                             <td>Last Name</td>

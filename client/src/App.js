@@ -9,7 +9,7 @@ import Profile from "./components/auth/Profile";
 import Footer from "./components/Footer";
 import UserForm from "./components/UserForm";
 // import Card from "./components/Card";
-
+// import Jumbotron from "./components/Jumbotron";
 
 function App() {
   return (
@@ -17,25 +17,15 @@ function App() {
       <div>
         <Nav />
         {/* <Switch> */}
-
-
-
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/userform" component={UserForm} />
         <Route exact path={["/", "/home"]} component={Home} />
-
-
-
         {/* </Switch> */}
       </div>
-
       <Footer />
     </Router>
   );
 }
-
-
 export default App;
-
