@@ -1,34 +1,31 @@
 import React from "react";
 import Jumbotron from "../components/Jumbotron";
-import Carousel from "../components/Carousel"; 
-
+import Carousel from "../components/Carousel";
 import Card from "../components/Card";
 
-
-
-function Home (){
-return(
+function Home() {
+  return (
     <div>
-        <div>
+      <div>
         <Jumbotron />
-    <Carousel />
-    </div>
-    <div>
-      <div className="MyCard">
-        <Card />
-       
+        <Carousel />
       </div>
-      <div className="MyCard">
-        <Card />
-       
-      </div>
-      <div className="MyCard">
-        <Card />
-       
+      <div>
+        <div className="MyCard">
+          <Card />
+
+        </div>
+        <div className="MyCard">
+          <Card />
+
+        </div>
+        <div className="MyCard">
+          <Card />
+
+        </div>
       </div>
     </div>
-    </div>
-)
+  )
 }
 
 export default Home;
