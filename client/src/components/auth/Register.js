@@ -28,6 +28,7 @@ console.log(setFormData);
   }
 
 
+
   function handleFormSubmit(event) {
     event.preventDefault();
     const newUser = {
@@ -36,6 +37,7 @@ console.log(setFormData);
       email: email,
       password: password
     }
+
     register(newUser).then(function(res){
        return history.push("/login")
      
@@ -53,10 +55,12 @@ console.log(setFormData);
     return(
         <div>
  <h1 className="large text-primary">Sign Up</h1>
+
       <p className="lead">
         <i className="fas fa-user" /> Create Your Account
       </p>
       <Form onSubmit={handleFormSubmit}>
+
       <Form.Group>
   <Form.Control 
   size="lg" 
@@ -111,13 +115,16 @@ console.log(setFormData);
   type="submit">
     
     Submit
+
   </Button>
-</Form>
+      </Form>
       <p className="my-1">
         Already have an account? <Link to="/login">Sign In</Link>
       </p>
+
         </div>
     )
+
 }
 
 

@@ -90,11 +90,10 @@ function Login(){
   variant="primary" 
   type="submit">
     Submit
+
   </Button>
-</Form>
-
-        </div>
-    )
-
+      </Form>
+    </div>
+  )
 }
 export default Login;

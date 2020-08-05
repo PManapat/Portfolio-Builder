@@ -26,9 +26,6 @@ function Profile() {
     
     },[])
     
-    
-
- 
     return (
         <div className="container">
             <div className="jumbotron mt-5">
@@ -40,6 +37,7 @@ function Profile() {
                         <tr>
                             <td>Fist Name</td>
     <td>{firstName.first_name}</td>
+
 
                         </tr>
                         <tr>
