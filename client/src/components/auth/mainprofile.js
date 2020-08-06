@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 //  import jwt_decode from 'jwt-decode'
-import {getProfile} from "../../utils/api.js";
+import {getProfile, mainProfile} from "../../utils/api.js";
 
-function Profile() {
+function myprofile() {
 
     const[firstName, setFirstName]=useState("");
     const[lastName, setLastName]=useState("");
@@ -11,12 +11,12 @@ function Profile() {
  
     useEffect(() => {
        
-        getProfile()
+        mainProfile()
         .then(res => {
             console.log(res);
-            const{first_name, last_name, email}=res;
-            setFirstName({first_name});
-            setLastName({last_name});
+            const{firstName, lastName, email}=res;
+            setFirstName({firstName});
+            setLastName({lastName});
             setEmail({email});
          
         }
@@ -31,12 +31,13 @@ function Profile() {
             <div className="jumbotron mt-5">
                 <div className="col-sm-8 mx-auto">
                     <h1 className="text-center">PROFILE</h1>
+                    <h1>Welcome {firstName.firstName}</h1>
                 </div>
-                <table className="table col-md-6 mx-auto">
+                {/* <table className="table col-md-6 mx-auto">
                     <tbody>
                         <tr>
                             <td>First Name</td>
-    <td>{firstName.first_name}</td>
+    <td>{firstName.firstName}</td>
 
 
                         </tr>
@@ -49,9 +50,9 @@ function Profile() {
                             <td>{email.email}</td>
                         </tr>
                     </tbody>
-                </table>
+                </table> */}
             </div>
         </div>
     )
 }
-export default Profile;
+export default myprofile;

@@ -7,12 +7,23 @@ import Success from './Success';
 export class UserForm extends Component {
   state = {
     step: 1,
+    email: '',
     firstName: '',
     lastName: '',
-    email: '',
-    occupation: '',
-    city: '',
-    bio: ''
+   navColor:'',
+   navText:'',
+   backgroundColor: '',
+   bio: '',
+   githubLink:'',
+   linkdin:'',
+   footer: '',
+
+
+
+   
+  
+ 
+
   };
 
   // Proceed to next step
@@ -38,8 +49,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { firstName, lastName, email, occupation, city, bio } = this.state;
-    const values = { firstName, lastName, email, occupation, city, bio };
+    const {  email,firstName,lastName,navColor, navText,backgroundColor,bio,githubLink,linkdin,footer } = this.state;
+    const values = { email,firstName,lastName,navColor, navText,backgroundColor,bio,githubLink,linkdin,footer };
 
     switch (step) {
       case 1:
@@ -62,6 +73,7 @@ export class UserForm extends Component {
       case 3:
         return (
           <Confirm
+            // nextStep={this.props.history.push('/mainprofile')}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             values={values}

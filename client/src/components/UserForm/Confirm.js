@@ -4,33 +4,62 @@ import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
-import { register } from "../../utils/api.js";
+import { profile } from "../../utils/api.js";
+// import { useHistory } from "react-router-dom";
 export class Confirm extends Component {
+  
 
   continue = e => {
     e.preventDefault();
     // PROCESS FORM //
     //let history = useHistory();
+    // let history = useHistory();
     const {
-      values: { firstName, lastName, email, occupation, city, bio }
+      values: { email,firstName,lastName,navColor, navText,backgroundColor,bio,githubLink,linkdin,footer}
     } = this.props;
+    // console.log(this.props);
+    // console.log(this.props.values.firstName);
+    // console.log(this.props.values.lastName);
+    // console.log(this.props.values.email);
+    // console.log(this.props.values.occupation);
+    // console.log(this.props.values.city);
+    // console.log(this.props.values.bio);
+    
 
     const newUser = {
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      //password: password,
-      occupation: occupation,
-      city: city,
-      bio: bio
+     emai: email,
+     firstName:firstName,
+     lastName: lastName,
+     navColor: navColor,  
+     navText: navText,
+     backgroundColor: backgroundColor,
+     bio: bio,
+     githubLink:githubLink,
+     linkdin:linkdin,
+     footer: footer
     }
+    //we can do this also
+    //   const newUser = {
+    //   firstName: this.props.values.firstName,
+    // email: this.props.values.email,
+    // lastName: this.props.values.lastName,
+    // occupation: this.props.values.occupation,
+    // city:this.props.values.city,
+    // bio: this.props.values.bio,
+    // }
+    
 
-    register(newUser).then(function (res) {
-      // return history.push("/login")
+    profile(newUser).then(function (res) {
+      // let history = useHistory();
+      // return history.push("/mainprofile")
+      // if (res) {
+      //   this.props.history.push(`/mainprofile`)
+      // }
+      console.log(res);
     })
 
 
-    this.props.nextStep();
+  this.props.nextStep();
   };
 
   back = e => {
@@ -40,7 +69,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { firstName, lastName, email, occupation, city, bio }
+      values: { email,firstName,lastName,navColor, navText,backgroundColor,bio,githubLink,linkdin,footer }
     } = this.props;
     return (
       <MuiThemeProvider>
@@ -48,7 +77,7 @@ export class Confirm extends Component {
           <Dialog
             open
             fullWidth
-            maxWidth='sm'
+            maxWidth='lg'
           >
             <AppBar title="Confirm User Data" />
             <List>
@@ -62,14 +91,24 @@ export class Confirm extends Component {
                 <ListItemText primary="Email" secondary={email} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Occupation" secondary={occupation} />
+                <ListItemText primary="GitHub Link" secondary={githubLink} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="City" secondary={city} />
+                <ListItemText primary="Linkdin Link" secondary={linkdin} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Bio" secondary={bio} />
+                <ListItemText primary="Nav Color" secondary={navColor} />
+                </ListItem>
+                <ListItem>
+                <ListItemText primary="Nav Text" secondary={navText} />
               </ListItem>
+              <ListItem>
+                <ListItemText primary="BackGround Color" secondary={backgroundColor} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="About Me" secondary={bio} />
+                </ListItem>
+             
             </List>
             <br />
 

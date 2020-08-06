@@ -50,7 +50,7 @@ function Login(){
 
 
       // console.log(localStorage.getItem('tokenvalue'));
-       return history.push("/profile")
+       return history.push("/home")
     
    })
    }

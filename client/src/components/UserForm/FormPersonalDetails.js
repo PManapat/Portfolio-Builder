@@ -5,6 +5,9 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+
+import MenuItem from '@material-ui/core/MenuItem';
+
 export class FormPersonalDetails extends Component {
   continue = e => {
     e.preventDefault();
@@ -27,27 +30,54 @@ export class FormPersonalDetails extends Component {
             maxWidth='sm'
           >
             <AppBar title="Enter Personal Details" />
+            <TextField 
+            id="select" 
+            label="Color for Nav Bar" 
+            onChange={handleChange('navColor')}
+            defaultValue={values.navColor}
+            select>
+           <MenuItem value="#008000">Green</MenuItem>
+           <MenuItem value="#FF0000">Red</MenuItem>
+           <MenuItem value="#647ba1">Blue</MenuItem>
+           <MenuItem value="#ada965">Lemon</MenuItem>
+           <MenuItem value="#4b5669">Grey</MenuItem>
+           </TextField>
+           <br/>
+           <TextField
+              placeholder="Text On Nav Bar"
+              label="Text On Nav Bar"
+              onChange={handleChange('navText')}
+              defaultValue={values.navText}
+              margin="normal"
+              fullWidth
+            />
+            <br/>
+            <TextField 
+            id="select" 
+            label="Background Color" 
+            onChange={handleChange('backgroundColor')}
+            defaultValue={values.backgroundColor}
+            select>
+           <MenuItem value="#008000">Green</MenuItem>
+           <MenuItem value="#FF0000">Red</MenuItem>
+           <MenuItem value="#647ba1">Blue</MenuItem>
+           <MenuItem value="#ada965">Lemon</MenuItem>
+           <MenuItem value="#4b5669">Grey</MenuItem>
+           </TextField>
+           <br/>
+           
             <TextField
-              placeholder="Enter Your Occupation"
-              label="Occupation"
-              onChange={handleChange('occupation')}
-              defaultValue={values.occupation}
+              placeholder="Enter Text For Footer"
+              label="Footer"
+              onChange={handleChange('footer')}
+              defaultValue={values.footer}
               margin="normal"
               fullWidth
             />
             <br />
             <TextField
-              placeholder="Enter Your City"
-              label="City"
-              onChange={handleChange('city')}
-              defaultValue={values.city}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your Bio"
-              label="Bio"
+              placeholder="Enter Text For About Me Section"
+              label="About Me"
               onChange={handleChange('bio')}
               defaultValue={values.bio}
               margin="normal"

@@ -59,6 +59,31 @@ export const getProfile = user=> {
       console.log(err)
     })
 }
+///route for getting main profile
+export const mainProfile = user=> {
+  return axios
+    .get('api/auth/mainprofile', 
+    { 
+  // //     headers: {
+  // //    'x-auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyOGEwMDhlNTkyNjExM2MyMDA5ODNjIn0sImlhdCI6MTU5NjQ5ODQ1NSwiZXhwIjoxNTk2OTMwNDU1fQ.O6o_IA9sttDy0Di-2ajIMVXOUT_VOKSOuqGIY6q71E8'
+  // // }
+  headers:Authheaders
+  
+    
+    })
+    .then(response => {
+      console.log(response)
+      return response.data
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+
+///
+
+
 export function getCurrentUser(){
   return JSON.parse(localStorage.getItem('user'));
 
@@ -68,4 +93,29 @@ export function getCurrentUser(){
 export function  logout() {
   localStorage.removeItem("user");
 
+}
+
+//route for profile from wizard
+
+export const profile = newUser => {
+  return axios
+    .post('api/profile', {
+      emai: newUser.email,
+      firstName:newUser.firstName,
+      lastName: newUser.lastName,
+      navColor: newUser.navColor,  
+      navText: newUser.navText,
+      backgroundColor: newUser.backgroundColor,
+      bio: newUser.bio,
+      githubLink: newUser.githubLink,
+      linkdin: newUser.linkdin,
+      footer: newUser.footer
+    })
+    .then(response => {
+      console.log('profile send to backend');
+      return response.data
+    })
+    .catch(err =>{
+      console.log(err);
+    });
 }
