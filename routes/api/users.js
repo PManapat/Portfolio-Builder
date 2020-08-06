@@ -16,7 +16,7 @@ const { check, validationResult } = require('express-validator');
 // module.exports = router;
 
 // @route    post api/users
-// @desc     Register user
+// @desc     Register user  
 // @access   Public
 
 router.post("/",
@@ -31,6 +31,7 @@ router.post("/",
 
 ],
 async (req,res)=> {
+  console.log(req.body);
 const errors = validationResult(req);
 if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
