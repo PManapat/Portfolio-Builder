@@ -2,10 +2,17 @@ import React from 'react' ;
 import "./style.css";
 import Button from '../Button';
 import { Jumbotron } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 
 
 function Jumbrotron (){
+  let history = useHistory();
+	function handleClick() {
+		// console.log("I am clicked");
+		return (history.push("/userForm"))
+  }
+  
     return(
       <Jumbotron>
           <h1> Meet Portfolio Builder!!</h1>
@@ -17,9 +24,10 @@ function Jumbrotron (){
             {/* Button component default from reactstrap */}
             {/* <Button variant="primary">Learn more</Button> */}
 
-            {/* Button component created by rich in components folder*/}
-            <Button>Learn more</Button>
-          </p>
+          {/* Button component created by rich in components folder*/}
+    <Button onClick={handleClick} name="Get Started"></Button>
+        </p>
+
       </Jumbotron>
     )
 }

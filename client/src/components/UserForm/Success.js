@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
+
 
 export class Success extends Component {
   continue = e => {
@@ -15,8 +17,11 @@ export class Success extends Component {
     this.props.prevStep();
   };
 
+
   render() {
+
     return (
+      
       <MuiThemeProvider>
         <>
           <Dialog
@@ -24,9 +29,11 @@ export class Success extends Component {
             fullWidth
             maxWidth='sm'
           >
+            <Link to="/home"><button>x</button></Link>
             <AppBar title="Success" />
             <h1>Thank You For Your Submission</h1>
             <p>You will get an email with further instructions.</p>
+            
           </Dialog>
         </>
       </MuiThemeProvider>
@@ -35,3 +42,43 @@ export class Success extends Component {
 }
 
 export default Success;
+
+// Refactor
+
+// import React from 'react';
+// import Dialog from '@material-ui/core/Dialog';
+// import AppBar from '@material-ui/core/AppBar';
+// import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+
+// function Success (props) {
+//   const continue = function (e) => {
+//     e.preventDefault();
+//     // PROCESS FORM //
+//     props.nextStep();
+//   };
+
+//   const back = e => {
+//     e.preventDefault();
+//     this.props.prevStep();
+//   };
+
+//   render() {
+//     return (
+//       <MuiThemeProvider>
+//         <>
+//           <Dialog
+//             open
+//             fullWidth
+//             maxWidth='sm'
+//           >
+//             <AppBar title="Success" />
+//             <h1>Thank You For Your Submission</h1>
+//             <p>You will get an email with further instructions.</p>
+//           </Dialog>
+//         </>
+//       </MuiThemeProvider>
+//     );
+//   }
+// }
+
+// export default Success;
