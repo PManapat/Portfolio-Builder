@@ -1,10 +1,10 @@
 import React,{useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import {login} from "../../utils/api.js";
-import Btn from "../Button"
+import Button from "../Button"
 
 
 function Login(){
@@ -95,14 +95,15 @@ function Login(){
   </Form.Group>
 
   <Button 
-  variant="primary" 
-  type="submit">
+  className="btn btn-info btn-sm" 
+  type="submit"
+  name="Submit">
     Submit
-
   </Button>
+  <Button onClick={handleClick} className="btn btn-outline-info btn-sm" name="Sign Up">Sign Up</Button>
       </Form>
 
-      <Btn onClick={handleClick} name="Register">Sign Up</Btn>
+      
     </div>
   )
 }
