@@ -5,7 +5,7 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 import { profile } from "../../utils/api.js";
-// import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 export class Confirm extends Component {
   
 
@@ -79,6 +79,7 @@ export class Confirm extends Component {
             fullWidth
             maxWidth='lg'
           >
+            <Link to="/home"><button>x</button></Link>
             <AppBar title="Confirm User Data" />
             <List>
               <ListItem>
