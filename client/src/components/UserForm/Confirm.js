@@ -15,7 +15,7 @@ export class Confirm extends Component {
     //let history = useHistory();
     // let history = useHistory();
     const {
-      values: { email,firstName,lastName,navColor, navText,backgroundColor,bio,githubLink,linkdin,footer}
+      values: { navColor, navText,backgroundColor,bio,githubLink,linkdin,footer}
     } = this.props;
     // console.log(this.props);
     // console.log(this.props.values.firstName);
@@ -27,17 +27,14 @@ export class Confirm extends Component {
     
 
     const newUser = {
-     emai: email,
-     firstName:firstName,
-     lastName: lastName,
-     navColor: navColor,  
-     navText: navText,
-     backgroundColor: backgroundColor,
-     bio: bio,
-     githubLink:githubLink,
-     linkdin:linkdin,
-     footer: footer
-    }
+      navColor: navColor,  
+      navText: navText,
+      backgroundColor: backgroundColor,
+      bio: bio,
+      githubLink:githubLink,
+      linkdin:linkdin,
+      footer: footer
+     }
     //we can do this also
     //   const newUser = {
     //   firstName: this.props.values.firstName,
@@ -69,7 +66,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { email,firstName,lastName,navColor, navText,backgroundColor,bio,githubLink,linkdin,footer }
+      values: {navColor, navText,backgroundColor,bio,githubLink,linkdin,footer }
     } = this.props;
     return (
       <MuiThemeProvider>
@@ -81,15 +78,6 @@ export class Confirm extends Component {
           >
             <AppBar title="Confirm User Data" />
             <List>
-              <ListItem>
-                <ListItemText primary="First Name" secondary={firstName} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Last Name" secondary={lastName} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Email" secondary={email} />
-              </ListItem>
               <ListItem>
                 <ListItemText primary="GitHub Link" secondary={githubLink} />
               </ListItem>
@@ -108,6 +96,10 @@ export class Confirm extends Component {
               <ListItem>
                 <ListItemText primary="About Me" secondary={bio} />
                 </ListItem>
+                <ListItem>
+                <ListItemText primary="Footer" secondary={footer} />
+                </ListItem>
+                
              
             </List>
             <br />

@@ -1,12 +1,12 @@
 import axios from 'axios'
 import {Authheaders} from "./frontendmiddlewar";
-
+// headers:Authheaders
 //front end route for signup
 export const register = newUser => {
   return axios
     .post('api/users', {
-      first_name: newUser.first_name,
-      last_name: newUser.last_name,
+      firstName: newUser.firstName,
+      lastName: newUser.lastName,
       email: newUser.email,
       password: newUser.password
     })
@@ -40,33 +40,31 @@ export const login = user => {
     })
 }
 
-export const getProfile = user=> {
-  return axios
-    .get('api/auth', 
-    { 
-  // //     headers: {
-  // //    'x-auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyOGEwMDhlNTkyNjExM2MyMDA5ODNjIn0sImlhdCI6MTU5NjQ5ODQ1NSwiZXhwIjoxNTk2OTMwNDU1fQ.O6o_IA9sttDy0Di-2ajIMVXOUT_VOKSOuqGIY6q71E8'
-  // // }
-  headers:Authheaders
+// export const getProfile = user=> {
+//   return axios
+//     .get('api/auth', 
+//     { 
+//   // //     headers: {
+//   // //    'x-auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyOGEwMDhlNTkyNjExM2MyMDA5ODNjIn0sImlhdCI6MTU5NjQ5ODQ1NSwiZXhwIjoxNTk2OTMwNDU1fQ.O6o_IA9sttDy0Di-2ajIMVXOUT_VOKSOuqGIY6q71E8'
+//   // // }
+//   headers:Authheaders
   
     
-    })
-    .then(response => {
-      console.log(response)
-      return response.data
-    })
-    .catch(err => {
-      console.log(err)
-    })
-}
+//     })
+//     .then(response => {
+//       console.log(response)
+//       return response.data
+//     })
+//     .catch(err => {
+//       console.log(err)
+//     })
+// }
 ///route for getting main profile
 export const mainProfile = user=> {
   return axios
-    .get('api/auth/mainprofile', 
+    .get('api/profile/me', 
     { 
-  // //     headers: {
-  // //    'x-auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyOGEwMDhlNTkyNjExM2MyMDA5ODNjIn0sImlhdCI6MTU5NjQ5ODQ1NSwiZXhwIjoxNTk2OTMwNDU1fQ.O6o_IA9sttDy0Di-2ajIMVXOUT_VOKSOuqGIY6q71E8'
-  // // }
+
   headers:Authheaders
   
     
@@ -95,22 +93,24 @@ export function  logout() {
 
 }
 
-//route for profile from wizard
+//Post route for profile from wizard
 
-export const profile = newUser => {
+export const profile = (newUser) => {
+  console.log("from api",newUser);
   return axios
-    .post('api/profile', {
-      emai: newUser.email,
-      firstName:newUser.firstName,
-      lastName: newUser.lastName,
-      navColor: newUser.navColor,  
+    .post('api/profile',{
+    navColor: newUser.navColor,  
       navText: newUser.navText,
       backgroundColor: newUser.backgroundColor,
       bio: newUser.bio,
       githubLink: newUser.githubLink,
       linkdin: newUser.linkdin,
       footer: newUser.footer
-    })
+    }, {
+      headers:Authheaders
+      // 'Accept' : 'application/json',
+      // 'Content-Type': 'application/json'
+  })
     .then(response => {
       console.log('profile send to backend');
       return response.data
