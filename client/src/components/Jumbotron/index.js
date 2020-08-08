@@ -25,7 +25,7 @@ function Jumbrotron (){
             {/* <Button variant="primary">Learn more</Button> */}
 
           {/* Button component created by rich in components folder*/}
-    <Button onClick={handleClick} name="Get Started"></Button>
+    <Button onClick={handleClick} className="btn btn-info btn-lg" name="Get Started"></Button>
         </p>
 
       </Jumbotron>
