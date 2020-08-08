@@ -24,6 +24,7 @@ function App() {
     <Route path="/dashboard" component={Dashboard}/>
     <Route path="/quickdesign" component={QuickDesign}/>
     <Route path="/mainprofile" component={MainProfile} />
+
   </Switch>
   </Router>
   <Footer />

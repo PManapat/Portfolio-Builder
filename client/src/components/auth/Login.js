@@ -4,9 +4,17 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import {login} from "../../utils/api.js";
+import Btn from "../Button"
+
 
 function Login(){
   let history = useHistory();
+
+	function handleClick() {
+		// console.log("I am clicked");
+		return (history.push("/register"))
+  }
+
   const [formData, setFormData] = useState({
      email: '',
      password: '',
@@ -93,6 +101,8 @@ function Login(){
 
   </Button>
       </Form>
+
+      <Btn onClick={handleClick} name="Register">Sign Up</Btn>
     </div>
   )
 }

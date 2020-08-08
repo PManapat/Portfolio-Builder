@@ -9,7 +9,6 @@ export default () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/userForm" activeClassName="active">Get Started</Nav.Link>
           <Nav.Link href="/profile" activeClassName="active">Profile</Nav.Link>
           
           {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
