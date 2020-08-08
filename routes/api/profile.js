@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const config = require('config');
+// const config = require('config');
 //importing module
-const Profile = require("../../models/Profile.js")
+// const Profile = require("../../models/Profile.js")
 
 
 

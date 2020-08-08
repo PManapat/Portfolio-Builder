@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 
 import MenuItem from '@material-ui/core/MenuItem';
@@ -29,6 +30,7 @@ export class FormPersonalDetails extends Component {
             fullWidth
             maxWidth='sm'
           >
+            <Link to="/home"><button>x</button></Link>
             <AppBar title="Enter Personal Details" />
             <TextField 
             id="select" 
