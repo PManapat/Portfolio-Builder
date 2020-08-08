@@ -23,7 +23,8 @@ function App() {
     <Route path="/register" component={Register}/>
     <Route path="/login" component={Login}/>
     <Route path="/userForm" component={UserForm}/>
-    <Route path="/mainprofile" component={MainProfile} />
+    <Route path="/dashboard" component={Dashboard}/>
+    <Route path="/quickdesign" component={QuickDesign}/>
   </Switch>
   </Router>
   <Footer />
