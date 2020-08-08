@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import QuickDesign from "./pages/QuickDesign";
 import Nav from "./components/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -21,9 +23,9 @@ function App() {
     <Route path="/register" component={Register}/>
     <Route path="/login" component={Login}/>
     <Route path="/userForm" component={UserForm}/>
+    <Route path="/mainprofile" component={MainProfile} />
   </Switch>
   </Router>
-  
   <Footer />
   </div>
   );
