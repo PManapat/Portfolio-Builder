@@ -1,55 +1,51 @@
-import axios from 'axios'
-import {Authheaders} from "./frontendmiddlewar";
+import axios from "axios";
+import { Authheaders } from "./frontendmiddlewar";
 // headers:Authheaders
 //front end route for signup
-export const register = newUser => {
+export const register = (newUser) => {
   return axios
-    .post('api/users', {
+    .post("api/users", {
       firstName: newUser.firstName,
       lastName: newUser.lastName,
       email: newUser.email,
-      password: newUser.password
+      password: newUser.password,
     })
-    .then(response => {
-      console.log('Registered')
-    })
-}
+    .then((response) => {
+      console.log("Registered");
+    });
+};
 //route for login
-export const login = user => {
+export const login = (user) => {
   return axios
-    .post('api/auth', {
+    .post("api/auth", {
       email: user.email,
-      password: user.password
+      password: user.password,
     })
-    .then(response => {
-      console.log("from the api.js",response);
+    .then((response) => {
+      console.log("from the api.js", response);
       if (response.data.token) {
-        localStorage.setItem("user", (response.data.token));
+        localStorage.setItem("user", response.data.token);
       }
       console.log(response.data.token);
 
       // localStorage.setItem('usertoken', response.data);
 
-
- 
-
-      return response.data
+      return response.data;
     })
-    .catch(err => {
-      console.log(err)
-    })
-}
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 // export const getProfile = user=> {
 //   return axios
-//     .get('api/auth', 
-//     { 
+//     .get('api/auth',
+//     {
 //   // //     headers: {
 //   // //    'x-auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyOGEwMDhlNTkyNjExM2MyMDA5ODNjIn0sImlhdCI6MTU5NjQ5ODQ1NSwiZXhwIjoxNTk2OTMwNDU1fQ.O6o_IA9sttDy0Di-2ajIMVXOUT_VOKSOuqGIY6q71E8'
 //   // // }
 //   headers:Authheaders
-  
-    
+
 //     })
 //     .then(response => {
 //       console.log(response)
@@ -60,62 +56,67 @@ export const login = user => {
 //     })
 // }
 ///route for getting main profile
-export const mainProfile = user=> {
+export const mainProfile = (user) => {
   return axios
-    .get('api/profile/me', 
-    { 
-
-  headers:Authheaders
-  
-    
+    .get("api/profile/me", {
+      headers: {
+        "x-auth-token": JSON.stringify(localStorage.getItem("user")).replace(
+          /['"]+/g,
+          ""
+        ),
+      },
     })
-    .then(response => {
-      console.log(response)
-      return response.data
+    .then((response) => {
+      console.log(response);
+      return response.data;
     })
-    .catch(err => {
-      console.log(err)
-    })
-}
-
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 ///
 
-
-export function getCurrentUser(){
-  return JSON.parse(localStorage.getItem('user'));
-
-
+export function getCurrentUser() {
+  return JSON.parse(localStorage.getItem("user"));
 }
 
-export function  logout() {
+export function logout() {
   localStorage.removeItem("user");
-
 }
 
 //Post route for profile from wizard
 
 export const profile = (newUser) => {
-  console.log("from api",newUser);
+  console.log("from api", newUser);
   return axios
-    .post('api/profile',{
-    navColor: newUser.navColor,  
-      navText: newUser.navText,
-      backgroundColor: newUser.backgroundColor,
-      bio: newUser.bio,
-      githubLink: newUser.githubLink,
-      linkdin: newUser.linkdin,
-      footer: newUser.footer
-    }, {
-      headers:Authheaders
-      // 'Accept' : 'application/json',
-      // 'Content-Type': 'application/json'
-  })
-    .then(response => {
-      console.log('profile send to backend');
-      return response.data
+    .post(
+      "api/profile",
+      {
+        navColor: newUser.navColor,
+        navText: newUser.navText,
+        backgroundColor: newUser.backgroundColor,
+        bio: newUser.bio,
+        githubLink: newUser.githubLink,
+        linkdin: newUser.linkdin,
+        footer: newUser.footer,
+      },
+      {
+        headers: {
+          "x-auth-token": JSON.stringify(localStorage.getItem("user")).replace(
+            /['"]+/g,
+            ""
+          ),
+        },
+        // 'Accept' : 'application/json',
+        // 'Content-Type': 'application/json'
+      }
+    )
+    .then((response) => {
+      console.log("profile send to backend");
+      return response.data;
     })
-    .catch(err =>{
+    .catch((err) => {
       console.log(err);
     });
-}
+};

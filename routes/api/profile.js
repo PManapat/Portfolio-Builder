@@ -10,6 +10,7 @@ const User = require("../../models/Users.js")
 
 router.get('/me', auth, async (req, res) => {
   // res.send("i m hit")
+  console.log(req.user.id)
   try {
     const profile = await Profile.findOne({
       user: req.user.id
@@ -35,7 +36,7 @@ router.get('/me', auth, async (req, res) => {
 router.post("/", auth,
 
 async (req,res)=> {
-  console.log(req.body);
+  console.log(req.user);
 
 //object destructing
 const {navColor, navText,backgroundColor,bio,githubLink,linkdin,footer}=req.body;
