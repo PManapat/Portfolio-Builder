@@ -6,8 +6,7 @@ import QuickDesign from "./pages/QuickDesign";
 import Nav from "./components/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import Profile from "./components/auth/Profile";
-// import Carousel from "./components/Carousel"; 
+import MainProfile from "./components/auth/mainprofile"
 import Footer from "./components/Footer";
 import UserForm from "./components/UserForm";
 // import Card from "./components/Card";
@@ -19,11 +18,13 @@ function App() {
   <Router>
     <Switch>
     <Route exact path={["/", "/home"]} activeClassName="active" eventKey="/" component={Home}/>
-    <Route path="/profile" component={Profile}/>
     <Route path="/register" component={Register}/>
     <Route path="/login" component={Login}/>
     <Route path="/userForm" component={UserForm}/>
-    {/* <Route path="/mainprofile" component={MainProfile} /> */}
+    <Route path="/dashboard" component={Dashboard}/>
+    <Route path="/quickdesign" component={QuickDesign}/>
+    <Route path="/mainprofile" component={MainProfile} />
+
   </Switch>
   </Router>
   <Footer />

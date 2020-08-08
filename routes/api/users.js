@@ -21,8 +21,8 @@ const { check, validationResult } = require('express-validator');
 
 router.post("/",
 [
-    check('first_name', 'Name is required').not().isEmpty(),
-    check('last_name', 'Name is required').not().isEmpty(),
+    check('firstName', 'Name is required').not().isEmpty(),
+    check('lastName', 'Name is required').not().isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
     check(
       'password',
@@ -37,7 +37,11 @@ if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
 //object destructing
-const {first_name, last_name, email, password,avatar,payment,github,linked,published_portfolio,credit_card}=req.body;
+const {firstName,
+  lastName,
+  email,
+  avatar,
+  password,}=req.body;
 try{
 //see if user exists
 let user = await User.findOne({ email });
@@ -55,16 +59,12 @@ const avatar = gravatar.url(email,{
 })
 //and create instance of new user
 user = new User({
-    first_name,
-    last_name,
+    firstName,
+    lastName,
     email,
     avatar,
     password,
-    credit_card,
-    payment,
-    linked,
-    github,
-    published_portfolio
+   
 
 
   });

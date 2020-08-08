@@ -12,6 +12,7 @@ const { check, validationResult } = require('express-validator');
 // @desc    get user by token
 // @access   private
 //authontication of the route
+// router.get("/users",(req,res)=> res.send("user route"));
 router.get('/', auth, async (req, res) => {
     try {
       const user = await User.findById(req.user.id).select('-password');
@@ -25,15 +26,15 @@ router.get('/', auth, async (req, res) => {
   //for getting the mainprofile route
 
 
-  router.get('/mainprofile', auth, async (req, res) => {
-    try {
-      const user = await Profile.findById(req.user.id);
-      res.json(user);
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server Error');
-    }
-  });
+  // router.get('/mainprofile', auth, async (req, res) => {
+  //   try {
+  //     const user = await Profile.findById(req.user.id);
+  //     res.json(user);
+  //   } catch (err) {
+  //     console.error(err.message);
+  //     res.status(500).send('Server Error');
+  //   }
+  // });
 
   // @route    POST api/auth
   // @desc     Authenticate user & get token
