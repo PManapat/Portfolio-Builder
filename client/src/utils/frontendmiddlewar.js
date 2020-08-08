@@ -1,7 +1,4 @@
 
 export const Authheaders={
-
-    'x-auth-token':localStorage.getItem('user')
- 
-
+    'x-auth-token':JSON.stringify(localStorage.getItem('user')).replace(/['"]+/g,'')
 }
