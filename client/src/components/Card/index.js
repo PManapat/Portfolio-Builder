@@ -12,8 +12,9 @@ const handleClick = () => {
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
       <div
         style={{
-          backgroundColor: "green",
-          height: 100,
+          backgroundColor: "light Pink",
+          // backgroundImage: url('/client/public/assets/img/img3.jpg'),
+          height: 400,
           color: "#fff",
           display: "flex",
           justifyContent: "center",
@@ -28,14 +29,14 @@ const handleClick = () => {
       <div
         style={{
           backgroundColor: "red",
-          height: 100,
+          height: 400,
           color: "#fff",
           display: "flex",
           justifyContent: "center",
           alignItems: "center"
         }}
       >
-        Select to purchase this template
+        Soft Theme Template
         <button onClick={handleClick}>Click to flip</button>
       </div>
     </ReactCardFlip>

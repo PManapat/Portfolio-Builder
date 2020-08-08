@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel'
+import "./style.css";
 
 // function Data(props) {
 //     console.log("Propss are", props);
@@ -13,13 +14,11 @@ export default function() {
         return (
             <div className="carousel container pb-4 pt-4">
                 <div className='container-fluid' >
-                    <div className="row title" style={{ marginBottom: "20px" }} >
-                        <div className="col-sm-12 btn btn-warning">
-                            Our Proud Customers
-                             </div>
-                    </div>
+                        <div style={{textAlign:"center"}}>
+                            <h1> Our Proud Customers</h1>
+                        </div>
                 </div>
-                <div className="container-fluid" fluid="true" style={{ textAlign: "center" }}>
+                <div className="container-fluid MyCarousel" fluid="true" style={{ textAlign: "center" }}>
                     <div>
                         <Carousel>
                             <Carousel.Item>
@@ -42,6 +41,30 @@ export default function() {
                                 <img style={{ "height": "500px" }}
                                     className="d-block w-100"
                                     src={'assets/img/img3.jpg'} />
+                                <Carousel.Caption>
+                                    <h3>Sample Customer Portfolio</h3>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item >
+                                <img style={{ "height": "500px" }}
+                                    className="d-block w-100"
+                                    src={'assets/img/img4.jpeg'} />
+                                <Carousel.Caption>
+                                    <h3>Sample Customer Portfolio</h3>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item >
+                                <img style={{ "height": "500px" }}
+                                    className="d-block w-100"
+                                    src={'assets/img/img5.jpeg'} />
+                                <Carousel.Caption>
+                                    <h3>Sample Customer Portfolio</h3>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item >
+                                <img style={{ "height": "500px" }}
+                                    className="d-block w-100"
+                                    src={'assets/img/img6.jpeg'} />
                                 <Carousel.Caption>
                                     <h3>Sample Customer Portfolio</h3>
                                 </Carousel.Caption>

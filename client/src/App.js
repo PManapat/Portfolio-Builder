@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import QuickDesign from "./pages/QuickDesign";
 import Nav from "./components/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -24,6 +26,8 @@ function App() {
         <Route exact path="/mainprofile" component={MainProfile} />
         <Route exact path="/userform" component={UserForm} />
         <Route exact path={["/", "/home"]} component={Home} />
+        {/* <Route exact path={["/", "/home"]} component={Dashboard} /> */}
+        {/* <Route exact path={["/", "/home"]} component={QuickDesign} /> */}
         {/* </Switch> */}
       </div>
       <Footer />
