@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {getProfile, mainProfile} from "../../utils/api.js";
+import "./style.css"
 
 function myprofile() {
 
@@ -27,7 +28,7 @@ function myprofile() {
     },[])
     
     return (
-        <div className="container">
+        <div className="container" id="container">
             <div className="jumbotron mt-5">
                 <div className="col-sm-8 mx-auto">
                     <h1 className="text-center">PROFILE</h1>

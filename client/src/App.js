@@ -9,6 +9,8 @@ import Login from "./components/auth/Login";
 import MainProfile from "./components/auth/mainprofile"
 import Footer from "./components/Footer";
 import UserForm from "./components/UserForm";
+import TempOne from "./pages/Temp1"
+
 // import Card from "./components/Card";
 // import Jumbotron from "./components/Jumbotron";
 function App() {
@@ -24,7 +26,7 @@ function App() {
     <Route path="/dashboard" component={Dashboard}/>
     <Route path="/quickdesign" component={QuickDesign}/>
     <Route path="/mainprofile" component={MainProfile} />
-
+    <Route path="/template" component={TempOne} />
   </Switch>
   </Router>
   <Footer />

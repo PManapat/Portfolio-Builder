@@ -2,8 +2,10 @@
 	background-image: url(https://cdn-media-1.freecodecamp.org/images/1*zVDcaM6mqhi9m0LP_Sq4Ag.jpeg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center; 
-	background-size: contain;
+	background-position: center;
+	background-size: cover; 
+	color: white;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .container{
@@ -13,8 +15,16 @@
 }
 
 .About{
+	background-position: center;
 	text-align: center;
 	font-size: 24px;
 	background-color: rgb(1, 4, 44);
-	margin: 5rem;
+}
+
+#profilePic{
+	border-radius: 50%;
+    width: 200px;
+	height: 200px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }

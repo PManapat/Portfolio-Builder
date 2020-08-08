@@ -1,5 +1,5 @@
 .MyCarouselBackground{
-    background-image: url("./img17_45.png");
+    background-image: url("./images/img17_45.png");
 }
 .MyCarousel{
     opacity: 1.0;
@@ -14,11 +14,11 @@
     background-color: aquamarine;
 }
 .img11{
-    background-image: url("./img11.jpeg");
+    background-image: url("./images/img11.jpeg");
 }
 .img12{
-    background-image: url("./img12.jpeg");
+    background-image: url("./images/img12.jpeg");
 }
 .img13{
-    background-image: url("./img13.jpeg");
+    background-image: url("./images/img13.jpeg");
 }

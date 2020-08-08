@@ -30,6 +30,7 @@ function Home() {
           <Card />
 
         </div>
+        <div class="clearfix"></div>
       </div>
 
     </div>

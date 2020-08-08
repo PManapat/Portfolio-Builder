@@ -10,22 +10,25 @@ export default function (){
 		<div className='Container'>
 			<Jumbotron className='Jumbo' fluid>
 				<Container className='container'>
-				<h1>Hi! My name is Elon</h1>
+				<h1>Hello World</h1>
 				<p className='here'>
 					I am an engineer, industrial designer, technology entrepreneur and philanthropist.
 				</p>
 				</Container>
 			</Jumbotron>
-			<Container className='About'>
+			<Container className='About' id='About'>
 				<Figure>
-				<Figure.Image
-					width={171}
-					height={180}
-					alt="171x180"
+				<Figure.Caption>
+					Elon Musk
+				</Figure.Caption>	
+				<Figure.Image id="profilePic"
+					width={300}
+					height={300}
+					alt="300x300"
 					src="https://www.biography.com/.image/t_share/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg"
 				/>
 				<Figure.Caption>
-					Nulla vitae elit libero, a pharetra augue mollis interdum.
+					Tesla | Space X
 				</Figure.Caption>
 				</Figure>
 			</Container>
