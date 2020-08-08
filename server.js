@@ -1,6 +1,6 @@
 const express = require("express");
 const connectDB = require('./config/db');
-const path = require("path");
+// const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 // Connect Database
@@ -24,8 +24,18 @@ app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
 
-
 app.get("/", (req, res) => res.send("Api Running"));
+
+// Replaced
+// app.get("/", (req, res) => {
+//   user.find((err, data) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.json(data);
+//     }
+//   });
+// });
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

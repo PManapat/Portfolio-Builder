@@ -1,0 +1,24 @@
+.MyCarouselBackground{
+    background-image: url("./img17_45.png");
+}
+.MyCarousel{
+    opacity: 1.0;
+}
+.MyCarousel img{
+    opacity: 1.0;
+}
+.MyCardContainer{
+    width:100%;
+}
+.MyCard {
+    background-color: aquamarine;
+}
+.img11{
+    background-image: url("./img11.jpeg");
+}
+.img12{
+    background-image: url("./img12.jpeg");
+}
+.img13{
+    background-image: url("./img13.jpeg");
+}
