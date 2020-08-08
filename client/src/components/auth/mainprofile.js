@@ -14,7 +14,8 @@ function myprofile() {
         mainProfile()
         .then(res => {
             console.log(res);
-            const{firstName, lastName, email}=res;
+            const{ user:{firstName, lastName, email}}=res;
+            console.log(firstName);
             setFirstName({firstName});
             setLastName({lastName});
             setEmail({email});
@@ -31,7 +32,8 @@ function myprofile() {
             <div className="jumbotron mt-5">
                 <div className="col-sm-8 mx-auto">
                     <h1 className="text-center">PROFILE</h1>
-                    <h1>Welcome {firstName.firstName}</h1>
+                    <h1>Welcome  {firstName.firstName}</h1>
+                    <h5>inspect you see all the values from backend</h5>
                 </div>
                 {/* <table className="table col-md-6 mx-auto">
                     <tbody>

@@ -6,6 +6,8 @@ import QuickDesign from "./pages/QuickDesign";
 import Nav from "./components/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+// import Profile from "./components/auth/Profile";
+import MainProfile from "./components/auth/mainprofile"
 import Profile from "./components/auth/Profile";
 // import Carousel from "./components/Carousel"; 
 import Footer from "./components/Footer";
@@ -25,6 +27,7 @@ function App() {
     <Route path="/userForm" component={UserForm}/>
     <Route path="/dashboard" component={Dashboard}/>
     <Route path="/quickdesign" component={QuickDesign}/>
+    <Route path="/mainprofile" component={MainProfile} />
   </Switch>
   </Router>
   <Footer />
