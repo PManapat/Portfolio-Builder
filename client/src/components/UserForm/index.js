@@ -11,6 +11,18 @@ export class UserForm extends Component {
     navText:'',
     backgroundColor: '',
     bio: '',
+    aboutBgColor:'',
+    profileImage:'',
+    ProjectOneTitle:'',
+    ProjectOneText:'',
+    ProjectOneUrl:'',
+    ProjectTwoTitle:'',
+    ProjectTwoText:'',
+    ProjectTwoUrl:'',
+    ProjectThreeTitle:'',
+    ProjectThreeText:'',
+    ProjectThreeUrl:'',
+    resumeUrl:'',
     githubLink:'',
     linkdin:'',
     footer: ''
@@ -39,8 +51,47 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const {  navColor, navText,backgroundColor,bio,githubLink,linkdin,footer } = this.state;
-    const values = {navColor, navText,backgroundColor,bio,githubLink,linkdin,footer };
+    const {  
+      navColor,
+      navText,
+      backgroundColor,
+      bio,
+      aboutBgColor,
+      profileImage,
+      ProjectOneTitle,
+      ProjectOneText,
+      ProjectOneUrl,
+      ProjectTwoTitle,
+      ProjectTwoText,
+      ProjectTwoUrl,
+      ProjectThreeTitle,
+      ProjectThreeText,
+      ProjectThreeUrl,
+      resumeUrl,
+      githubLink,
+      linkdin,
+      footer } = this.state;
+    const values = {
+      navColor,
+      navText,
+      backgroundColor,
+      bio,
+      aboutBgColor,
+      profileImage,
+      ProjectOneTitle,
+      ProjectOneText,
+      ProjectOneUrl,
+      ProjectTwoTitle,
+      ProjectTwoText,
+      ProjectTwoUrl,
+      ProjectThreeTitle,
+      ProjectThreeText,
+      ProjectThreeUrl,
+      resumeUrl,
+      githubLink,
+      linkdin,
+      footer
+     };
 
     switch (step) {
       case 1:
