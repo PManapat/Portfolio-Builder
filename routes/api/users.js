@@ -47,9 +47,11 @@ try{
 let user = await User.findOne({ email });
 
 if (user) {
+
   return res
     .status(400)
     .json({ errors: [{ msg: 'User already exists' }] });
+    
 }
 //get users garvatar
 const avatar = gravatar.url(email,{

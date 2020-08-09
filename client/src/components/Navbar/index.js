@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import Button from '@material-ui/core/Button';
+import {logout} from "../../utils/api";
 
 export default () => {
   return (
@@ -21,6 +23,7 @@ export default () => {
         </Nav>
         <Nav>
           <Nav.Link href="/login" activeClassName="active">Log In</Nav.Link>
+          <Nav.Link href="/" activeClassName="active"  onClick={logout}> Log Out</Nav.Link>
           <Nav.Link href="/register" activeClassName="active" style={{backgroundColor: '#fff', color: 'black'}}>Sign Up</Nav.Link>
         </Nav>
       </Navbar.Collapse>
