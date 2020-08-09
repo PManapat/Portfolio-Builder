@@ -15,10 +15,10 @@
 }
 
 .About{
-	background-position: center;
 	text-align: center;
 	font-size: 24px;
-	background-color: rgb(1, 4, 44);
+	background-color: rgba(0, 0, 0, 0.842);
+	background-size: cover;
 }
 
 #profilePic{
@@ -27,4 +27,8 @@
 	height: 200px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.figure-caption{
+	color: white
 }

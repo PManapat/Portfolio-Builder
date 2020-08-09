@@ -1,7 +1,7 @@
-.footer{
+#footer{
 	color: black;
 	text-decoration: none;
-	padding: 3rem;
+	border-top: 1px solid;
 }
 
 #footertext{

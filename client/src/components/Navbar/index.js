@@ -1,25 +1,19 @@
 import React from "react";
+import "./style.css";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import Button from '@material-ui/core/Button';
 import {logout} from "../../utils/api";
+import "./style.css";
 
 export default () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/home" eventKey="/">Portfolio-Builder</Navbar.Brand>
+    <Navbar collapseOnSelect expand="lg" id="navDiv">
+      <Navbar.Brand href="/home">Portfolio-Builder</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/mainprofile" activeClassName="active">Profile</Nav.Link>
-          
-          {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown> */}
+          <Nav.Link href="/mainprofile" activeclassname="active">Profile</Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link href="/login" activeClassName="active">Log In</Nav.Link>
@@ -28,25 +22,5 @@ export default () => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-
-    // <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-    //   <ul className="navbar-nav mr-auto">
-    //     <li className="navbar-item">
-    //       <Link to="/home" className="nav-link">Home</Link>
-    //     </li>
-    //     <li className="navbar-item">
-    //       <Link to="/register" className="nav-link">Register</Link>
-    //     </li>
-    //     <li className="navbar-item">
-    //       <Link to="/login" className="nav-link">Login</Link>
-    //     </li>
-    //     <li className="navbar-item">
-    //       <Link to="/userForm" className="nav-link">UserForm</Link>
-    //     </li>
-    //     <li className="navbar-item">
-    //       <Link to="/profile" className="nav-link">Profile</Link>
-    //     </li>
-    //   </ul>
-    // </nav>
   );
 };

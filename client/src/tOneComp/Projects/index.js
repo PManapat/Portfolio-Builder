@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Nav, Tabs, Tab, Image } from "react-bootstrap";
-import "./style.css"
+import "./style.css";
 
 export default function () {
   // pass link
@@ -9,13 +9,13 @@ export default function () {
   const [linkThree, setLinkThree] = useState("https://www.google.com/");
 
   // pass function on event change
-  const [greeting, setGreeting] = useState("green");
+  // const [greeting, setGreeting] = useState("green");
 
   const handleChange = (event) => {
-	setLinkOne(event.target.value);
-	setLinkTwo(event.target.value);
-	setLinkThree(event.target.value);
-    console.log(greeting);
+    setLinkOne(event.target.value);
+    setLinkTwo(event.target.value);
+    setLinkThree(event.target.value);
+    // console.log(greeting);
   };
 
   return (
@@ -27,33 +27,43 @@ export default function () {
         id="noanim-tab-example"
       >
         <Tab eventKey="project1" title="Project 1" href={linkOne}>
-			<div id="tabdiv"></div> 
-			<Nav className="justify-content-center">
-		  <Image
-            src="https://lh3.googleusercontent.com/proxy/3oxCUeBa4A3EeWHH6T8QnBhOu92tIZJ0ogCLvURE14C5kN18AtnnBA_2aSVL6SQDnsdk9Pyh5rzoQcOaqrUTcHRcSPwltnUwHt7KxMBjalOp7zo8JlGhug"
-          />
-		  </Nav>
-          <Nav.Link href={linkOne}>Project Demo 1</Nav.Link>
+          <div id="tabdiv"></div>
+          <Nav className="justify-content-center">
+            <Image
+              src="https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2017Q2/project-planning-header@2x.png"
+              fluid
+              width={250}
+              height={200}
+              alt="250x200"
+            />
+          </Nav>
+          <Nav.Link id="projects" href={linkOne}>Project Demo Link 1</Nav.Link>
         </Tab>
         <Tab eventKey="project2" title="Project 2" href={linkTwo}>
-		<div id="tabdiv"></div> 
+          <div id="tabdiv"></div>
           <Nav className="justify-content-center">
             <Image
-              src="https://lh3.googleusercontent.com/proxy/3oxCUeBa4A3EeWHH6T8QnBhOu92tIZJ0ogCLvURE14C5kN18AtnnBA_2aSVL6SQDnsdk9Pyh5rzoQcOaqrUTcHRcSPwltnUwHt7KxMBjalOp7zo8JlGhug"
+              src="https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2017Q2/project-planning-header@2x.png"
               fluid
+              width={250}
+              height={200}
+              alt="250x200"
             />
           </Nav>
-            <Nav.Link href={linkTwo}>Project Demo 2</Nav.Link>
+          <Nav.Link id="projects" href={linkTwo}>Project Demo Link 2</Nav.Link>
         </Tab>
         <Tab eventKey="project3" title="Project 3" href={linkThree}>
-		<div id="tabdiv"></div> 
+          <div id="tabdiv"></div>
           <Nav className="justify-content-center">
             <Image
-              src="https://lh3.googleusercontent.com/proxy/3oxCUeBa4A3EeWHH6T8QnBhOu92tIZJ0ogCLvURE14C5kN18AtnnBA_2aSVL6SQDnsdk9Pyh5rzoQcOaqrUTcHRcSPwltnUwHt7KxMBjalOp7zo8JlGhug"
+              src="https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2017Q2/project-planning-header@2x.png"
               fluid
+              width={250}
+              height={200}
+              alt="250x200"
             />
           </Nav>
-            <Nav.Link href={linkThree}>Project Demo 3</Nav.Link>
+          <Nav.Link id="projects" href={linkThree}>Project Demo Link 3</Nav.Link>
         </Tab>
       </Tabs>
     </div>

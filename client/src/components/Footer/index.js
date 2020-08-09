@@ -3,51 +3,26 @@ import "./style.css";
 
 function Footer() {
   return (
-    <footer className="navbar navbar-light bg-dark text-light">
-      <a className="navbar-brand" href="#"></a>
-      <div className="container-fluid text-center text-md-left">
-        <div className="row">
-          <div className="col-md-3 mt-md-0 mt-5"></div>
-          <ul className="list-unstyled">
-            <h5>Products</h5>
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-          </ul>
-        </div>
-        <div className="col-md-3 mb-md-0 mb-5"></div>
-        <ul className="list-unstyled">
-          <h5>Services</h5>
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-        </ul>
-        <div className="col-md-3 mb-md-0 mb-5"></div>
-        <ul className="list-unstyled">
-          <h5>Follow</h5>
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-        </ul>
-      </div>
+    <footer className="text-dark container-fluid text-center pt-1 pb-1 sticky-bottom" id="footdiv">
+        <br />
+        <br />
+        <img className="footimg mr-4" src="https://i1.wp.com/www.buyholdlong.com/wp-content/uploads/2017/01/portfolio-logo1.jpg?ssl=1" alt="Logo" />
+        <button className="link mr-4 btn btn-info" href="#">
+          Social Media
+        </button>
+        <button className="link mr-4 btn btn-info" href="#">
+          Privacy Policy
+        </button>
+        <button className="link mr-4 btn btn-info" href="#">
+          Terms & Conditions
+        </button>
+        <h5 className="mt-4">
+        Portfolio Builder © 2020
+        </h5>
+        <br />
+        <p className="white-txt small pb-4">
+         Brought to you by, Phillip, Deepali, Suraj, RIch & Shivani.
+        </p>
     </footer>
   );
 }
