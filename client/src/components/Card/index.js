@@ -2,12 +2,14 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
-const CardFlip = () => {
+
+function CardFlip ({onClick}) {
 const [isFlipped, setIsFlipped] = useState(false);
 
-const handleClick = () => {
-    setIsFlipped(!isFlipped);
-  };
+function handleClick () {
+  setIsFlipped(!isFlipped);
+};
+
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
       <div
@@ -28,7 +30,7 @@ const handleClick = () => {
 
       <div
         style={{
-          backgroundColor: "red",
+          backgroundColor: "blue",
           height: 400,
           color: "#fff",
           display: "flex",
@@ -37,7 +39,7 @@ const handleClick = () => {
         }}
       >
         Soft Theme Template
-        <button onClick={handleClick}>Click to flip</button>
+        <button onClick={onClick}>Click to flip</button>
       </div>
     </ReactCardFlip>
   );

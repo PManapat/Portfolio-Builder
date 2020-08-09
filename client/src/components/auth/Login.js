@@ -64,7 +64,6 @@ submitForm(e){
   login(data).then(res=>{
     // if(res.status==200){
       console.log("looking backend error in register",res)
-
       // alert("please put email address already in use, try with another unique email");
       this.props.history.push('/home');
     // }else{

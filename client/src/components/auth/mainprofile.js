@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {getProfile, mainProfile} from "../../utils/api.js";
+import Dashboard from '../Dashboard';
 import "./style.css"
 
 function myprofile() {
@@ -36,6 +37,7 @@ function myprofile() {
                     <h5>inspect you see all the values from backend</h5>
                 </div>
             </div>
+            <Dashboard />
         </div>
     )
 }
