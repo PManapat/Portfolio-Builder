@@ -58,10 +58,12 @@ function Login(){
 
 
       // console.log(localStorage.getItem('tokenvalue'));
-       return history.push("/home")
+       return history.push("/mainprofile")
     
    })
-   }
+
+
+}
  
  
     return(
@@ -75,6 +77,7 @@ function Login(){
      name="email"
      value={email}
      onChange={handleInputChange}
+     required
      
      />
     <Form.Text className="text-muted">
@@ -90,8 +93,12 @@ function Login(){
     name="password"
     value={password}
     onChange={handleInputChange}
+    required
     
     />
+    <Form.Text className="text-muted">
+      Enter a minimum 6 Characters
+    </Form.Text>
   </Form.Group>
 
   <Button 

@@ -34,6 +34,9 @@ export const login = (user) => {
     })
     .catch((err) => {
       console.log(err);
+      // Handling the error and reload page
+      alert("Please enter valid information");
+      window.location.reload();
     });
 };
 
