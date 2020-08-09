@@ -39,13 +39,47 @@ async (req,res)=> {
   console.log(req.user);
 
 //object destructing
-const {navColor, navText,backgroundColor,bio,githubLink,linkdin,footer}=req.body;
-const profileFields = {
-  user: req.user.id,
-  navColor, 
+const {  
+  navColor,
   navText,
   backgroundColor,
-  bio,githubLink,
+  bio,
+  aboutBgColor,
+  profileImage,
+  ProjectOneTitle,
+  ProjectOneText,
+  ProjectOneUrl,
+  ProjectTwoTitle,
+  ProjectTwoText,
+  ProjectTwoUrl,
+  ProjectThreeTitle,
+  ProjectThreeText,
+  ProjectThreeUrl,
+  resumeUrl,
+  githubLink,
+  linkdin,
+  footer
+  }=req.body;
+
+const profileFields = {
+  user: req.user.id,
+  navColor,
+  navText,
+  backgroundColor,
+  bio,
+  aboutBgColor,
+  profileImage,
+  ProjectOneTitle,
+  ProjectOneText,
+  ProjectOneUrl,
+  ProjectTwoTitle,
+  ProjectTwoText,
+  ProjectTwoUrl,
+  ProjectThreeTitle,
+  ProjectThreeText,
+  ProjectThreeUrl,
+  resumeUrl,
+  githubLink,
   linkdin,
   footer
    
