@@ -27,9 +27,8 @@ function myprofile() {
         <div className="container" id="container">
             <div className="jumbotron mt-5">
                 <div className="col-sm-8 mx-auto">
-                    <h1 className="text-center">PROFILE</h1>
-                    <h1>Welcome {firstName.firstName}</h1>
-                    <h5>inspect you see all the values from backend</h5>
+                <h2 className="text-center">Hello {firstName.firstName} {" "} {lastName.lastName} </h2>
+                    <h5>This page is limited. We will be updating features.</h5>
                 </div>
             </div>
             <Dashboard />

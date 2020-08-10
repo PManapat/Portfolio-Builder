@@ -11,9 +11,9 @@ console.log(props);
 		return (history.push("/login"))
   }
   return(
-    <Jumbotron>
+    <Jumbotron id="jumbo">
        <h1>Welcome  {props.firstName}</h1>
-      <h1> Meet Portfolio Builder!! </h1>
+      <h1> Create and Customize a Portfolio </h1>
       <p>
         Beautiful designs, powerful features, and the freedom to build anything you want. 
         Portfolio Builder is both free and priceless at the same time.

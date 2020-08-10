@@ -100,7 +100,7 @@ export class AboutMeDetails extends Component {
             />
             <br />
              <TextField
-              placeholder="Enter Your Linkdin Link"
+              placeholder="Enter Your LinkedIn Link"
               label="Linkdin Link"
               onChange={handleChange('linkdin')}
               defaultValue={values.linkdin}
