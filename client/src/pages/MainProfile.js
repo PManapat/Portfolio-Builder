@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import "./style.css";
-import { home } from "../../utils/api.js";
-import Dashboard from '../Dashboard';
+import "./MainProfile.css";
+import { home } from "../utils/api.js";
+import Dashboard from '../components/Dashboard';
 // import { mainProfile } from "../utils/api.js";
 
-function myprofile() {
+export default () => {
     const[firstName, setFirstName]=useState("");
     // const[lastName, setLastName]=useState("");
     // const[email, setEmail]=useState("");
@@ -35,5 +35,3 @@ function myprofile() {
         </div>
     );
 }
-
-export default myprofile;

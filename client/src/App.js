@@ -6,7 +6,7 @@ import QuickDesign from "./pages/QuickDesign";
 import Nav from "./components/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import MainProfile from "./components/auth/mainprofile";
+import MainProfile from "./pages/MainProfile";
 import Footer from "./components/Footer";
 import UserForm from "./components/UserForm";
 import TempOne from "./pages/Temp1";
