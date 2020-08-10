@@ -5,6 +5,7 @@ import Carousel from "../components/Carousel";
 import Card from "../components/Card";
 
 function Home() {
+
   return (
     <div>
       <div style={{textAlign:"center"}}>
@@ -25,7 +26,7 @@ function Home() {
           <Card />
         </div>
         {/* Clearfix to fix float issue */}
-        <div class="clearfix"></div>
+        <div className="clearfix"></div>
       </div>
     </div>
   )

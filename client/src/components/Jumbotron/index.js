@@ -4,14 +4,15 @@ import Button from '../Button';
 import { Jumbotron } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
-function Jumbrotron (){
+function Jumbrotron (props){
   let history = useHistory();
-
+console.log(props);
 	function handleClick() {
 		return (history.push("/login"))
   }
   return(
     <Jumbotron id="jumbo">
+       <h1>Welcome  {props.firstName}</h1>
       <h1> Create and Customize a Portfolio </h1>
       <p>
         Beautiful designs, powerful features, and the freedom to build anything you want. 

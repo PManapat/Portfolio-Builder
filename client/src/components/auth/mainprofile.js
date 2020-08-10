@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import "./style.css";
-import {getProfile, mainProfile} from "../../utils/api.js";
+import { home } from "../../utils/api.js";
 import Dashboard from '../Dashboard';
+// import { mainProfile } from "../utils/api.js";
 
 function myprofile() {
     const[firstName, setFirstName]=useState("");
-    const[lastName, setLastName]=useState("");
-    const[email, setEmail]=useState("");
+    // const[lastName, setLastName]=useState("");
+    // const[email, setEmail]=useState("");
     
     useEffect(() => {
-        mainProfile()
+        home()
         .then(res => {
             console.log(res);
-            const{ user:{firstName, lastName, email}}=res;
-            console.log(firstName);
+            // const{ user:{firstName, lastName, email}}=res;
+            const{firstName}=res;
+            console.log({firstName});
             setFirstName({firstName});
-            setLastName({lastName});
-            setEmail({email});
+            // setLastName({lastName});
+            // setEmail({email});
         })
         .catch(err => console.log(err));
     },[])
-    
+
     return (
         <div className="container" id="container">
             <div className="jumbotron mt-5">

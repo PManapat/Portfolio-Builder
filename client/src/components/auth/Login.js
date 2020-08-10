@@ -59,8 +59,9 @@ class Login extends React.Component {
       password: this.state.password
     }
     login(data).then(res => {
-      console.log("looking backend error in register", res)
-      this.props.history.push('/home');
+      // console.log("looking backend error in register", res)
+      // When user logs in they will be directed to mainprofile page
+      this.props.history.push('/mainprofile');
     });
   }
   render() {
