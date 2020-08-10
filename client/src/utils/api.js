@@ -37,6 +37,24 @@ export const login = (user) => {
     });
 };
 
+//Routing for geeting name from user profile only to home page
+export const home = (user) => {
+  return axios
+    .get("api/auth", {
+      headers: {
+        "x-auth-token": JSON.stringify(localStorage.getItem("user")).replace(/['"]+/g,"")
+      }
+    })
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+
 // Route for getting main profile
 export const mainProfile = (user) => {
   return axios
