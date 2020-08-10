@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
+import "./style.css"
 
 function CardFlip ({onClick}) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -9,35 +10,32 @@ function CardFlip ({onClick}) {
   };
 
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" id="container">
       <div
         style={{
           backgroundColor: "light Pink",
           // backgroundImage: url('/client/public/assets/img/img3.jpg'),
-          height: 400,
-          color: "#fff",
+          height: 550,
+          color: "black",
           display: "flex",
           justifyContent: "center",
           alignItems: "center"
         }}
       >
-        How do you like your portfolio to be?
-        
-        <button onClick={handleClick}>Click to flip</button>
+        <button className="link mr-4 btn btn-info" onClick={handleClick}>Learn more</button>
       </div>
 
-      <div
+      <div id="backOfCard"
         style={{
-          backgroundColor: "blue",
-          height: 400,
+          backgroundColor: "white",
+          height: 300,
           color: "#fff",
           display: "flex",
           justifyContent: "center",
           alignItems: "center"
-        }}
-      >
-        Soft Theme Template
-        <button onClick={onClick}>Click to flip</button>
+        }}>
+          <h3>Sign Up to start creating</h3>
+        <button className="link mr-4 btn btn-info" onClick={handleClick}>Close</button>
       </div>
     </ReactCardFlip>
   );

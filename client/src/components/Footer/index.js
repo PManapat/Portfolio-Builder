@@ -1,3 +1,4 @@
+  
 import React from "react";
 import "./style.css";
 
@@ -7,20 +8,20 @@ function Footer() {
       <br />
       <br />
       <img className="footimg mr-4" src="https://i1.wp.com/www.buyholdlong.com/wp-content/uploads/2017/01/portfolio-logo1.jpg?ssl=1" alt="Logo" />
-      <button className="link mr-4 btn btn-info" href="#">
+      <button className="link mr-2 btn btn-info" href="#">
         Social Media
         </button>
-      <button className="link mr-4 btn btn-info" href="#">
+      <button className="link mr-2 btn btn-info" href="#">
         Privacy Policy
         </button>
-      <button className="link mr-4 btn btn-info" href="#">
+      <button className="link mr-2 btn btn-info" href="#">
         Terms & Conditions
         </button>
-      <h5 className="mt-4">
+      <h5 className="mt-2">
         Portfolio Builder © 2020
         </h5>
       <br />
-      <p className="white-txt small pb-4">
+      <p className="white-txt small pb-2">
         Brought to you by, Phillip, Deepali, Suraj, Rich & Shivani.
         </p>
     </footer>

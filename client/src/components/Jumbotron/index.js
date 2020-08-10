@@ -11,8 +11,8 @@ function Jumbrotron (){
 		return (history.push("/login"))
   }
   return(
-    <Jumbotron>
-      <h1> Meet Portfolio Builder!! </h1>
+    <Jumbotron id="jumbo">
+      <h1> Create and Customize a Portfolio </h1>
       <p>
         Beautiful designs, powerful features, and the freedom to build anything you want. 
         Portfolio Builder is both free and priceless at the same time.
