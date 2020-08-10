@@ -42,9 +42,14 @@ export default function () {
       })
       .catch((err) => console.log(err));
   }, []);
+  // `url(${navImage.navImage})`
   return (
     <div className="Container">
-      <Jumbotron className="Jumbo" style={{backgroundImage: `url("${navImage}")`}}>
+      {/* <Jumbotron className="Jumbo" style={{
+        backgroundImage: `url("https://www.nicesnippets.com/image/imgpsh_fullsize.png")` }}>
+        <Container> */}
+        <Jumbotron className="Jumbo" style={{
+        backgroundImage: `url(${navImage.navImage})` }}>
         <Container>
           <h1>{introTitle.introTitle}</h1>
           <p>
