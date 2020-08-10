@@ -1,10 +1,7 @@
 import React from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import Button from '@material-ui/core/Button';
-import {logout} from "../../utils/api";
-import "./style.css";
+import { Navbar, Nav } from 'react-bootstrap'
+import { logout } from "../../utils/api";
 
 export default () => {
   return (

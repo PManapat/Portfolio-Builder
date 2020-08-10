@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
-import Button from '@material-ui/core/Button';
 import { profile } from "../../utils/api.js";
 import { Link } from "react-router-dom";
 export class Confirm extends Component {
-  
-
   continue = e => {
     e.preventDefault();
     // PROCESS FORM //
-    //let history = useHistory();
-    // let history = useHistory();
     const {
       values: { 
         navColor,
@@ -37,14 +33,6 @@ export class Confirm extends Component {
         footer
       }
     } = this.props;
-    // console.log(this.props);
-    // console.log(this.props.values.firstName);
-    // console.log(this.props.values.lastName);
-    // console.log(this.props.values.email);
-    // console.log(this.props.values.occupation);
-    // console.log(this.props.values.city);
-    // console.log(this.props.values.bio);
-    
 
     const newUser = {
       navColor: navColor,
@@ -66,31 +54,12 @@ export class Confirm extends Component {
       githubLink: githubLink,
       linkdin: linkdin,
       footer: footer
-     }
-    //we can do this also
-    //   const newUser = {
-    //   firstName: this.props.values.firstName,
-    // email: this.props.values.email,
-    // lastName: this.props.values.lastName,
-    // occupation: this.props.values.occupation,
-    // city:this.props.values.city,
-    // bio: this.props.values.bio,
-    // }
-    
-
+    }
     profile(newUser).then(function (res) {
-      // let history = useHistory();
-      // return history.push("/mainprofile")
-      // if (res) {
-      //   this.props.history.push(`/mainprofile`)
-      // }
       console.log(res);
     })
-
-
-  this.props.nextStep();
+    this.props.nextStep();
   };
-
   back = e => {
     e.preventDefault();
     this.props.prevStep();
@@ -122,13 +91,11 @@ export class Confirm extends Component {
     } = this.props;
     return (
       <MuiThemeProvider>
-        <>
-          <Dialog
-            open
-            fullWidth
-            maxWidth='lg'
-          >
-            <Link to="/home"><button>x</button></Link>
+        <div>
+          <Dialog open fullWidth maxWidth='lg'>
+            <Link to="/home">
+              <button>x</button>
+            </Link>
             <AppBar title="Confirm User Data" />
             <List>
               <ListItem>
@@ -188,27 +155,19 @@ export class Confirm extends Component {
                 <ListItem>
                 <ListItemText primary="Footer" secondary={footer} />
                 </ListItem>
-                
-             
             </List>
             <br />
-
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
-
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Confirm & Continue</Button>
+            <Button color="secondary" variant="contained" onClick={this.back}>
+              Back
+            </Button>
+            <Button color="primary" variant="contained" onClick={this.continue}>
+              Confirm & Continue
+            </Button>
           </Dialog>
-        </>
+        </div>
       </MuiThemeProvider>
     );
-  }
-}
+  };
+};
 
 export default Confirm;

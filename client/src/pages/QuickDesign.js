@@ -3,7 +3,7 @@ import "./QuickDesign.css";
 import { Card } from "react-bootstrap";
 
 const QuickDesign = () => {
-    const cardInfo = [
+  const cardInfo = [
     {
       image: "https://images.creativemarket.com/0.1.0/ps/4005388/580/387/m1/fpnw/wm0/01_frontcover-.jpg?1518611018&s=a2954e5d75bb23ad2ac167bd03284b72",
       title: "Lebron James",
@@ -19,7 +19,6 @@ const QuickDesign = () => {
       title: "Steph Curry",
       text: "Photography Theme",
     },
-
     {
       image: "https://s3.envato.com/files/238075824/Ben.__large_preview.png",
       title: "Michael Jordan",
@@ -54,14 +53,11 @@ const QuickDesign = () => {
       title: "Lebron James",
       text: "THE GOAT",
     },
-    
-    
     {
       image: "https://www.addictionary.org/g/003-stirring-free-html-portfolio-templates-concept-868_685.jpg",
       title: "Lebron James",
       text: "THE GOAT",
     },
-    
   ];
 
   const renderCard = (card, index) => {
@@ -76,7 +72,11 @@ const QuickDesign = () => {
     );
   };
 
-    return <div className="grid">{cardInfo.map(renderCard)}</div>;
+  return (
+    <div className="grid">
+      {cardInfo.map(renderCard)}
+    </div>
+  );
 };
 
 export default QuickDesign;
