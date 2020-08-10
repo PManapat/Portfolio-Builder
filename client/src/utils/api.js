@@ -71,7 +71,9 @@ export const profile = (newUser) => {
       {
         navColor: newUser.navColor,
         navText: newUser.navText,
-        backgroundColor: newUser.backgroundColor,
+        navImage: newUser.navImage,
+        introText: newUser.introText,
+        introTitle: newUser.introTitle,
         bio: newUser.bio,
         aboutBgColor: newUser.aboutBgColor,
         profileImage: newUser.profileImage,
