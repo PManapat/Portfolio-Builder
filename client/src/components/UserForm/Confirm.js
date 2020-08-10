@@ -18,7 +18,9 @@ export class Confirm extends Component {
       values: { 
         navColor,
         navText,
-        backgroundColor,
+        navImage,
+        introText,
+        introTitle,
         bio,
         aboutBgColor,
         profileImage,
@@ -49,7 +51,9 @@ export class Confirm extends Component {
     const newUser = {
       navColor: navColor,
       navText: navText,
-      backgroundColor: backgroundColor,
+      navImage: navImage,
+      introText: introText,
+      introTitle: introTitle,
       bio: bio,
       aboutBgColor: aboutBgColor,
       profileImage: profileImage,
@@ -101,7 +105,9 @@ export class Confirm extends Component {
       values: {
         navColor,
         navText,
-        backgroundColor,
+        navImage,
+        introText,
+        introTitle,
         bio,
         aboutBgColor,
         profileImage,
@@ -138,7 +144,13 @@ export class Confirm extends Component {
                 <ListItemText primary="Nav Text" secondary={navText}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary=" Nav BackGround Color" secondary={backgroundColor}  />
+                <ListItemText primary="Nav Image" secondary={navImage}/>
+              </ListItem>
+              <ListItem>
+                <ListItemText primary=" Introduction Text" secondary={introText}  />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary=" Introduction Title" secondary={introTitle}  />
               </ListItem>
               <ListItem>
                 <ListItemText primary="About Me" secondary={bio} />
