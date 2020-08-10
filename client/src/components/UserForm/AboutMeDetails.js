@@ -33,17 +33,7 @@ export class AboutMeDetails extends Component {
             <Link to="/home"><button>x</button></Link>
             <AppBar title="About Me" />
             <TextField
-              placeholder="Enter Text For Introduction"
-              label="Enter Text For Introduction"
-              onChange={handleChange('introText')}
-              defaultValue={values.introText}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Text Introduction Title"
-              label="Enter Text Introduction Title"
+              label="Add a Title for an Introduction"
               onChange={handleChange('introTitle')}
               defaultValue={values.introTitle}
               margin="normal"
@@ -51,8 +41,15 @@ export class AboutMeDetails extends Component {
             />
             <br />
             <TextField
-              placeholder="Enter Text For About Me Section"
-              label="Enter Text For About Me Section"
+              label="Add text for the body of your Introduction"
+              onChange={handleChange('introText')}
+              defaultValue={values.introText}
+              margin="normal"
+              fullWidth
+            />
+            <br />
+            <TextField
+              label="Add text for a quick bio"
               onChange={handleChange('bio')}
               defaultValue={values.bio}
               margin="normal"
@@ -61,7 +58,7 @@ export class AboutMeDetails extends Component {
             <br />
             <TextField 
             id="select" 
-            label="Background Color For About Me page" 
+            label="Select a background color for you bio card" 
             onChange={handleChange('aboutBgColor')}
             defaultValue={values.navColor}
             select>
@@ -73,8 +70,7 @@ export class AboutMeDetails extends Component {
            </TextField>
            <br/>
            <TextField
-              placeholder="Profile Image"
-              label="Profile Image"
+              label="https:// (add a profile image, must use png or jpg)"
               onChange={handleChange('profileImage')}
               defaultValue={values.bio}
               margin="normal"
@@ -82,8 +78,7 @@ export class AboutMeDetails extends Component {
             />
             <br />
             <TextField
-              placeholder="Enter Your Resume Link"
-              label="Resume Link"
+              label="https: (Add a URL to your resume)"
               onChange={handleChange('resumeUrl')}
               defaultValue={values.resumeUrl}
               margin="normal"
@@ -91,8 +86,7 @@ export class AboutMeDetails extends Component {
             />
             <br />
             <TextField
-              placeholder="Enter Your GitHub Link"
-              label="GitHub Link"
+              label="https: (Add a URL to your Github Profile)"
               onChange={handleChange('githubLink')}
               defaultValue={values.githubLink}
               margin="normal"
@@ -100,8 +94,7 @@ export class AboutMeDetails extends Component {
             />
             <br />
              <TextField
-              placeholder="Enter Your Linkdin Link"
-              label="Linkdin Link"
+              label="https: (Add a URL to your LinkedIn Profile)"
               onChange={handleChange('linkdin')}
               defaultValue={values.linkdin}
               margin="normal"
@@ -110,15 +103,14 @@ export class AboutMeDetails extends Component {
             <br />
            
            <TextField
-              placeholder="Enter Text For Footer"
-              label="Footer"
+              label="Add text to your footer"
               onChange={handleChange('footer')}
               defaultValue={values.footer}
               margin="normal"
               fullWidth
             />
             <br />
-          
+          <br />
 
             <Button
               color="secondary"

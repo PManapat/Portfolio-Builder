@@ -39,12 +39,14 @@ export default function () {
         setProfileImage({ profileImage });
         setIntroText({ introText });
         setIntroTitle({ introTitle });
+        console.log(navImage);
       })
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className="Container">
-      <Jumbotron className="Jumbo" style={{backgroundImage: `url("${navImage}")`}}>
+    <div className="App">
+      <Jumbotron className="Jumbo" style={{
+        backgroundImage: `url(${navImage.navImage})` }}>
         <Container>
           <h1>{introTitle.introTitle}</h1>
           <p>
