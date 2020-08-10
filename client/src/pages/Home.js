@@ -1,29 +1,15 @@
-import React, { useEffect, useState }from "react";
+import React from "react";
 import "./Home.css";
 import Jumbotron from "../components/Jumbotron";
 import Carousel from "../components/Carousel";
 import Card from "../components/Card";
-import {home} from "../utils/api.js";
 
 function Home() {
-  const[firstName, setFirstName]=useState("");
-  useEffect(() => {
-    home()
-    .then(res => {
-        console.log(res);
-        console.log(res.firstName);
-        const{firstName}=res;
-        setFirstName({firstName});
-        console.log(firstName);
-       
-    })
-    .catch(err => console.log(err));
-},[])
+
   return (
     <div>
       <div style={{textAlign:"center"}}>
-      {/* <h1>Welcome  {firstName.firstName}</h1> */}
-        <Jumbotron firstName={firstName.firstName} />
+        <Jumbotron />
       </div>
       <div className="MyCarouselBackground">
         <Carousel />
@@ -40,7 +26,7 @@ function Home() {
           <Card />
         </div>
         {/* Clearfix to fix float issue */}
-        <div class="clearfix"></div>
+        <div className="clearfix"></div>
       </div>
     </div>
   )
