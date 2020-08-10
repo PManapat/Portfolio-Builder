@@ -1,10 +1,9 @@
+import React, { useEffect, useState } from "react";
 import "./style.css";
+import { mainProfile } from "../../utils/api.js";
 import Figure from "react-bootstrap/Figure";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
-import React, { useEffect, useState } from "react";
-import UserForm from "../../components/UserForm";
-import { getProfile, mainProfile } from "../../utils/api.js";
 
 export default function () {
   const [navText, setNavText] = useState("");
@@ -42,11 +41,7 @@ export default function () {
           </p>
         </Container>
       </Jumbotron>
-      <Container
-        className="About"
-        id="About"
-        style={{ backgroundColor: navColor.navColor }}
-      >
+      <Container className="About" id="About" style={{ backgroundColor: navColor.navColor }}>
         <Figure>
           <Figure.Caption>
             {firstName.firstName}{' '}

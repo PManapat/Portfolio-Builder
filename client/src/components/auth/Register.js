@@ -1,108 +1,100 @@
-
 import React from 'react';
-import {register} from "../../utils/api.js";
- import { Link } from 'react-router-dom';
+import { register } from "../../utils/api.js";
+import { Link } from 'react-router-dom';
 
 class Register extends React.Component{
   constructor(props){
     super(props);
-     this.state = {
-       isDisabled:true
-     }                                                                                                 
-     this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      isDisabled:true
+    }                                                                                                 
+    this.submitForm = this.submitForm.bind(this);
   }
   validateEmail(email){
-   const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
-   const result = pattern.test(email);
-   if(result===true){
-     this.setState({
-       emailError:false,
-       email:email
-     })
-   } else{
-     this.setState({
-       emailError:true
-     })
-   }
- }
- handleChange(e){
-  const target = e.target;
-  const value = target.type === 'checkbox' ? target.checked : target.value;
-  const name = target.name;
-  this.setState({
-    [name]: value
-  });
-  if(e.target.name==='firstname'){
-    if(e.target.value==='' || e.target.value===null ){
+    const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
+    const result = pattern.test(email);
+    if(result===true){
       this.setState({
-        firstnameError:true
+        emailError:false,
+        email:email
       })
     } else {
       this.setState({
-        firstnameError:false,     
-        firstName:e.target.value
+        emailError:true
       })
     }
   }
-  if(e.target.name==='lastname'){
-    if(e.target.value==='' || e.target.value===null){
-      this.setState({
-        lastnameError:true
-      })
-    } else {
-      this.setState({
-        lastnameError:false,
-        lastName:e.target.value
-      })
-    }
-  }
-  if(e.target.name==='email'){
-   this.validateEmail(e.target.value);
-  }
-  if(e.target.name==='password'){
-    if(e.target.value==='' || e.target.value===null || e.target.value.length<=5){
-      this.setState({
-        passwordError:true
-      })
-    } else {
-      this.setState({
-        passwordError:false,
-        password:e.target.value
-      })
-    }
- }
- if(this.state.firstnameError===false && this.state.lastnameError===false && 
-  this.state.emailError===false && this.state.passwordError===false){
+  handleChange(e){
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
     this.setState({
-      isDisabled:false
-    })
- }
-}
-submitForm(e){
-  e.preventDefault();
-  const data = {
-   firstName: this.state.firstName,
-   lastName: this.state.lastName,
-   email: this.state.email,
-   password: this.state.password
+      [name]: value
+    });
+    if(e.target.name==='firstname'){
+      if(e.target.value==='' || e.target.value===null ){
+        this.setState({
+          firstnameError:true
+        })
+      } else {
+        this.setState({
+          firstnameError:false,     
+          firstName:e.target.value
+        })
+      }
+    }
+    if(e.target.name==='lastname'){
+      if(e.target.value==='' || e.target.value===null){
+        this.setState({
+          lastnameError:true
+        })
+      } else {
+        this.setState({
+          lastnameError:false,
+          lastName:e.target.value
+        })
+      }
+    }
+    if(e.target.name==='email'){
+      this.validateEmail(e.target.value);
+    }
+    if(e.target.name==='password'){
+      if(e.target.value==='' || e.target.value===null || e.target.value.length<=5){
+        this.setState({
+          passwordError:true
+        })
+      } else {
+        this.setState({
+          passwordError:false,
+          password:e.target.value
+        })
+      }
+    }
+    if(this.state.firstnameError===false && this.state.lastnameError===false && 
+      this.state.emailError===false && this.state.passwordError===false){
+        this.setState({
+          isDisabled:false
+      })
+    }
   }
-  register(data).then(res=>{
-    // if(res.status==200){
-      // console.log("looking backend error in register",res)
-
-      // alert("please put email address already in use, try with another unique email");
+  submitForm(e){
+    e.preventDefault();
+    const data = {
+    firstName: this.state.firstName,
+    lastName: this.state.lastName,
+    email: this.state.email,
+    password: this.state.password
+    }
+    register(data).then(res => {
       this.props.history.push('/login');
-    // }else{
-
-    // } 
-  });
- }
-render(){
-return(
-  <div className="container">
-    <div className="card card-login mx-auto mt-5">
-      <div className="card-header text-primary text-center">Register here</div>
-        <div className="card-body">
+    });
+  }
+  render(){
+  return(
+    <div className="container">
+      <div className="card card-login mx-auto mt-5">
+        <div className="card-header text-primary text-center">Register here</div>
+          <div className="card-body">
             <form id="signup-form">
               <div className="form-group">
                 <div className="form-label-group">
@@ -134,13 +126,14 @@ return(
               </div>                
               <button className="btn btn-primary btn-block" disabled={this.state.isDisabled} onClick={this.submitForm}>Signup</button>
             </form>
-                 <p className="my-1 text-primary text-center">
-        Already have an account<Link to="/login"><br></br>Sign In</Link>
-     </p>
+            <p className="my-1 text-primary text-center">
+            Already have an account<Link to="/login"><br></br>Sign In</Link>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  );
- }
+    );
+  }
 }
+
 export default Register;

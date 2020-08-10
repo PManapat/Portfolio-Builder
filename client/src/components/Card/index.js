@@ -1,14 +1,12 @@
-
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
-
 function CardFlip ({onClick}) {
-const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
-function handleClick () {
-  setIsFlipped(!isFlipped);
-};
+  function handleClick () {
+    setIsFlipped(!isFlipped);
+  };
 
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
@@ -44,7 +42,5 @@ function handleClick () {
     </ReactCardFlip>
   );
 };
-
-// ReactDOM.render(<CardFlip />, document.querySelector("#root"));
 
 export default CardFlip;

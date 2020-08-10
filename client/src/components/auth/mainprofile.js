@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import "./style.css";
 import {getProfile, mainProfile} from "../../utils/api.js";
 import Dashboard from '../Dashboard';
-import "./style.css"
 
 function myprofile() {
-
     const[firstName, setFirstName]=useState("");
     const[lastName, setLastName]=useState("");
     const[email, setEmail]=useState("");
     
- 
     useEffect(() => {
-       
         mainProfile()
         .then(res => {
             console.log(res);
@@ -20,12 +17,8 @@ function myprofile() {
             setFirstName({firstName});
             setLastName({lastName});
             setEmail({email});
-         
-        }
-          
-        )
+        })
         .catch(err => console.log(err));
-    
     },[])
     
     return (
@@ -39,6 +32,7 @@ function myprofile() {
             </div>
             <Dashboard />
         </div>
-    )
+    );
 }
+
 export default myprofile;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Nav, Tabs, Tab, Image } from "react-bootstrap";
 import "./style.css";
+import { Nav, Tabs, Tab, Image } from "react-bootstrap";
 
 export default function () {
   // pass link
@@ -15,7 +15,6 @@ export default function () {
     setLinkOne(event.target.value);
     setLinkTwo(event.target.value);
     setLinkThree(event.target.value);
-    // console.log(greeting);
   };
 
   return (
