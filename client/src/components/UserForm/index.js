@@ -29,6 +29,7 @@ export class UserForm extends Component {
     linkdin:'',
     footer: ''
 };
+
   // Proceed to next step
   nextStep = () => {
     const { step } = this.state;
@@ -36,6 +37,7 @@ export class UserForm extends Component {
       step: step + 1
     });
   };
+
   // Go back to prev step
   prevStep = () => {
     const { step } = this.state;
@@ -43,10 +45,12 @@ export class UserForm extends Component {
       step: step - 1
     });
   };
+
   // Handle fields change
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
   };
+
   render() {
     const { step } = this.state;
     const {  
@@ -94,7 +98,8 @@ export class UserForm extends Component {
       githubLink,
       linkdin,
       footer
-    };
+     };
+
     switch (step) {
       case 1:
         return (

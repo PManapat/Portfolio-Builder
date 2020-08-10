@@ -56,15 +56,15 @@ export default function () {
       </Jumbotron>
       <Container className="About" id="About" style={{ backgroundColor: aboutBgColor.aboutBgColor }}>
         <Figure>
-          <Figure.Caption>
+          <Figure className="name">
             {firstName.firstName}{' '}
             {lastName.lastName}
-          </Figure.Caption>
+          </Figure>
           <Figure.Image
             id="profilePic"
             src={profileImage.profileImage}
           />
-          <Figure.Caption>Bio: {bio.bio}</Figure.Caption>
+          <p className="bio">Bio: {bio.bio}</p>
         </Figure>
       </Container>
     </div>

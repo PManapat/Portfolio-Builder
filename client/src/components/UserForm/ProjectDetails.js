@@ -5,7 +5,7 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
-import "./style.css";
+
 
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -32,10 +32,9 @@ export class ProjectDetails extends Component {
           >
             <Link to="/home"><button>x</button></Link>
             <AppBar title="Project " />
-           <br />
-           Project One
             <TextField
-              label="Add a Title for your first Project"
+              placeholder="ProjectOneTitle"
+              label="Project One Title"
               onChange={handleChange('ProjectOneTitle')}
               defaultValue={values.ProjectOneTitle}
               margin="normal"
@@ -43,7 +42,8 @@ export class ProjectDetails extends Component {
             />
             <br />
            <TextField
-              label="Add text to describe your first Project"
+              placeholder="ProjectOneText"
+              label="Project One Text"
               onChange={handleChange('ProjectOneText')}
               defaultValue={values.ProjectOneText}
               margin="normal"
@@ -51,19 +51,17 @@ export class ProjectDetails extends Component {
             />
             <br />
             <TextField
-              label="Add a URL Link for your first Project"
+              placeholder="ProjectOneUrl"
+              label="Project One Link"
               onChange={handleChange('ProjectOneUrl')}
               defaultValue={values.ProjectOneUrl}
               margin="normal"
               fullWidth
             />
             <br />
-            <br />
-            <br />
-            <br />
-           Project Two
             <TextField
-              label="Add a Title for your second Project"
+              placeholder="ProjectTwoTitle"
+              label="Project Two Title"
               onChange={handleChange('ProjectTwoTitle')}
               defaultValue={values.ProjectTwoTitle}
               margin="normal"
@@ -71,7 +69,8 @@ export class ProjectDetails extends Component {
             />
             <br />
            <TextField
-              label="Add text to describe your second Project"
+              placeholder="ProjectTwoText"
+              label="Project Two Text"
               onChange={handleChange('ProjectTwoText')}
               defaultValue={values.ProjectTwoText}
               margin="normal"
@@ -79,19 +78,16 @@ export class ProjectDetails extends Component {
             />
             <br />
             <TextField
-              label="Add a URL Link for your second Project"
+              placeholder="ProjectTwoUrl"
+              label="Project Two Link"
               onChange={handleChange('ProjectTwoUrl')}
               defaultValue={values.ProjectTwoUrl}
               margin="normal"
               fullWidth
             />
             <br />
-            <br />
-            <br />
-            <br />
-           Project Three
             <TextField
-              placeholder="Add a Title for your third Project"
+              placeholder="ProjectThreeTitle"
               label="Project Three Title"
               onChange={handleChange('ProjectThreeTitle')}
               defaultValue={values.ProjectThreeTitle}
@@ -100,7 +96,8 @@ export class ProjectDetails extends Component {
             />
             <br />
            <TextField
-              label="Add text to describe your third Project"
+              placeholder="ProjectThreeText"
+              label="Project Three Text"
               onChange={handleChange('ProjectThreeText')}
               defaultValue={values.ProjectThreeText}
               margin="normal"
@@ -108,14 +105,15 @@ export class ProjectDetails extends Component {
             />
             <br />
             <TextField
-              label="Add a URL Link for your third Project"
+              placeholder="ProjectThreeUrl"
+              label="Project Three Link"
               onChange={handleChange('ProjectThreeUrl')}
               defaultValue={values.ProjectThreeUrl}
               margin="normal"
               fullWidth
             />
             <br />
-          <br />
+          
 
             <Button
               color="secondary"
