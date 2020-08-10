@@ -1,22 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { Nav, Tabs, Tab, Image } from "react-bootstrap";
+import { mainProfile } from "../../utils/api.js";
 
 export default function () {
-  // pass link
-  const [linkOne, setLinkOne] = useState("https://www.google.com/");
-  const [linkTwo, setLinkTwo] = useState("https://www.google.com/");
-  const [linkThree, setLinkThree] = useState("https://www.google.com/");
-
-  // pass function on event change
-  // const [greeting, setGreeting] = useState("green");
-
-  const handleChange = (event) => {
-    setLinkOne(event.target.value);
-    setLinkTwo(event.target.value);
-    setLinkThree(event.target.value);
-  };
-
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [ProjectOneText, SetProjectOneText] = useState("");
+  const [ProjectOneTitle, SetProjectOneTitle] = useState("");
+  const [ProjectOneUrl, SetProjectOneUrl] = useState("");
+  const [ProjectTwoText, SetProjectTwoText] = useState("");
+  const [ProjectTwoTitle, SetProjectTwoTitle] = useState("");
+  const [ProjectTwoUrl, SetProjectTwoUrl] = useState("");
+  const [ProjectThreeText, SetProjectThreeText] = useState("");
+  const [ProjectThreeTitle, SetProjectThreeTitle] = useState("");
+  const [ProjectThreeUrl, SetProjectThreeUrl] = useState("");
+  
+  useEffect(() => {
+    mainProfile()
+      .then((res) => {
+        const {
+          ProjectOneText,ProjectOneTitle,ProjectOneUrl,
+          ProjectTwoText,ProjectTwoTitle,ProjectTwoUrl,
+          SetProjectThreeText,SetProjectThreeTitle,SetProjectThreeUrl,
+          user: { firstName, lastName },
+        } = res;
+        console.log(firstName);
+        console.log(res.navColor);
+        setFirstName({ firstName });
+        setLastName({ lastName });
+        SetProjectOneText({ ProjectOneText });
+        SetProjectOneTitle({ ProjectOneTitle });
+        SetProjectOneUrl({ ProjectOneUrl });
+        SetProjectTwoText({ ProjectTwoText });
+        SetProjectTwoTitle({ ProjectTwoTitle });
+        SetProjectTwoUrl({ ProjectTwoUrl} );
+        SetProjectThreeText({ ProjectThreeText });
+        SetProjectThreeTitle({ ProjectThreeTitle });
+        SetProjectThreeUrl({ ProjectThreeUrl });
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="container">
       <Tabs
@@ -25,7 +49,7 @@ export default function () {
         transition={false}
         id="noanim-tab-example"
       >
-        <Tab eventKey="project1" title="Project 1" href={linkOne}>
+        <Tab eventKey="project1" title={ProjectOneTitle.ProjectOneTitle} href={ProjectOneUrl.ProjectOneUrl}>
           <div id="tabdiv"></div>
           <Nav className="justify-content-center">
             <Image
@@ -36,9 +60,9 @@ export default function () {
               alt="250x200"
             />
           </Nav>
-          <Nav.Link id="projects" href={linkOne}>Project Demo Link 1</Nav.Link>
+          <Nav.Link id="projects" href={ProjectOneUrl.ProjectOneUrl}>{ProjectOneTitle.ProjectOneTitle}</Nav.Link>
         </Tab>
-        <Tab eventKey="project2" title="Project 2" href={linkTwo}>
+        <Tab eventKey="project2" title={ProjectTwoTitle.ProjectTwoTitle} href={ProjectTwoUrl.ProjectTwoUrl}>
           <div id="tabdiv"></div>
           <Nav className="justify-content-center">
             <Image
@@ -49,9 +73,9 @@ export default function () {
               alt="250x200"
             />
           </Nav>
-          <Nav.Link id="projects" href={linkTwo}>Project Demo Link 2</Nav.Link>
+          <Nav.Link id="projects" href={ProjectTwoUrl.ProjectTwoUrl}>{ProjectTwoTitle.ProjectTwoTitle}</Nav.Link>
         </Tab>
-        <Tab eventKey="project3" title="Project 3" href={linkThree}>
+        <Tab eventKey="project3" title={ProjectThreeTitle.ProjectThreeTitle} href={ProjectThreeUrl.ProjectThreeUrl}>
           <div id="tabdiv"></div>
           <Nav className="justify-content-center">
             <Image
@@ -62,7 +86,7 @@ export default function () {
               alt="250x200"
             />
           </Nav>
-          <Nav.Link id="projects" href={linkThree}>Project Demo Link 3</Nav.Link>
+          <Nav.Link id="projects" href={ProjectThreeUrl.ProjectThreeUrl}>{ProjectThreeTitle.ProjectThreeTitle}</Nav.Link>
         </Tab>
       </Tabs>
     </div>
