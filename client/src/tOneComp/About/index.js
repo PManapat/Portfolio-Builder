@@ -10,9 +10,11 @@ export default function () {
   const [lastName, setLastName] = useState("");
   const [aboutBgColor, setAboutBgColor] = useState("");
   const [bio, setBio] = useState("");
-  const [backgroundImg, setBackgroundImg] = useState("");
+  const [navImage, setNavImage] = useState("");
   const [profileImage, setProfileImage] = useState("");
-
+  const [introText, setIntroText] = useState("");
+  const [introTitle, setIntroTitle] = useState("");
+  
   useEffect(() => {
     mainProfile()
       .then((res) => {
@@ -21,8 +23,10 @@ export default function () {
         const {
           aboutBgColor,
           bio,
-          backgroundImg,
+          navImage,
           profileImage,
+          introText,
+          introTitle,
           user: { firstName, lastName },
         } = res;
         console.log(firstName);
@@ -31,18 +35,20 @@ export default function () {
         setLastName({ lastName });
         setAboutBgColor({ aboutBgColor });
         setBio({ bio });
-        setBackgroundImg({ backgroundImg });
+        setNavImage({ navImage });
         setProfileImage({ profileImage });
+        setIntroText({ introText });
+        setIntroTitle({ introTitle });
       })
       .catch((err) => console.log(err));
   }, []);
   return (
     <div className="Container">
-      <Jumbotron className="Jumbo" fluid>
+      <Jumbotron className="Jumbo" style={{backgroundImage: `url("${navImage}")`}}>
         <Container>
-          <h1>Intro Title:</h1>
+          <h1>{introTitle.introTitle}</h1>
           <p>
-            Intro Text:
+            {introText.introText}
           </p>
         </Container>
       </Jumbotron>

@@ -22,7 +22,7 @@ export default function () {
         const {
           ProjectOneText,ProjectOneTitle,ProjectOneUrl,
           ProjectTwoText,ProjectTwoTitle,ProjectTwoUrl,
-          SetProjectThreeText,SetProjectThreeTitle,SetProjectThreeUrl,
+          ProjectThreeText,ProjectThreeTitle,ProjectThreeUrl,
           user: { firstName, lastName },
         } = res;
         console.log(firstName);
@@ -35,7 +35,7 @@ export default function () {
         SetProjectTwoText({ ProjectTwoText });
         SetProjectTwoTitle({ ProjectTwoTitle });
         SetProjectTwoUrl({ ProjectTwoUrl} );
-        SetProjectThreeText({ ProjectThreeText });
+       SetProjectThreeText({ ProjectThreeText });
         SetProjectThreeTitle({ ProjectThreeTitle });
         SetProjectThreeUrl({ ProjectThreeUrl });
       })
