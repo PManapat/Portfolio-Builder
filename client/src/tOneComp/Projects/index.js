@@ -58,8 +58,9 @@ export default function () {
               width={250}
               height={200}
               alt="250x200"
-            />
+            /> 
           </Nav>
+          <p>{ProjectOneText.ProjectOneText}</p>
           <Nav.Link id="projects" href={ProjectOneUrl.ProjectOneUrl}>{ProjectOneTitle.ProjectOneTitle}</Nav.Link>
         </Tab>
         <Tab eventKey="project2" title={ProjectTwoTitle.ProjectTwoTitle} href={ProjectTwoUrl.ProjectTwoUrl}>
@@ -73,6 +74,7 @@ export default function () {
               alt="250x200"
             />
           </Nav>
+          <p>{ProjectTwoText.ProjectTwoText}</p>
           <Nav.Link id="projects" href={ProjectTwoUrl.ProjectTwoUrl}>{ProjectTwoTitle.ProjectTwoTitle}</Nav.Link>
         </Tab>
         <Tab eventKey="project3" title={ProjectThreeTitle.ProjectThreeTitle} href={ProjectThreeUrl.ProjectThreeUrl}>
@@ -86,6 +88,7 @@ export default function () {
               alt="250x200"
             />
           </Nav>
+          <p>{ProjectThreeText.ProjectThreeText}</p>
           <Nav.Link id="projects" href={ProjectThreeUrl.ProjectThreeUrl}>{ProjectThreeTitle.ProjectThreeTitle}</Nav.Link>
         </Tab>
       </Tabs>
