@@ -4,6 +4,7 @@ import AboutMeDetails from './AboutMeDetails';
 import ProjectDetails from './ProjectDetails';
 import Confirm from './Confirm';
 import Success from './Success';
+
 export class UserForm extends Component {
   state = {
     step: 1,

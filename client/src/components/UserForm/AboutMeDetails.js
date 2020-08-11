@@ -26,7 +26,7 @@ const theme = createMuiTheme({
   },
 });
 
-export class AboutMeDetails extends Component {
+export default class AboutMeDetails extends Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -155,35 +155,7 @@ export class AboutMeDetails extends Component {
                 Continue
               </Button>
             </div>
-            <TextField
-              placeholder="Enter Text For Footer"
-              label="Footer"
-              onChange={handleChange("footer")}
-              defaultValue={values.footer}
-              margin="normal"
-              fullWidth
-            />
             <br />
-            <div className="row">
-              <div className="col-9">
-                <Button
-                  color="secondary"
-                  variant="contained"
-                  onClick={this.back}
-                >
-                  Back
-                </Button>
-              </div>
-              <div className="col-2">
-                <Button
-                  color="primary"
-                  variant="contained"
-                  onClick={this.continue}
-                >
-                  Continue
-                </Button>
-              </div>
-            </div>
           </div>
         </Dialog>
       </MuiThemeProvider>

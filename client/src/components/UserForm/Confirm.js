@@ -280,27 +280,6 @@ export class Confirm extends Component {
                   Continue
                 </Button>
               </div>
-
-              <div className="row">
-                <div className="col-9">
-                  <Button
-                    color="secondary"
-                    variant="contained"
-                    onClick={this.back}
-                  >
-                    Back
-                  </Button>
-                </div>
-                <div className="col-2">
-                  <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={this.continue}
-                  >
-                    Continue
-                  </Button>
-                </div>
-              </div>
             </div>
           </Dialog>
         </>
