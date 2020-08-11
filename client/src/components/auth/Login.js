@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {login} from "../../utils/api.js";
- import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component{
   constructor(props){
@@ -56,10 +56,9 @@ class Login extends React.Component{
 }
 submitForm(e){
   e.preventDefault();
-  const data = {
-  
-   email: this.state.email,
-   password: this.state.password
+  const data = {  
+    email: this.state.email,
+    password: this.state.password
   }
   login(data).then(res=>{
     // if(res.status==200){
@@ -70,9 +69,9 @@ submitForm(e){
 
     // } 
   });
- }
+}
 render(){
-return(
+  return(
   <div className="container">
     <div className="card card-login mx-auto mt-5">
       <div className="card-header text-primary text-center">Login</div>
@@ -94,13 +93,13 @@ return(
               </div>                
               <button className="btn btn-primary btn-block" disabled={this.state.isDisabled} onClick={this.submitForm}>Login</button>
             </form>
-                 <p className="my-1 text-primary text-center">
+                <p className="my-1 text-primary text-center">
         Don't have an account?<Link to="/register"><br></br>Sign Up</Link>
-     </p>
+    </p>
         </div>
       </div>
     </div>
   );
- }
+  }
 }
 export default Login;

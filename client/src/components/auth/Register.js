@@ -1,31 +1,31 @@
 
 import React from 'react';
 import {register} from "../../utils/api.js";
- import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Register extends React.Component{
   constructor(props){
     super(props);
-     this.state = {
-       isDisabled:true
-     }                                                                                                 
-     this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      isDisabled:true
+    }                                                                                                 
+    this.submitForm = this.submitForm.bind(this);
   }
   validateEmail(email){
-   const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
-   const result = pattern.test(email);
-   if(result===true){
-     this.setState({
-       emailError:false,
-       email:email
-     })
-   } else{
-     this.setState({
-       emailError:true
-     })
-   }
- }
- handleChange(e){
+  const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
+  const result = pattern.test(email);
+  if(result===true){
+    this.setState({
+      emailError:false,
+      email:email
+    })
+  } else{
+    this.setState({
+      emailError:true
+    })
+  }
+}
+handleChange(e){
   const target = e.target;
   const value = target.type === 'checkbox' ? target.checked : target.value;
   const name = target.name;
@@ -57,7 +57,7 @@ class Register extends React.Component{
     }
   }
   if(e.target.name==='email'){
-   this.validateEmail(e.target.value);
+  this.validateEmail(e.target.value);
   }
   if(e.target.name==='password'){
     if(e.target.value==='' || e.target.value===null || e.target.value.length<=5){
@@ -70,8 +70,8 @@ class Register extends React.Component{
         password:e.target.value
       })
     }
- }
- if(this.state.firstnameError===false && this.state.lastnameError===false && 
+}
+if(this.state.firstnameError===false && this.state.lastnameError===false && 
   this.state.emailError===false && this.state.passwordError===false){
     this.setState({
       isDisabled:false
