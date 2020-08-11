@@ -9,6 +9,9 @@ import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
 import MenuItem from '@material-ui/core/MenuItem';
 import Icon from '@material-ui/core/Icon';
+import Nav from '../UserNav';
+
+
 export class NavBarDetails extends Component {
   
   continue = e => {
@@ -34,17 +37,18 @@ export class NavBarDetails extends Component {
            </TypoGraphy>
           </Toolbar>
         </AppBar>
-            
             <br/>
-            <TextField
-              placeholder="Text On Nav Bar"
-              label="Text On Nav Bar"
-              onChange={handleChange('navText')}
-              defaultValue={values.navText}
+            <TextField 
+              id="select" 
+              label="Background Image for NavBar" 
+              onChange={handleChange('navImage')}
+              defaultValue={values.navImage}
               margin="normal"
               fullWidth
-            />
+              />
+          
             <br/>
+                
             <TextField 
             id="select" 
             label="Color for Nav Bar" 
@@ -68,10 +72,7 @@ export class NavBarDetails extends Component {
             />
         
            <br/>
-           
-           
-           
-           
+               
             <Button
               color="primary"
               variant="contained"
@@ -79,9 +80,10 @@ export class NavBarDetails extends Component {
               onClick={this.continue}
             >Continue</Button>
 
-          </Dialog>
-        </>
-      </MuiThemeProvider>
+            </Dialog>
+          </>
+        </MuiThemeProvider>
+      </div>
     );
   }
 }

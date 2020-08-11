@@ -4,6 +4,7 @@ import { home } from "../utils/api.js";
 import Dashboard from '../components/Dashboard';
 // import { useHistory } from "react-router-dom";
 import { Button } from 'react-bootstrap';
+import Nav from '../components/UserNav';
 
 
 export default () => {
@@ -30,15 +31,18 @@ export default () => {
     // }
 
     return (
-        <div className="container" id="container">
-            <div className="jumbotron mt-5">
-                <div className="col-sm-8 mx-auto">
-    <h2 className="text-center">Hello {firstName.firstName} {" "}{lastName.lastName}</h2>
-                    <h5>This page is limited. We will be updating features.</h5>
-                    {/* <Button onClick={handleClick} name="Check your Portfolio!">Check portfolio</Button> */}
+        <div>
+            <Nav />
+            <div className="container" id="container">
+                <div className="jumbotron mt-5">
+                    <div className="col-sm-8 mx-auto">
+                        <h2 className="text-center">Hello {firstName.firstName} {" "}{lastName.lastName}</h2>
+                        <h5>This page is limited. We will be updating features.</h5>
+                        {/* <Button onClick={handleClick} name="Check your Portfolio!">Check portfolio</Button> */}
+                    </div>
                 </div>
+                <Dashboard />
             </div>
-            <Dashboard />
         </div>
     );
 }

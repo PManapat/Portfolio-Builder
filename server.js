@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === "production") {
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
+app.use("/api/generatepage", require("./routes/api/generatepage"));
 
 app.get("/", (req, res) => res.send("Api Running"));
 
