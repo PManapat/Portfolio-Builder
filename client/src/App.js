@@ -33,7 +33,7 @@ function App() {
           <Route path="/template" component={TempOne} />
         </Switch>
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
