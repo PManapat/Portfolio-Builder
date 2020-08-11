@@ -133,7 +133,7 @@ export class UserForm extends Component {
         );
       case 5:
         return <Success 
-        nextStep={this.props.history.push('/mainprofile')}
+        nextStep={this.props.history.push('/template')}
         values={values}
         />;
       default:

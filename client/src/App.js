@@ -4,19 +4,24 @@ import Home from "./pages/Home";
 import QuickDesign from "./pages/QuickDesign";
 import CustomTemplate from "./pages/CustomTemplate";
 import CustomPage from "./pages/CustomPage";
-// import Nav from "./components/Navbar";
+import Nav from "./components/Navbar";
+import UserNav from "./components/UserNav";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import MainProfile from "./pages/MainProfile";
 import Footer from "./components/Footer";
 import UserForm from "./components/UserForm";
 import TempOne from "./pages/Temp1";
-import TempTwo from "./pages/Temp2";
+// import TempTwo from "./pages/Temp2";
 import { home } from "./utils/api";
+// import { login } from "./utils/api";
 
 function App() {
   const[portfolio, setPortfolio]=useState("/template");
-  const[portfolioTwo, setPortfolioTwo]=useState("/template");
+  // const[portfolioTwo, setPortfolioTwo]=useState("/template");
+  const[navbar, SetNavbar]=useState(Nav);
+  const userInfo = window.localStorage.user;
+
   useEffect(() => {
     home()
     .then(res => {
@@ -25,16 +30,26 @@ function App() {
         // console.log({firstName});
         // console.log(`"/${firstName}"`);
         setPortfolio(`/${firstName}${lastName}`);
-        setPortfolioTwo(`/${firstName}${lastName}2`);
+        // setPortfolioTwo(`/${firstName}${lastName}2`);
         // console.log(firstName);
     })
     .catch(err => console.log(err));
-    console.log({portfolio})
+    // console.log({portfolio})
 },[]);
+
+useEffect(() => {
+      if(userInfo != undefined){
+        SetNavbar(UserNav);
+        console.log(window.localStorage);
+      }
+      else return;
+  }, []);
+
   return (
     <div>
-      {/* <Nav /> */}
+      
         <Router>
+          {navbar}
           <Switch>
             <Route exact path={["/", "/home"]} activeClassName="active" eventKey="/" component={Home}/>
             <Route path="/register" component={Register}/>
@@ -45,10 +60,11 @@ function App() {
             <Route path="/customtemplate" component={CustomTemplate} />
             <Route path="/custompage" component={CustomPage} />
             <Route path={portfolio} component={TempOne} />
-            <Route path={portfolioTwo} component={TempTwo} /> 
+            {/* <Route path={portfolioTwo} component={TempTwo} />  */}
           </Switch>
+          <Footer />
         </Router>
-      <Footer />
+      
   </div>
   );
 };
