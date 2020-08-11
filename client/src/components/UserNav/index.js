@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Navbar, Nav } from 'react-bootstrap'
+import { logout } from "../../utils/api";
 
 export default () => {
   return (
@@ -11,8 +12,8 @@ export default () => {
         <Nav className="mr-auto">
         </Nav>
         <Nav>
-          <Nav.Link href="/login" activeClassName="active">Log In</Nav.Link>
-          <Nav.Link href="/register" activeClassName="active" style={{backgroundColor: '#fff', color: 'black'}}>Sign Up</Nav.Link>
+          <Nav.Link href="/mainprofile" activeclassname="active">Profile</Nav.Link>
+          <Nav.Link href="/" activeClassName="active" onClick={logout}> Log Out</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

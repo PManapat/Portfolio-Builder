@@ -1,0 +1,14 @@
+h3{
+    text-align: center;
+    justify-content: center;
+}
+
+#backOfCard {
+    background-image: linear-gradient(rgba(64, 179, 197, 0.452), rgba(122, 41, 175, 0.267));
+    color: black;
+}
+
+.clearfix{
+    background-image: linear-gradient( rgba(255, 255, 255, 0.829),rgba(82, 116, 121, 0.452));
+    color: black
+}

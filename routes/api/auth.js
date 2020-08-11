@@ -13,6 +13,10 @@ const { check, validationResult } = require('express-validator');
 // @access   private
 //authontication of the route
 // router.get("/users",(req,res)=> res.send("user route"));
+
+
+// @route    get api/auth
+//Routing for geeting name from user profile only to home page
 router.get('/', auth, async (req, res) => {
     try {
       const user = await User.findById(req.user.id).select('-password');
@@ -23,7 +27,7 @@ router.get('/', auth, async (req, res) => {
     }
   });
 
-  //for getting the mainprofile route
+  
 
 
   // router.get('/mainprofile', auth, async (req, res) => {

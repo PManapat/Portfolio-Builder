@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails';
+import NavBarDetails from './NavBarDetails';
+import AboutMeDetails from './AboutMeDetails';
+import ProjectDetails from './ProjectDetails';
 import Confirm from './Confirm';
 import Success from './Success';
-
 export class UserForm extends Component {
   state = {
     step: 1,
     navColor:'',
     navText:'',
-    backgroundColor: '',
+    navImage: '',
+    introText: '',
+    introTitle: '',
     bio: '',
     aboutBgColor:'',
     profileImage:'',
@@ -27,7 +29,6 @@ export class UserForm extends Component {
     linkdin:'',
     footer: ''
 };
-
   // Proceed to next step
   nextStep = () => {
     const { step } = this.state;
@@ -35,7 +36,6 @@ export class UserForm extends Component {
       step: step + 1
     });
   };
-
   // Go back to prev step
   prevStep = () => {
     const { step } = this.state;
@@ -43,38 +43,18 @@ export class UserForm extends Component {
       step: step - 1
     });
   };
-
   // Handle fields change
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
   };
-
   render() {
     const { step } = this.state;
     const {  
       navColor,
       navText,
-      backgroundColor,
-      bio,
-      aboutBgColor,
-      profileImage,
-      ProjectOneTitle,
-      ProjectOneText,
-      ProjectOneUrl,
-      ProjectTwoTitle,
-      ProjectTwoText,
-      ProjectTwoUrl,
-      ProjectThreeTitle,
-      ProjectThreeText,
-      ProjectThreeUrl,
-      resumeUrl,
-      githubLink,
-      linkdin,
-      footer } = this.state;
-    const values = {
-      navColor,
-      navText,
-      backgroundColor,
+      navImage,
+      introText,
+      introTitle,
       bio,
       aboutBgColor,
       profileImage,
@@ -91,12 +71,34 @@ export class UserForm extends Component {
       githubLink,
       linkdin,
       footer
-     };
-
+    } = this.state;
+    const values = {
+      navColor,
+      navText,
+      navImage,
+      introText,
+      introTitle,
+      bio,
+      aboutBgColor,
+      profileImage,
+      ProjectOneTitle,
+      ProjectOneText,
+      ProjectOneUrl,
+      ProjectTwoTitle,
+      ProjectTwoText,
+      ProjectTwoUrl,
+      ProjectThreeTitle,
+      ProjectThreeText,
+      ProjectThreeUrl,
+      resumeUrl,
+      githubLink,
+      linkdin,
+      footer
+    };
     switch (step) {
       case 1:
         return (
-          <FormUserDetails
+          <NavBarDetails
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -104,14 +106,23 @@ export class UserForm extends Component {
         );
       case 2:
         return (
-          <FormPersonalDetails
+          <AboutMeDetails
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
             values={values}
           />
         );
-      case 3:
+        case 3:
+          return (
+            <ProjectDetails
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              handleChange={this.handleChange}
+              values={values}
+            />
+          );
+      case 4:
         return (
           <Confirm
             // nextStep={this.props.history.push('/mainprofile')}
@@ -120,7 +131,7 @@ export class UserForm extends Component {
             values={values}
           />
         );
-      case 4:
+      case 5:
         return <Success 
         nextStep={this.props.history.push('/mainprofile')}
         values={values}

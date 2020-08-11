@@ -1,17 +1,20 @@
+import React, { useEffect, useState } from "react";
 import "./style.css";
+import { mainProfile } from "../../utils/api.js";
 import Figure from "react-bootstrap/Figure";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
-import React, { useEffect, useState } from "react";
-import UserForm from "../../components/UserForm";
-import { getProfile, mainProfile } from "../../utils/api.js";
 
 export default function () {
-  const [navText, setNavText] = useState("");
-  const [navColor, setNavColor] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-
+  const [navColor, setNavColor] = useState("");
+  const [bio, setBio] = useState("");
+  const [navImage, setNavImage] = useState("");
+  const [profileImage, setProfileImage] = useState("");
+  const [introText, setIntroText] = useState("");
+  const [introTitle, setIntroTitle] = useState("");
+  
   useEffect(() => {
     mainProfile()
       .then((res) => {
@@ -19,7 +22,11 @@ export default function () {
         console.log(res.navColor);
         const {
           navColor,
-          navText,
+          bio,
+          navImage,
+          profileImage,
+          introText,
+          introTitle,
           user: { firstName, lastName },
         } = res;
         console.log(firstName);
@@ -27,26 +34,30 @@ export default function () {
         setFirstName({ firstName });
         setLastName({ lastName });
         setNavColor({ navColor });
-        setNavText({ navText });
+        setBio({ bio });
+        setNavImage({ navImage });
+        setProfileImage({ profileImage });
+        setIntroText({ introText });
+        setIntroTitle({ introTitle });
       })
       .catch((err) => console.log(err));
   }, []);
+  // `url(${navImage.navImage})`
   return (
     <div className="Container">
-      <Jumbotron className="Jumbo" fluid>
-        <Container className="container">
-          <h1>Hello World {navColor.navColor}</h1>
-          <p className="here">
-            I am an engineer, industrial designer, technology entrepreneur and
-            philanthropist.
+      {/* <Jumbotron className="Jumbo" style={{
+        backgroundImage: `url("https://www.nicesnippets.com/image/imgpsh_fullsize.png")` }}>
+        <Container> */}
+        <Jumbotron className="Jumbo" style={{
+        backgroundImage: `url(${navImage.navImage})` }}>
+        <Container>
+          <h1>{introTitle.introTitle}</h1>
+          <p>
+            {introText.introText}
           </p>
         </Container>
       </Jumbotron>
-      <Container
-        className="About"
-        id="About"
-        style={{ backgroundColor: navColor.navColor }}
-      >
+      <Container className="About" id="About" style={{ backgroundColor: navColor.navColor}}>
         <Figure>
           <Figure.Caption>
             {firstName.firstName}{' '}
@@ -54,9 +65,9 @@ export default function () {
           </Figure.Caption>
           <Figure.Image
             id="profilePic"
-            src="https://www.biography.com/.image/t_share/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg"
+            src={profileImage.profileImage}
           />
-          <Figure.Caption>{navText.navText}</Figure.Caption>
+          <Figure.Caption>Bio: {bio.bio}</Figure.Caption>
         </Figure>
       </Container>
     </div>

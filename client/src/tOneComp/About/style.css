@@ -1,3 +1,6 @@
+.div{
+	color: white;
+}
 .Jumbo{
 	background-image: url(https://cdn-media-1.freecodecamp.org/images/1*zVDcaM6mqhi9m0LP_Sq4Ag.jpeg);
 	background-repeat: no-repeat;
@@ -9,19 +12,19 @@
 }
 
 .container{
-	color: rgb(255, 255, 255);
 	text-align: right;
 	padding: 2rem;
 }
 
 .About{
+	text-decoration-color: white;
 	text-align: center;
 	font-size: 24px;
-	background-color: rgba(0, 0, 0, 0.842);
 	background-size: cover;
 }
 
 #profilePic{
+	color: white;
 	border-radius: 50%;
     width: 200px;
 	height: 200px;
