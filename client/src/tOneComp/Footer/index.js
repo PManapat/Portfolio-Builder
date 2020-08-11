@@ -37,7 +37,7 @@ export default function () {
         <Nav.Item>
           <Nav.Link href={email.email}>{email.email}</Nav.Link>
         </Nav.Item>
-        <Nav.Item>
+        <Nav.Item id="resume">
           <Nav.Link href={resumeUrl.resumeUrl}>Resume</Nav.Link>
         </Nav.Item>
         <Nav.Item>
