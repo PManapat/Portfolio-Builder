@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails';
+import NavBarDetails from './NavBarDetails';
+import AboutMeDetails from './AboutMeDetails';
+import ProjectDetails from './ProjectDetails';
 import Confirm from './Confirm';
 import Success from './Success';
+import {home} from '../../utils/api';
 
 export class UserForm extends Component {
   state = {
     step: 1,
+    firstName: '',
+    lastName: '',
     navColor:'',
     navText:'',
-    backgroundColor: '',
+    navImage: '',
+    introText: '',
+    introTitle: '',
     bio: '',
     aboutBgColor:'',
     profileImage:'',
@@ -49,12 +55,28 @@ export class UserForm extends Component {
     this.setState({ [input]: e.target.value });
   };
 
+  componentDidMount(){
+    home()
+          .then(res => {
+              console.log("from userform component didmount",res);
+              const{firstName, lastName}=res;
+              console.log({firstName});
+              this.setState({firstName});
+              this.setState({lastName});
+              // setPortfolio(`/${firstName}`);
+          }).catch(err => console.log(err));
+  }
+  
   render() {
     const { step } = this.state;
     const {  
+      firstName,
+      lastName,
       navColor,
       navText,
-      backgroundColor,
+      navImage,
+      introText,
+      introTitle,
       bio,
       aboutBgColor,
       profileImage,
@@ -70,11 +92,16 @@ export class UserForm extends Component {
       resumeUrl,
       githubLink,
       linkdin,
-      footer } = this.state;
+      footer
+    } = this.state;
     const values = {
+      firstName,
+      lastName,
       navColor,
       navText,
-      backgroundColor,
+      navImage,
+      introText,
+      introTitle,
       bio,
       aboutBgColor,
       profileImage,
@@ -96,7 +123,7 @@ export class UserForm extends Component {
     switch (step) {
       case 1:
         return (
-          <FormUserDetails
+          <NavBarDetails
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -104,14 +131,23 @@ export class UserForm extends Component {
         );
       case 2:
         return (
-          <FormPersonalDetails
+          <AboutMeDetails
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
             values={values}
           />
         );
-      case 3:
+        case 3:
+          return (
+            <ProjectDetails
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              handleChange={this.handleChange}
+              values={values}
+            />
+          );
+      case 4:
         return (
           <Confirm
             // nextStep={this.props.history.push('/mainprofile')}
@@ -120,9 +156,9 @@ export class UserForm extends Component {
             values={values}
           />
         );
-      case 4:
+      case 5:
         return <Success 
-        nextStep={this.props.history.push('/mainprofile')}
+        nextStep={this.props.history.push(`${firstName}${lastName}`)}
         values={values}
         />;
       default:

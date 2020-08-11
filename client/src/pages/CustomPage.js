@@ -18,8 +18,8 @@ function CustomPage()
 <div className="MyCom90">
 <CarouselR />
 </div>
-
        </div>
 )
 }
+
 export default CustomPage;

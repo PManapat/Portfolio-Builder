@@ -1,20 +1,21 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Temp1.css";
 import Navbar from '../tOneComp/Nav';
 import About from '../tOneComp/About';
 import Projects from '../tOneComp/Projects';
 import Footer from '../tOneComp/Footer';
-import "./Temp1.css"
+// import Nav from '../components/UserNav';
 
-function App() {
+export default function () {
   return (
-    <div id="tempBorder">
-      <Navbar />
-      <About />
-      <Projects />
-      <Footer />
+    <div>
+      {/* <Nav /> */}
+      <div id="tempBorder">
+        <Navbar />
+        <About />
+        <Projects />
+        <Footer />
+      </div>
     </div>
   );
-}
-
-export default App;
+};

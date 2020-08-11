@@ -1,5 +1,7 @@
 .MyCarouselBackground{
-    background-image: url("./images/img17_45.png");
+    background-color: rgba(70, 202, 219, 0.801);
+    background-image: linear-gradient(rgb(255, 255, 255),  rgba(70, 202, 219, 0.801),white);
+    color: black
 }
 .MyCarousel{
     opacity: 1.0;
