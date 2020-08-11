@@ -29,6 +29,7 @@ const userSchema = new mongoose.Schema({
   linkdin:{ type: String },
   footer: { type: String },
   date: { type: Date, default: Date.now },
+  // CustomPage {    }
 
 
 });
