@@ -58,7 +58,7 @@ export default function () {
               width={250}
               height={200}
               alt="250x200"
-            />
+            /> 
           </Nav>
           <p> {ProjectOneText.ProjectOneText} </p>
           <Nav.Link id="projects" href={ProjectOneUrl.ProjectOneUrl}>{ProjectOneTitle.ProjectOneTitle}</Nav.Link>

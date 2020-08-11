@@ -36,6 +36,7 @@ function CardFlip ({onClick}) {
           alignItems: "center"
         }}>
           <h3>Sign Up to start creating</h3>
+        <button className="link mr-4 btn btn-info" onClick={handleClick}>Close</button>
         <button className="link mr-4 btn btn-info" onClick={onClick}>Create Portfolio!</button>
       </div>
     </ReactCardFlip>
