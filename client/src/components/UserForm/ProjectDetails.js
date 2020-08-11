@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Dialog from "@material-ui/core/Dialog";
 import AppBar from "@material-ui/core/AppBar";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider as MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
@@ -9,8 +9,19 @@ import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import Nav from "../UserNav";
+import { cyan, grey } from "@material-ui/core/colors"
 
-import MenuItem from "@material-ui/core/MenuItem";
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#17A2b8",
+    },
+    secondary: {
+      main: grey[900]
+    }
+  }
+})
+
 
 export class ProjectDetails extends Component {
   continue = (e) => {
@@ -28,7 +39,7 @@ export class ProjectDetails extends Component {
     return (
       <div>
         <Nav />
-        <MuiThemeProvider>
+        <MuiThemeProvider theme={theme}>
           <>
             <Dialog open fullWidth maxWidth="sm">
               <AppBar color="primary" position="static">
