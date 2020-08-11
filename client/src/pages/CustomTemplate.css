@@ -1,7 +1,9 @@
 body {
 
-    background-color: cadetblue;
-    /* background-image: url(./images/Portfolio-Abstract-01.jpeg); */
+    background-color: lightskyblue;
+    background-image: url(./images/portfolio-background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
     /* background-image: -o-linear-gradient(.2); */
 }   
 
