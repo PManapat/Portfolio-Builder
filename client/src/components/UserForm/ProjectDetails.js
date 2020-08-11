@@ -187,10 +187,10 @@ export class ProjectDetails extends Component {
                   </Button>
                 </div>
               </div>
+              </div>
             </Dialog>
           </>
         </MuiThemeProvider>
-      </div>
     );
   }
 }

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Dialog from "@material-ui/core/Dialog";
 import AppBar from "@material-ui/core/AppBar";
-import { ThemeProvider as MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import {
+  ThemeProvider as MuiThemeProvider,
+  createMuiTheme,
+} from "@material-ui/core/styles";
 import { List, ListItem, ListItemText } from "@material-ui/core/";
 import Button from "@material-ui/core/Button";
 import { profile } from "../../utils/api.js";
@@ -10,7 +13,7 @@ import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import Nav from "../UserNav";
-import { cyan, grey } from "@material-ui/core/colors"
+import { cyan, grey } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
   palette: {
@@ -18,11 +21,10 @@ const theme = createMuiTheme({
       main: "#17A2b8",
     },
     secondary: {
-      main: grey[900]
-    }
-  }
-})
-
+      main: grey[900],
+    },
+  },
+});
 
 export class Confirm extends Component {
   continue = (e) => {
@@ -142,72 +144,109 @@ export class Confirm extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <>
-          <Dialog
-            open
-            fullWidth
-            maxWidth='lg'
-          >
+          <Dialog open fullWidth maxWidth="lg">
             <AppBar color="primary" position="static">
-             <Link to="/home"><Icon color="secondary">backspace</Icon></Link>
-           <Toolbar>
-            <TypoGraphy variant="title" color="inherit" >
-            <h1>Confirm Your Details</h1>
-           </TypoGraphy>
-          </Toolbar>
-        </AppBar>
+              <Link to="/home">
+                <Icon color="secondary">backspace</Icon>
+              </Link>
+              <Toolbar>
+                <TypoGraphy variant="title" color="inherit">
+                  <h1>Confirm Your Details</h1>
+                </TypoGraphy>
+              </Toolbar>
+            </AppBar>
             <List>
               <ListItem>
-                <ListItemText primary="Nav Color" secondary={navColor}  />
+                <ListItemText primary="Nav Color" secondary={navColor} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Nav Text" secondary={navText}/>
+                <ListItemText primary="Nav Text" secondary={navText} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Nav Image" secondary={navImage}/>
+                <ListItemText primary="Nav Image" secondary={navImage} />
               </ListItem>
               <ListItem>
-                <ListItemText primary=" Introduction Text" secondary={introText}  />
+                <ListItemText
+                  primary=" Introduction Text"
+                  secondary={introText}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary=" Introduction Title" secondary={introTitle}  />
+                <ListItemText
+                  primary=" Introduction Title"
+                  secondary={introTitle}
+                />
               </ListItem>
               <ListItem>
                 <ListItemText primary="About Me" secondary={bio} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="About background Image" secondary={aboutBgColor} />
+                <ListItemText
+                  primary="About background Image"
+                  secondary={aboutBgColor}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="profile Image" secondary={profileImage} />
+                <ListItemText
+                  primary="profile Image"
+                  secondary={profileImage}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project One Title" secondary={ProjectOneTitle} />
+                <ListItemText
+                  primary="Project One Title"
+                  secondary={ProjectOneTitle}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project One Text" secondary={ProjectOneText} />
+                <ListItemText
+                  primary="Project One Text"
+                  secondary={ProjectOneText}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project One Url" secondary={ProjectOneUrl} />
+                <ListItemText
+                  primary="Project One Url"
+                  secondary={ProjectOneUrl}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project Two Title" secondary={ProjectTwoTitle} />
+                <ListItemText
+                  primary="Project Two Title"
+                  secondary={ProjectTwoTitle}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project Two Text" secondary={ProjectTwoText} />
+                <ListItemText
+                  primary="Project Two Text"
+                  secondary={ProjectTwoText}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project Two Url" secondary={ProjectTwoUrl} />
+                <ListItemText
+                  primary="Project Two Url"
+                  secondary={ProjectTwoUrl}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project Three Title" secondary={ProjectThreeTitle} />
+                <ListItemText
+                  primary="Project Three Title"
+                  secondary={ProjectThreeTitle}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project Three Text" secondary={ProjectThreeText} />
+                <ListItemText
+                  primary="Project Three Text"
+                  secondary={ProjectThreeText}
+                />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Project Three Url" secondary={ProjectThreeUrl} />
-                </ListItem>
-                <ListItem>
+                <ListItemText
+                  primary="Project Three Url"
+                  secondary={ProjectThreeUrl}
+                />
+              </ListItem>
+              <ListItem>
                 <ListItemText primary="Resume Url" secondary={resumeUrl} />
               </ListItem>
               <ListItem>
@@ -215,33 +254,32 @@ export class Confirm extends Component {
               </ListItem>
               <ListItem>
                 <ListItemText primary="linkedIn" secondary={linkdin} />
-                </ListItem>
-                <ListItem>
+              </ListItem>
+              <ListItem>
                 <ListItemText primary="Footer" secondary={footer} />
-                </ListItem>
-                
-             
+              </ListItem>
             </List>
             <br />
 
             <div className="row">
-           <div className="col-9">
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
-
-  
-          </div>
-          <div className="col-2">
-           <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
-  
-          </div>
+              <div className="col-9">
+                <Button
+                  color="secondary"
+                  variant="contained"
+                  onClick={this.back}
+                >
+                  Back
+                </Button>
+              </div>
+              <div className="col-2">
+                <Button
+                  color="primary"
+                  variant="contained"
+                  onClick={this.continue}
+                >
+                  Continue
+                </Button>
+              </div>
 
               <div className="row">
                 <div className="col-9">
@@ -263,10 +301,10 @@ export class Confirm extends Component {
                   </Button>
                 </div>
               </div>
-            </Dialog>
-          </>
-        </MuiThemeProvider>
-      </div>
+            </div>
+          </Dialog>
+        </>
+      </MuiThemeProvider>
     );
   }
 }

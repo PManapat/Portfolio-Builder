@@ -101,7 +101,6 @@ export class NavBarDetails extends Component {
             </Dialog>
           </>
         </MuiThemeProvider>
-      </div>
     );
   }
 }
