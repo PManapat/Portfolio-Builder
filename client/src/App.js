@@ -12,14 +12,16 @@ import MainProfile from "./pages/MainProfile";
 import Footer from "./components/Footer";
 import UserForm from "./components/UserForm";
 import TempOne from "./pages/Temp1";
-// import TempTwo from "./pages/Temp2";
+import TempTwo from "./pages/Temp2";
 import { home } from "./utils/api";
 
 function App() {
-  const[portfolio, setPortfolio]=useState("/template");
-  // const[portfolioTwo, setPortfolioTwo]=useState("/template");
+  const[portfolio, setPortfolio]=useState("/template");  
+  const[portfolioTwo, setPortfolioTwo]=useState("/template");
   const[navbar, SetNavbar]=useState(Nav);
   const userInfo = window.localStorage.user;
+  
+
 
 useEffect(() => {
     home()
@@ -28,6 +30,7 @@ useEffect(() => {
         if(userInfo != undefined){
           const { firstName, lastName } = res;
           setPortfolio(`/${firstName}${lastName}`);
+          setPortfolioTwo(`/${firstName}${lastName}2`);
           SetNavbar(UserNav);
           console.log("window object", window.location.reload);
         }
@@ -50,7 +53,7 @@ useEffect(() => {
             <Route path="/customtemplate" component={CustomTemplate} />
             <Route path="/custompage" component={CustomPage} />
             <Route path={portfolio} component={TempOne} />
-            {/* <Route path={portfolioTwo} component={TempTwo} />  */}
+            <Route path={portfolioTwo} component={TempTwo} />
           </Switch>
           <Footer />
         </Router>

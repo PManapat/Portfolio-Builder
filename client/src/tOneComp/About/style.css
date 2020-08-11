@@ -1,19 +1,11 @@
-.div{
-	color: white;
-}
 .Jumbo{
 	background-image: url(https://cdn-media-1.freecodecamp.org/images/1*zVDcaM6mqhi9m0LP_Sq4Ag.jpeg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center;
+	background-position: bottom;
 	background-size: cover; 
 	color: white;
-	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.container{
-	text-align: right;
-	padding: 2rem;
+	/* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
 }
 
 .About{
@@ -22,16 +14,35 @@
 	font-size: 24px;
 	background-size: cover;
 }
-
+p{
+	padding: 2rem;
+	font-size: 15px;
+}
 #profilePic{
 	color: white;
 	border-radius: 50%;
     width: 200px;
-	height: 200px;
+	height: 250px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-.figure-caption{
-	color: white
+#figure-caption{
+	color: white;
+	padding: 2rem;
+}
+
+.name{
+	margin-top: 150px;
+	margin-right: 200px;
+	padding: 2rem;
+	text-align: center;
+	color: white;
+	font: white;
+}
+.bio{
+	padding: 2rem;
+	text-align: center;
+	color: white;
+	font: white;
 }

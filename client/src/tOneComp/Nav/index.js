@@ -5,15 +5,15 @@ import { Nav } from 'react-bootstrap';
 export default function (){
   return(
     <Nav className="justify-content-center navbar" activeKey="/home">
-      <Nav.Item>
-        <Nav.Link href="">About</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1">Projects</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-2">Resume</Nav.Link>
-      </Nav.Item>
-    </Nav>
+     <Nav.Item>
+      <Nav.Link href="#about">About</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="#resume">Resume</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="#projects">Projects</Nav.Link>
+    </Nav.Item>
+  </Nav>
   )
 }

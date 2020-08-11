@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./style.css";
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { mainProfile } from "../../utils/api.js";
-import Figure from "react-bootstrap/Figure";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
 
-export default function () {
+export default () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [navColor, setNavColor] = useState("");
@@ -14,19 +11,23 @@ export default function () {
   const [profileImage, setProfileImage] = useState("");
   const [introText, setIntroText] = useState("");
   const [introTitle, setIntroTitle] = useState("");
-  
+  const [resumeUrl, setResumeUrl] = useState("");
+  const [navText, setNavText] = useState("");
+
   useEffect(() => {
     mainProfile()
       .then((res) => {
         console.log(res);
         console.log(res.navColor);
         const {
+          navText,
           navColor,
           bio,
           navImage,
           profileImage,
           introText,
           introTitle,
+          resumeUrl,
           user: { firstName, lastName },
         } = res;
         console.log(firstName);
@@ -39,37 +40,32 @@ export default function () {
         setProfileImage({ profileImage });
         setIntroText({ introText });
         setIntroTitle({ introTitle });
+        setResumeUrl({resumeUrl});
+        setNavText({navText});
         console.log(navImage);
       })
       .catch((err) => console.log(err));
   }, []);
-  // `url(${navImage.navImage})`
-  return (
-    <div className="Container mb-5">
-      {/* <Jumbotron className="Jumbo" style={{
-        backgroundImage: `url("https://www.nicesnippets.com/image/imgpsh_fullsize.png")` }}>
-        <Container> */}
-        <Jumbotron className="Jumbo" style={{
-        backgroundImage: `url(${navImage.navImage})` }}>
-        <Container>
-          <h1>{introTitle.introTitle}</h1>
-          <p>
-            {introText.introText}
-          </p>
-        </Container>
-      </Jumbotron>
-      <Container className="About" id="about" style={{ backgroundColor: navColor.navColor}}>
-        <Figure>
-          <Figure className="name">
-            <h1>{firstName.firstName}{' '}{lastName.lastName}</h1>
-          </Figure>
-          <Figure.Image
-            id="profilePic"
-            src={profileImage.profileImage}
-          />
-          <h4 className="bio">{bio.bio}</h4>
-        </Figure>
-      </Container>
-    </div>
-  );
-}
+    return (
+<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar.Brand href="#home">{navText.navText}</Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto">
+      <NavDropdown title="MENU" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="#action/3.1">Home</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">About</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Projects</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action/3.4">Contact</NavDropdown.Item>
+      </NavDropdown>
+    </Nav>
+    <Nav>
+      <Nav.Link href={resumeUrl.resumeUrl}>
+        Resume
+      </Nav.Link>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
+    )
+};

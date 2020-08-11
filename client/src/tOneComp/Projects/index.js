@@ -47,7 +47,7 @@ export default function () {
         defaultActiveKey="project1"
         className="justify-content-center"
         transition={false}
-        id="noanim-tab-example"
+        id="projects"
       >
         <Tab eventKey="project1" title={ProjectOneTitle.ProjectOneTitle} href={ProjectOneUrl.ProjectOneUrl}>
           <div id="tabdiv"></div>
@@ -58,7 +58,7 @@ export default function () {
               width={250}
               height={200}
               alt="250x200"
-            />
+            /> 
           </Nav>
           <p> {ProjectOneText.ProjectOneText} </p>
           <Nav.Link id="projects" href={ProjectOneUrl.ProjectOneUrl}>{ProjectOneTitle.ProjectOneTitle}</Nav.Link>

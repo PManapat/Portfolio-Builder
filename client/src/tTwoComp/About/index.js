@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-import "./style.css";
+import React, { useState, useEffect } from "react";
 import { mainProfile } from "../../utils/api.js";
-import Figure from "react-bootstrap/Figure";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
+import "./style.css"
 
-export default function () {
+const AboutMe = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [navColor, setNavColor] = useState("");
@@ -14,7 +11,8 @@ export default function () {
   const [profileImage, setProfileImage] = useState("");
   const [introText, setIntroText] = useState("");
   const [introTitle, setIntroTitle] = useState("");
-  
+  const [resumeUrl, setResumeUrl] = useState("");
+
   useEffect(() => {
     mainProfile()
       .then((res) => {
@@ -27,12 +25,14 @@ export default function () {
           profileImage,
           introText,
           introTitle,
+          resumeUrl,
           user: { firstName, lastName },
         } = res;
         console.log(firstName);
         console.log(res.navColor);
         setFirstName({ firstName });
         setLastName({ lastName });
+        setResumeUrl({resumeUrl});
         setNavColor({ navColor });
         setBio({ bio });
         setNavImage({ navImage });
@@ -43,33 +43,35 @@ export default function () {
       })
       .catch((err) => console.log(err));
   }, []);
-  // `url(${navImage.navImage})`
   return (
-    <div className="Container mb-5">
-      {/* <Jumbotron className="Jumbo" style={{
-        backgroundImage: `url("https://www.nicesnippets.com/image/imgpsh_fullsize.png")` }}>
-        <Container> */}
-        <Jumbotron className="Jumbo" style={{
-        backgroundImage: `url(${navImage.navImage})` }}>
-        <Container>
-          <h1>{introTitle.introTitle}</h1>
-          <p>
-            {introText.introText}
-          </p>
-        </Container>
-      </Jumbotron>
-      <Container className="About" id="about" style={{ backgroundColor: navColor.navColor}}>
-        <Figure>
-          <Figure className="name">
-            <h1>{firstName.firstName}{' '}{lastName.lastName}</h1>
-          </Figure>
-          <Figure.Image
-            id="profilePic"
-            src={profileImage.profileImage}
-          />
-          <h4 className="bio">{bio.bio}</h4>
-        </Figure>
-      </Container>
-    </div>
+    <div id="aboutme" className="jumbotron jumbotron-fluid m-0" >
+      <div className="container container-fluid p-5">
+        <div className="row">
+          {(
+            <div className="col-5 d-none d-lg-block align-self-center">
+              <img
+                className="border border-secondary rounded-circle" id="profilePic"
+                src={profileImage.profileImage}
+                alt="profile-pic"
+              />
+            </div>
+          )}
+            <h1 className="display-4 mb-5 text-center">{introTitle.introTitle}</h1>
+          <p className="lead text-center">{introText.introText}</p>
+            {(
+              <p className="lead text-center">
+                <a
+                  className="btn btn-outline-dark btn-lg"
+                  href={resumeUrl.resumeUrl} id="resume"
+                >
+                  Resume
+                </a>
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
   );
-}
+};
+
+export default AboutMe;

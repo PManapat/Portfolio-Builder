@@ -1,19 +1,22 @@
 import React from 'react';
+import Navbar from '../tTwoComp/Navbar';
+import About from '../tTwoComp/About';
+import Footer from "../tOneComp/Footer"
+import Project from"../tTwoComp/Project"
+import ProjectCard from"../tTwoComp/ProjectCard"
 import "./Temp1.css";
-import About from '../tTwoComp/components/about';
-import Footer from '../tTwoComp/components/footer';
-import Header from '../tTwoComp/components/header';
-import Portfolio from '../tTwoComp/components/portfolio';
-import Resume from '../tTwoComp/components/resume';
 
 export default function () {
   return (
-    <div id="tempBorder">
-      <Header />
-      <About />
-      <Resume />
-      <Portfolio />
-      <Footer />
+    <div>
+      <div id="tempBorder">
+        <Navbar />
+        <About />
+        <Project />
+        <ProjectCard />
+        <Footer />
+      </div>
     </div>
-  );
-};
+  )
+}
+
