@@ -86,7 +86,7 @@ class Register extends React.Component{
     password: this.state.password
     }
     register(data).then(res => {
-      this.props.history.push('/mainprofile');
+      this.props.history.push('/login');
     });
   }
   render(){
