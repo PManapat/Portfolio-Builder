@@ -30,15 +30,15 @@ export class NavBarDetails extends Component {
              <Link to="/home"><Icon color="secondary">backspace</Icon></Link>
            <Toolbar>
             <TypoGraphy variant="title" color="inherit" >
-            <h1>Enter NavBar Details</h1>
+            <h1>Enter Navbar Details</h1>
            </TypoGraphy>
           </Toolbar>
         </AppBar>
             
             <br/>
             <TextField
-              placeholder="Text On Nav Bar"
-              label="Text On Nav Bar"
+              placeholder="Text On Navbar"
+              label="Text On Navbar"
               onChange={handleChange('navText')}
               defaultValue={values.navText}
               margin="normal"
@@ -47,7 +47,7 @@ export class NavBarDetails extends Component {
             <br/>
             <TextField 
             id="select" 
-            label="Color for Nav Bar" 
+            label="Color for Navbar" 
             onChange={handleChange('navColor')}
             defaultValue={values.navColor}
             select>
@@ -60,7 +60,7 @@ export class NavBarDetails extends Component {
            <br/>
            <TextField 
             id="select" 
-            label="Background Image for NavBar" 
+            label="Background Image for Navbar" 
             onChange={handleChange('navImage')}
             defaultValue={values.navImage}
             margin="normal"

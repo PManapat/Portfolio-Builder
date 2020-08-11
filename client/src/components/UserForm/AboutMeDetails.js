@@ -29,7 +29,7 @@ export class AboutMeDetails extends Component {
           <Dialog
             open
             fullWidth
-            maxWidth='sm'
+            maxWidth='lg'
           >
             <AppBar color="primary" position="static">
              <Link to="/home"><Icon color="secondary">backspace</Icon></Link>
@@ -39,7 +39,7 @@ export class AboutMeDetails extends Component {
            </TypoGraphy>
           </Toolbar>
         </AppBar>
-            <TextField
+        <TextField
               placeholder="Enter Text For Introduction"
               label="Enter Text For Introduction"
               onChange={handleChange('introText')}
@@ -65,13 +65,15 @@ export class AboutMeDetails extends Component {
               margin="normal"
               fullWidth
             />
-            <br />
-            <TextField 
+        <br />
+    
+        <TextField 
             id="select" 
-            label="Background Color For About Me page" 
+            label="Background Color For About Me Page" 
             onChange={handleChange('aboutBgColor')}
-            defaultValue={values.navColor}
+            defaultValue={values.aboutBgColor}
             select>
+              <br/>
            <MenuItem value="#008000">Green</MenuItem>
            <MenuItem value="#FF0000">Red</MenuItem>
            <MenuItem value="#647ba1">Blue</MenuItem>
@@ -83,10 +85,11 @@ export class AboutMeDetails extends Component {
               placeholder="Profile Image"
               label="Profile Image"
               onChange={handleChange('profileImage')}
-              defaultValue={values.bio}
+              defaultValue={values.profileImage}
               margin="normal"
               fullWidth
             />
+           
             <br />
             <TextField
               placeholder="Enter Your Resume Link"
@@ -108,7 +111,7 @@ export class AboutMeDetails extends Component {
             <br />
              <TextField
               placeholder="Enter Your LinkedIn Link"
-              label="Linkdin Link"
+              label="LinkedIn Link"
               onChange={handleChange('linkdin')}
               defaultValue={values.linkdin}
               margin="normal"
@@ -125,7 +128,6 @@ export class AboutMeDetails extends Component {
               fullWidth
             />
             <br />
-          
            <div className="row">
            <div className="col-9">
             <Button

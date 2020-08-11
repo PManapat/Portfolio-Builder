@@ -29,7 +29,7 @@ export class ProjectDetails extends Component {
           <Dialog
             open
             fullWidth
-            maxWidth='sm'
+            maxWidth='lg'
           >
             <AppBar color="primary" position="static">
              <Link to="/home"><Icon color="secondary">backspace</Icon></Link>
@@ -39,7 +39,8 @@ export class ProjectDetails extends Component {
            </TypoGraphy>
           </Toolbar>
         </AppBar>
-            <TextField
+        <div className="container">
+        <TextField
               placeholder="ProjectOneTitle"
               label="Project One Title"
               onChange={handleChange('ProjectOneTitle')}
@@ -65,7 +66,13 @@ export class ProjectDetails extends Component {
               margin="normal"
               fullWidth
             />
+
+
+        </div >
+           
             <br />
+
+            <div className="container">
             <TextField
               placeholder="ProjectTwoTitle"
               label="Project Two Title"
@@ -92,7 +99,10 @@ export class ProjectDetails extends Component {
               margin="normal"
               fullWidth
             />
+            </div>
+            
             <br />
+            <div className="container">
             <TextField
               placeholder="ProjectThreeTitle"
               label="Project Three Title"
@@ -119,6 +129,8 @@ export class ProjectDetails extends Component {
               margin="normal"
               fullWidth
             />
+            </div>
+           
             <br />
           
 

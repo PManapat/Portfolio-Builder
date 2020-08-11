@@ -168,7 +168,7 @@ export class Confirm extends Component {
                 <ListItemText primary="About background Image" secondary={aboutBgColor} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="profileImage" secondary={profileImage} />
+                <ListItemText primary="profile Image" secondary={profileImage} />
               </ListItem>
               <ListItem>
                 <ListItemText primary="Project One Title" secondary={ProjectOneTitle} />
@@ -198,13 +198,13 @@ export class Confirm extends Component {
                 <ListItemText primary="Project Three Url" secondary={ProjectThreeUrl} />
                 </ListItem>
                 <ListItem>
-                <ListItemText primary="resume Url" secondary={resumeUrl} />
+                <ListItemText primary="Resume Url" secondary={resumeUrl} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="github Link" secondary={githubLink} />
+                <ListItemText primary="Github Link" secondary={githubLink} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="linkdin" secondary={linkdin} />
+                <ListItemText primary="linkedIn" secondary={linkdin} />
                 </ListItem>
                 <ListItem>
                 <ListItemText primary="Footer" secondary={footer} />
