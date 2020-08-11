@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect }from "react";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
@@ -6,12 +6,27 @@ import QuickDesign from "./pages/QuickDesign";
 import Nav from "./components/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import MainProfile from "./components/auth/mainprofile";
+import MainProfile from "./pages/MainProfile";
 import Footer from "./components/Footer";
 import UserForm from "./components/UserForm";
 import TempOne from "./pages/Temp1";
+import { home } from "./utils/api";
 
 function App() {
+  const[portfolio, setPortfolio]=useState("/template");
+
+  useEffect(() => {
+    home()
+    .then(res => {
+        // console.log(res);
+        const { firstName, lastName } = res;
+        // console.log({firstName});
+        // console.log(`"/${firstName}"`);
+        setPortfolio(`/${firstName}${lastName}`);
+        // console.log(firstName);
+    })
+    .catch(err => console.log(err));
+},[]);
   return (
     <div>
       <Nav />
@@ -24,7 +39,7 @@ function App() {
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/quickdesign" component={QuickDesign}/>
             <Route path="/mainprofile" component={MainProfile} />
-            <Route path="/template" component={TempOne} />
+            <Route path={portfolio} component={TempOne} />
           </Switch>
         </Router>
       <Footer />
