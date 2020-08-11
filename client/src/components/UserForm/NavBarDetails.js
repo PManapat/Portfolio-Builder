@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar'
+import TypoGraphy from '@material-ui/core/Typography'
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
-
 import MenuItem from '@material-ui/core/MenuItem';
-
-
+import Icon from '@material-ui/core/Icon';
 export class NavBarDetails extends Component {
+  
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -25,8 +26,15 @@ export class NavBarDetails extends Component {
             fullWidth
             maxWidth='sm'
           >
-            <Link to="/home"><button>x</button></Link>
-            <AppBar title="Enter NavBar Details" />
+             <AppBar color="primary" position="static">
+             <Link to="/home"><Icon color="secondary">backspace</Icon></Link>
+           <Toolbar>
+            <TypoGraphy variant="title" color="inherit" >
+            <h1>Enter NavBar Details</h1>
+           </TypoGraphy>
+          </Toolbar>
+        </AppBar>
+            
             <br/>
             <TextField
               placeholder="Text On Nav Bar"
@@ -67,6 +75,7 @@ export class NavBarDetails extends Component {
             <Button
               color="primary"
               variant="contained"
+              size="small"
               onClick={this.continue}
             >Continue</Button>
 

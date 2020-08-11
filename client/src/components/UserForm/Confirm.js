@@ -6,6 +6,9 @@ import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 import { profile } from "../../utils/api.js";
 import { Link } from "react-router-dom";
+import Icon from '@material-ui/core/Icon';
+import TypoGraphy from '@material-ui/core/Typography'
+import Toolbar from '@material-ui/core/Toolbar'
 export class Confirm extends Component {
   
 
@@ -134,8 +137,14 @@ export class Confirm extends Component {
             fullWidth
             maxWidth='lg'
           >
-            <Link to="/home"><button>x</button></Link>
-            <AppBar title="Confirm User Data" />
+            <AppBar color="primary" position="static">
+             <Link to="/home"><Icon color="secondary">backspace</Icon></Link>
+           <Toolbar>
+            <TypoGraphy variant="title" color="inherit" >
+            <h1>Confirm Your Details</h1>
+           </TypoGraphy>
+          </Toolbar>
+        </AppBar>
             <List>
               <ListItem>
                 <ListItemText primary="Nav Color" secondary={navColor}  />
@@ -205,17 +214,26 @@ export class Confirm extends Component {
             </List>
             <br />
 
+            <div className="row">
+           <div className="col-9">
             <Button
               color="secondary"
               variant="contained"
               onClick={this.back}
             >Back</Button>
 
-            <Button
+  
+          </div>
+          <div className="col-2">
+           <Button
               color="primary"
               variant="contained"
               onClick={this.continue}
-            >Confirm & Continue</Button>
+            >Continue</Button>
+  
+          </div>
+
+          </div>
           </Dialog>
         </>
       </MuiThemeProvider>

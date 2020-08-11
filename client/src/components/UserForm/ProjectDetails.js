@@ -5,8 +5,9 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
-
-
+import Icon from '@material-ui/core/Icon';
+import TypoGraphy from '@material-ui/core/Typography'
+import Toolbar from '@material-ui/core/Toolbar'
 import MenuItem from '@material-ui/core/MenuItem';
 
 export class ProjectDetails extends Component {
@@ -30,8 +31,14 @@ export class ProjectDetails extends Component {
             fullWidth
             maxWidth='sm'
           >
-            <Link to="/home"><button>x</button></Link>
-            <AppBar title="Project " />
+            <AppBar color="primary" position="static">
+             <Link to="/home"><Icon color="secondary">backspace</Icon></Link>
+           <Toolbar>
+            <TypoGraphy variant="title" color="inherit" >
+            <h1>Enter Project Details</h1>
+           </TypoGraphy>
+          </Toolbar>
+        </AppBar>
             <TextField
               placeholder="ProjectOneTitle"
               label="Project One Title"
@@ -115,17 +122,26 @@ export class ProjectDetails extends Component {
             <br />
           
 
+            <div className="row">
+           <div className="col-9">
             <Button
               color="secondary"
               variant="contained"
               onClick={this.back}
             >Back</Button>
 
-            <Button
+  
+          </div>
+          <div className="col-2">
+           <Button
               color="primary"
               variant="contained"
               onClick={this.continue}
             >Continue</Button>
+  
+          </div>
+
+          </div>
           </Dialog>
         </>
       </MuiThemeProvider>
