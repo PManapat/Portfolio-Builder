@@ -9,17 +9,22 @@ function getPageTemplate(){
 
     var page =  "import React from \"react\"; \n" +
     "import Card from \"../components/Card\"; \n" +
-    "import Lovecard from \"../components/Lovecard\";" +
-    "import Mediacard from \"../components/Mediacard\";" +
-    "import Navbar from \"../components/Navbar\"; \n" +
-    "import Colorpicker from \"../components/Colorpicker\"; \n" +
+    "import Lovecard from \"../components/Lovecard\";\n" +
+    "import Mediacard from \"../components/Mediacard\";\n" +
+    // "import Navbar from \"../components/Navbar\"; \n" +
+    // "import Colorpicker from \"../components/Colorpicker\"; \n" +
+    "import Carousel from \"../components/Carousel\"; \n" +
+    "import CarouselP from \"../components/CarouselP\"; \n" +
+    "import CarouselR from \"../components/CarouselR\"; \n" +
     "import Jumbotron from \"../components/Jumbotron\"; \n" +
-    "import Footer from \"../components/Footer\"; \n" +
+    // "import JumbotronP from \"../components/JumbotronP\"; \n" +
+    // "import JumbotronR from \"../components/JumbotronR\"; \n" +
+    // "import Footer from \"../components/Footer\"; \n" +
     "function CustomPage() \n{" +
         "return ( \n" +
-            "<div>\n" +
+            "       <div>\n" +
             "Insert_Custom_Page_Here\n" +
-            "</div>\n" +
+            "       </div>\n" +
         ")\n" +
     "}\n" + 
     "export default CustomPage;";
@@ -38,7 +43,6 @@ function generatePage(){
                         "</div>\n";
 
     }
-
     if(document.getElementById("jumbotron").checked){
 
         customPage = customPage + 
@@ -47,7 +51,20 @@ function generatePage(){
         "</div>\n";
 
     }
+    // if(document.getElementById("jumbotronp").checked){
 
+    //     customPage = customPage + 
+    //     "<div className=\"img11\">\n" +
+    //         "<JumbotronP />\n" +
+    //     "</div>\n";
+    // }
+    // if(document.getElementById("jumbotronr").checked){
+
+    //     customPage = customPage + 
+    //     "<div className=\"img11\">\n" +
+    //         "<JumbotronR />\n" +
+    //     "</div>\n";
+    // }
     if(document.getElementById("card").checked){
 
         customPage = customPage + 
@@ -58,7 +75,6 @@ function generatePage(){
             "<Card />\n" +
         "</div>\n";
     }
-
     if(document.getElementById("Colorpicker").checked){
 
         customPage = customPage + 
@@ -67,7 +83,6 @@ function generatePage(){
             "<Colorpicker />\n" +
         "</div>\n";
     }
-
     if(document.getElementById("lovecard").checked){
 
         customPage = customPage + 
@@ -75,7 +90,6 @@ function generatePage(){
             "<Lovecard />\n" +
         "</div>\n";
     }
-
     if(document.getElementById("mediacard").checked){
 
         customPage = customPage + 
@@ -83,9 +97,27 @@ function generatePage(){
             "<Mediacard />\n" +
         "</div>\n";
     }
+    if(document.getElementById("carousel").checked){
 
+        customPage = customPage + 
+        "<div className=\"MyCom90\">\n" +
+            "<Carousel />\n" +
+        "</div>\n";
+    }
+    if(document.getElementById("carouselp").checked){
 
+        customPage = customPage + 
+        "<div className=\"MyCom90\">\n" +
+            "<CarouselP />\n" +
+        "</div>\n";
+    }
+    if(document.getElementById("carouselr").checked){
 
+        customPage = customPage + 
+        "<div className=\"MyCom90\">\n" +
+            "<CarouselR />\n" +
+        "</div>\n";
+    }
     if(document.getElementById("footer").checked){
     
         customPage = customPage + 
@@ -94,6 +126,9 @@ function generatePage(){
         "</div>\n";
 
     }
+
+
+        //  -------    Code to generate page here  --------
 
     var completePage = getPageTemplate();
     completePage = completePage.replace("Insert_Custom_Page_Here", customPage);
@@ -108,7 +143,6 @@ function generatePage(){
     window.location.href = "custompage";
 
     // to show the newly created custompage, we need to do a page refresh on the browser.
-
 }
 
 function CustomTemplate() {
@@ -123,6 +157,18 @@ function CustomTemplate() {
                     <input type="checkbox" id="navbar" name="navbar" value="Navbar" />
                     <label for="navbar">Navbar</label>
                 </li>
+                <li>                
+                    <input type="checkbox" id="jumbotron" name="jumbotron" value="Jumbotron" />
+                    <label for="jumbotron">Jumbotron</label>
+                </li>
+                {/* <li>                
+                    <input type="checkbox" id="jumbotronp" name="jumbotronp" value="Jumbotronp" />
+                    <label for="jumbotronp">Jumbotron (Photography)</label>
+                </li>
+                <li>                
+                    <input type="checkbox" id="jumbotronr" name="jumbotronr" value="Jumbotronr" />
+                    <label for="jumbotronr">Jumbotron (Restaurant)</label>
+                </li> */}
                 <li>
                     <input type="checkbox" id="accordion" name="accordion" value="accordion" />
                     <label for="accordion">Accordion</label>
@@ -132,15 +178,15 @@ function CustomTemplate() {
                     <label for="carousel"> Carousel</label>
                     <ul>
                         <li>
-                        <input type="checkbox" id="carousel" name="carousel" value="accordion" />
-                        <label for="carousel"> Carousel with images</label>
+                            <input type="checkbox" id="carouselp" name="carousel" value="accordion" />
+                            <label for="carousel"> Carousel (Photography)</label>
                         </li>
                         
                         <li>
-                        <input type="checkbox" id="carousel" name="carousel" value="accordion" />
-                        <label for="carousel"> Carousel without images</label>
+                            <input type="checkbox" id="carouselr" name="carousel" value="accordion" />
+                            <label for="carousel"> Carousel (Restaurant)</label>
                         </li>
-                        </ul>
+                    </ul>
                 </li>
                 <li>
                     <input type="checkbox" id="appbar" name="appbar" value="appbar" />
@@ -161,10 +207,6 @@ function CustomTemplate() {
                 <li>
                     <input type="checkbox" id="Colorpicker" name="Color-Picker" value="Color Picker" />
                     <label for="Color-Picker"> Color Picker</label>
-                </li>
-                <li>                
-                    <input type="checkbox" id="jumbotron" name="jumbotron" value="Jumbotron" />
-                    <label for="jumbotron">Jumbotron</label>
                 </li>
                 <li>                
                     {/* <input type="checkbox" id="card" name="card" value="Card" /> */}
@@ -200,7 +242,7 @@ function CustomTemplate() {
             <button onClick={generatePage}>Generate New Page</button>
         </div>
     </div>
-  )
+    )
 }
 
 export default CustomTemplate;
