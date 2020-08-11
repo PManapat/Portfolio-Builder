@@ -4,7 +4,7 @@ import { home } from "../utils/api.js";
 import Dashboard from '../components/Dashboard';
 // import { useHistory } from "react-router-dom";
 import { Button } from 'react-bootstrap';
-import Nav from '../components/UserNav';
+// import Nav from '../components/UserNav';
 
 
 export default () => {
@@ -18,7 +18,7 @@ export default () => {
         .then(res => {
             console.log(res);
             const{firstName, lastName}=res;
-            console.log({firstName});
+            // console.log({firstName});
             setFirstName({firstName});
             setLastName({lastName});
             // setPortfolio(`/${firstName}`);
@@ -32,7 +32,7 @@ export default () => {
 
     return (
         <div>
-            <Nav />
+            {/* <Nav /> */}
             <div className="container" id="container">
                 <div className="jumbotron mt-5">
                     <div className="col-sm-8 mx-auto">
