@@ -32,56 +32,63 @@ export class NavBarDetails extends Component {
   render() {
     const { values, handleChange } = this.props;
     return (
-      <div>
-        <Nav />
-        <MuiThemeProvider theme={theme}>
-          <>
-            <Dialog open fullWidth maxWidth="sm">
-              <AppBar color="primary" position="static">
-                <Link to="/home">
-                  <Icon color="secondary">backspace</Icon>
-                </Link>
-                <Toolbar>
-                  <TypoGraphy variant="title" color="inherit">
-                    <h1>Enter NavBar Details</h1>
-                  </TypoGraphy>
-                </Toolbar>
-              </AppBar>
 
-              <br />
-              <TextField
-                placeholder="Text On Nav Bar"
-                label="Text On Nav Bar"
-                onChange={handleChange("navText")}
-                defaultValue={values.navText}
-                margin="normal"
-                fullWidth
-              />
-              <br />
-              <TextField
-                id="select"
-                label="Color for Nav Bar"
-                onChange={handleChange("navColor")}
-                defaultValue={values.navColor}
-                select
-              >
-                <MenuItem value="#008000">Green</MenuItem>
-                <MenuItem value="#FF0000">Red</MenuItem>
-                <MenuItem value="#647ba1">Blue</MenuItem>
-                <MenuItem value="#ada965">Lemon</MenuItem>
-                <MenuItem value="#4b5669">Grey</MenuItem>
-              </TextField>
-              <br />
-              <TextField
-                id="select"
-                label="Background Image for NavBar"
-                onChange={handleChange("navImage")}
-                defaultValue={values.navImage}
-                margin="normal"
-                fullWidth
-              />
-
-              <br />
+      <MuiThemeProvider theme={theme}>
+        <>
+          <Dialog
+            open
+            fullWidth
+            maxWidth='sm'
+          >
+             <AppBar color="primary" position="static">
+             <Link to="/home"><Icon color="secondary">backspace</Icon></Link>
+           <Toolbar>
+            <TypoGraphy variant="title" color="inherit" >
+            <h1>Enter Navbar Details</h1>
+           </TypoGraphy>
+          </Toolbar>
+        </AppBar>
+            
+            <br/>
+            <TextField
+              placeholder="Text On Navbar"
+              label="Text On Navbar"
+              onChange={handleChange('navText')}
+              defaultValue={values.navText}
+              margin="normal"
+              fullWidth
+            />
+            <br/>
+            <TextField 
+            id="select" 
+            label="Color for Navbar" 
+            onChange={handleChange('navColor')}
+            defaultValue={values.navColor}
+            select>
+           <MenuItem value="#008000">Green</MenuItem>
+           <MenuItem value="#FF0000">Red</MenuItem>
+           <MenuItem value="#647ba1">Blue</MenuItem>
+           <MenuItem value="#ada965">Lemon</MenuItem>
+           <MenuItem value="#4b5669">Grey</MenuItem>
+           </TextField>
+           <br/>
+           <TextField 
+            id="select" 
+            label="Background Image for Navbar" 
+            onChange={handleChange('navImage')}
+            defaultValue={values.navImage}
+            margin="normal"
+            fullWidth
+            />
+        
+           <br/>
+     
+            <Button
+              color="primary"
+              variant="contained"
+              size="small"
+              onClick={this.continue}
+            >Continue</Button>
 
               <Button
                 color="primary"
