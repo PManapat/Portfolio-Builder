@@ -1,6 +1,7 @@
 import React from 'react';
 import { login } from "../../utils/api.js";
 import { Link } from 'react-router-dom';
+import Nav from "../Navbar";
 
 class Login extends React.Component {
   constructor(props) {
@@ -66,32 +67,35 @@ class Login extends React.Component {
   }
   render() {
     return (
-      <div className="container">
-        <div className="card card-login mx-auto mt-5">
-          <div className="card-header text-primary text-center">Login</div>
-          <div className="card-body">
-            <form id="signup-form">
-              <div className="form-group">
-                <div className="form-label-group">
-                  <input type="email" id="email" name="email" className="form-control" placeholder="Enter your email" onChange={(e) => { this.handleChange(e) }} />
-                  <label htmlFor="email">email</label>
-                  {this.state.emailError ? <span style={{ color: "red" }}>Please Enter valid email address</span> : ''}
-                </div>
+      <div>
+        <Nav />
+          <div className="container">
+            <div className="card card-login mx-auto mt-5">
+              <div className="card-header text-primary text-center">Login</div>
+              <div className="card-body">
+                <form id="signup-form">
+                  <div className="form-group">
+                    <div className="form-label-group">
+                      <input type="email" id="email" name="email" className="form-control" placeholder="Enter your email" onChange={(e) => { this.handleChange(e) }} />
+                      <label htmlFor="email"></label>
+                      {this.state.emailError ? <span style={{ color: "red" }}>Please Enter valid email address</span> : ''}
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <div className="form-label-group">
+                      <input type="password" id="password" name="password" className="form-control" placeholder="Password" onChange={(e) => { this.handleChange(e) }} />
+                      <label htmlFor="password"></label>
+                      {this.state.passwordError ? <span style={{ color: "red" }}>Your password must be at least 6 characters</span> : ''}
+                    </div>
+                  </div>
+                  <button className="btn btn-primary btn-block" disabled={this.state.isDisabled} onClick={this.submitForm}>Login</button>
+                </form>
+                <p className="my-1 text-primary text-center">
+                  Don't have an account?<Link to="/register"><br></br>Sign Up</Link>
+                </p>
               </div>
-              <div className="form-group">
-                <div className="form-label-group">
-                  <input type="password" id="password" name="password" className="form-control" placeholder="Password" onChange={(e) => { this.handleChange(e) }} />
-                  <label htmlFor="password">Password</label>
-                  {this.state.passwordError ? <span style={{ color: "red" }}>Your password must be at least 6 characters</span> : ''}
-                </div>
-              </div>
-              <button className="btn btn-primary btn-block" disabled={this.state.isDisabled} onClick={this.submitForm}>Login</button>
-            </form>
-            <p className="my-1 text-primary text-center">
-              Don't have an account?<Link to="/register"><br></br>Sign Up</Link>
-            </p>
+            </div>
           </div>
-        </div>
       </div>
     );
   }

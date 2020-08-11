@@ -1,22 +1,35 @@
-import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import Dialog from "@material-ui/core/Dialog";
+import AppBar from "@material-ui/core/AppBar";
+import { ThemeProvider as MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import Icon from '@material-ui/core/Icon';
-import TypoGraphy from '@material-ui/core/Typography'
-import Toolbar from '@material-ui/core/Toolbar'
-import MenuItem from '@material-ui/core/MenuItem';
+import Icon from "@material-ui/core/Icon";
+import TypoGraphy from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
+import Nav from "../UserNav";
+import { cyan, grey } from "@material-ui/core/colors"
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#17A2b8",
+    },
+    secondary: {
+      main: grey[900]
+    }
+  }
+})
+
 
 export class ProjectDetails extends Component {
-  continue = e => {
+  continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
   };
 
-  back = e => {
+  back = (e) => {
     e.preventDefault();
     this.props.prevStep();
   };
@@ -24,7 +37,8 @@ export class ProjectDetails extends Component {
   render() {
     const { values, handleChange } = this.props;
     return (
-      <MuiThemeProvider>
+      
+      <MuiThemeProvider theme={theme}>
         <>
           <Dialog
             open
@@ -153,10 +167,30 @@ export class ProjectDetails extends Component {
   
           </div>
 
-          </div>
-          </Dialog>
-        </>
-      </MuiThemeProvider>
+              <div className="row">
+                <div className="col-9">
+                  <Button
+                    color="secondary"
+                    variant="contained"
+                    onClick={this.back}
+                  >
+                    Back
+                  </Button>
+                </div>
+                <div className="col-2">
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={this.continue}
+                  >
+                    Continue
+                  </Button>
+                </div>
+              </div>
+            </Dialog>
+          </>
+        </MuiThemeProvider>
+      </div>
     );
   }
 }

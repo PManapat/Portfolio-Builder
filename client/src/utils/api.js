@@ -123,3 +123,13 @@ export const profile = (newUser) => {
       console.log(err);
     });
 };
+
+export const generatepage = (data) => {
+  return axios
+    .post("api/generatepage", {
+      'page': data,
+    })
+    .then((response) => {
+      console.log("This new page holds - ", response);
+    })
+};

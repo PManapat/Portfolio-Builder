@@ -39,6 +39,7 @@ export default function () {
         setProfileImage({ profileImage });
         setIntroText({ introText });
         setIntroTitle({ introTitle });
+        console.log(navImage);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -59,15 +60,15 @@ export default function () {
       </Jumbotron>
       <Container className="About" id="About" style={{ backgroundColor: navColor.navColor}}>
         <Figure>
-          <Figure.Caption>
+          <Figure className="name">
             {firstName.firstName}{' '}
             {lastName.lastName}
-          </Figure.Caption>
+          </Figure>
           <Figure.Image
             id="profilePic"
             src={profileImage.profileImage}
           />
-          <Figure.Caption>Bio: {bio.bio}</Figure.Caption>
+          <p className="bio">Bio: {bio.bio}</p>
         </Figure>
       </Container>
     </div>

@@ -1,24 +1,37 @@
-import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import { List, ListItem, ListItemText } from '@material-ui/core/';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import Dialog from "@material-ui/core/Dialog";
+import AppBar from "@material-ui/core/AppBar";
+import { ThemeProvider as MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { List, ListItem, ListItemText } from "@material-ui/core/";
+import Button from "@material-ui/core/Button";
 import { profile } from "../../utils/api.js";
 import { Link } from "react-router-dom";
-import Icon from '@material-ui/core/Icon';
-import TypoGraphy from '@material-ui/core/Typography'
-import Toolbar from '@material-ui/core/Toolbar'
-export class Confirm extends Component {
-  
+import Icon from "@material-ui/core/Icon";
+import TypoGraphy from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
+import Nav from "../UserNav";
+import { cyan, grey } from "@material-ui/core/colors"
 
-  continue = e => {
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#17A2b8",
+    },
+    secondary: {
+      main: grey[900]
+    }
+  }
+})
+
+
+export class Confirm extends Component {
+  continue = (e) => {
     e.preventDefault();
     // PROCESS FORM //
     //let history = useHistory();
     // let history = useHistory();
     const {
-      values: { 
+      values: {
         navColor,
         navText,
         navImage,
@@ -39,8 +52,8 @@ export class Confirm extends Component {
         resumeUrl,
         githubLink,
         linkdin,
-        footer
-      }
+        footer,
+      },
     } = this.props;
     // console.log(this.props);
     // console.log(this.props.values.firstName);
@@ -49,7 +62,6 @@ export class Confirm extends Component {
     // console.log(this.props.values.occupation);
     // console.log(this.props.values.city);
     // console.log(this.props.values.bio);
-    
 
     const newUser = {
       navColor: navColor,
@@ -72,8 +84,8 @@ export class Confirm extends Component {
       resumeUrl: resumeUrl,
       githubLink: githubLink,
       linkdin: linkdin,
-      footer: footer
-     }
+      footer: footer,
+    };
     //we can do this also
     //   const newUser = {
     //   firstName: this.props.values.firstName,
@@ -83,7 +95,6 @@ export class Confirm extends Component {
     // city:this.props.values.city,
     // bio: this.props.values.bio,
     // }
-    
 
     profile(newUser).then(function (res) {
       // let history = useHistory();
@@ -92,13 +103,12 @@ export class Confirm extends Component {
       //   this.props.history.push(`/mainprofile`)
       // }
       console.log(res);
-    })
+    });
 
-
-  this.props.nextStep();
+    this.props.nextStep();
   };
 
-  back = e => {
+  back = (e) => {
     e.preventDefault();
     this.props.prevStep();
   };
@@ -126,11 +136,11 @@ export class Confirm extends Component {
         resumeUrl,
         githubLink,
         linkdin,
-        footer
-      }
+        footer,
+      },
     } = this.props;
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider theme={theme}>
         <>
           <Dialog
             open
@@ -233,10 +243,30 @@ export class Confirm extends Component {
   
           </div>
 
-          </div>
-          </Dialog>
-        </>
-      </MuiThemeProvider>
+              <div className="row">
+                <div className="col-9">
+                  <Button
+                    color="secondary"
+                    variant="contained"
+                    onClick={this.back}
+                  >
+                    Back
+                  </Button>
+                </div>
+                <div className="col-2">
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={this.continue}
+                  >
+                    Continue
+                  </Button>
+                </div>
+              </div>
+            </Dialog>
+          </>
+        </MuiThemeProvider>
+      </div>
     );
   }
 }
