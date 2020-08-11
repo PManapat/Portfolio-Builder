@@ -4,6 +4,7 @@ import "./style.css"
 
 function CardFlip ({onClick}) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [frontText, setFrontText] = useState("");
 
   function handleClick () {
     setIsFlipped(!isFlipped);
@@ -15,7 +16,11 @@ function CardFlip ({onClick}) {
         style={{
           backgroundColor: "light Pink",
           // backgroundImage: url('/client/public/assets/img/img3.jpg'),
+<<<<<<< HEAD
           height: 550,
+=======
+          height: 300,
+>>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
           color: "black",
           display: "flex",
           justifyContent: "center",
@@ -35,7 +40,11 @@ function CardFlip ({onClick}) {
           alignItems: "center"
         }}>
           <h3>Sign Up to start creating</h3>
+<<<<<<< HEAD
         <button className="link mr-4 btn btn-info" onClick={handleClick}>Close</button>
+=======
+        <button className="link mr-4 btn btn-info" onClick={onClick}>Create Portfolio!</button>
+>>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
       </div>
     </ReactCardFlip>
   );

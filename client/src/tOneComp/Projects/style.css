@@ -9,6 +9,12 @@
 }
 
 p{
+<<<<<<< HEAD
     padding-top: 15px;
     text-align: center;
+=======
+    padding-top: 20px;
+    text-align: center;
+
+>>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
 }

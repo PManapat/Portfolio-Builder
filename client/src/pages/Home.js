@@ -3,10 +3,13 @@ import "./Home.css";
 import Jumbotron from "../components/Jumbotron";
 import Carousel from "../components/Carousel";
 import Card from "../components/Card";
+import Nav from "../components/Navbar";
 
 function Home() {
+
   return (
     <div>
+      <Nav />
       <div style={{textAlign:"center"}}>
         <Jumbotron />
       </div>
@@ -25,7 +28,7 @@ function Home() {
           <Card />
         </div>
         {/* Clearfix to fix float issue */}
-        <div class="clearfix"></div>
+        <div className="clearfix"></div>
       </div>
     </div>
   )

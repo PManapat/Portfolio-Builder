@@ -14,7 +14,7 @@ function Dashboard() {
   return (
     <div>
       <div style={{ textAlign: "center" }}>
-        <h1>Tell us what you want to do? </h1>
+        <h1> Select the level of portfolio customization below </h1>
       </div>
       <div className="MyCard50 img12">
         <Card onClick={handleClickOne} />

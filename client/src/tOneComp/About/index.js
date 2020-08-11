@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 export default function () {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [aboutBgColor, setAboutBgColor] = useState("");
+  const [navColor, setNavColor] = useState("");
   const [bio, setBio] = useState("");
   const [navImage, setNavImage] = useState("");
   const [profileImage, setProfileImage] = useState("");
@@ -21,7 +21,7 @@ export default function () {
         console.log(res);
         console.log(res.navColor);
         const {
-          aboutBgColor,
+          navColor,
           bio,
           navImage,
           profileImage,
@@ -33,7 +33,7 @@ export default function () {
         console.log(res.navColor);
         setFirstName({ firstName });
         setLastName({ lastName });
-        setAboutBgColor({ aboutBgColor });
+        setNavColor({ navColor });
         setBio({ bio });
         setNavImage({ navImage });
         setProfileImage({ profileImage });
@@ -43,9 +43,18 @@ export default function () {
       })
       .catch((err) => console.log(err));
   }, []);
+  // `url(${navImage.navImage})`
   return (
+<<<<<<< HEAD
     <div className="App">
       <Jumbotron className="Jumbo" style={{
+=======
+    <div className="Container">
+      {/* <Jumbotron className="Jumbo" style={{
+        backgroundImage: `url("https://www.nicesnippets.com/image/imgpsh_fullsize.png")` }}>
+        <Container> */}
+        <Jumbotron className="Jumbo" style={{
+>>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
         backgroundImage: `url(${navImage.navImage})` }}>
         <Container>
           <h1>{introTitle.introTitle}</h1>
@@ -54,7 +63,7 @@ export default function () {
           </p>
         </Container>
       </Jumbotron>
-      <Container className="About" id="About" style={{ backgroundColor: aboutBgColor.aboutBgColor }}>
+      <Container className="About" id="About" style={{ backgroundColor: navColor.navColor}}>
         <Figure>
           <Figure className="name">
             {firstName.firstName}{' '}
