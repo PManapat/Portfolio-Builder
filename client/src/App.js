@@ -10,11 +10,12 @@ import MainProfile from "./pages/MainProfile";
 import Footer from "./components/Footer";
 import UserForm from "./components/UserForm";
 import TempOne from "./pages/Temp1";
+import TempTwo from "./pages/Temp2";
 import { home } from "./utils/api";
 
 function App() {
   const[portfolio, setPortfolio]=useState("/template");
-
+  const[portfolioTwo, setPortfolioTwo]=useState("/template");
   useEffect(() => {
     home()
     .then(res => {
@@ -23,9 +24,11 @@ function App() {
         // console.log({firstName});
         // console.log(`"/${firstName}"`);
         setPortfolio(`/${firstName}${lastName}`);
+        setPortfolioTwo(`/${firstName}${lastName}2`);
         // console.log(firstName);
     })
     .catch(err => console.log(err));
+    console.log({portfolio})
 },[]);
   return (
     <div>
@@ -40,6 +43,7 @@ function App() {
             <Route path="/quickdesign" component={QuickDesign}/>
             <Route path="/mainprofile" component={MainProfile} />
             <Route path={portfolio} component={TempOne} />
+            <Route path={portfolioTwo} component={TempTwo} /> 
           </Switch>
         </Router>
       <Footer />
