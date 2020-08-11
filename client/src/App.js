@@ -1,9 +1,8 @@
 import React, { useState, useEffect }from "react";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
 import QuickDesign from "./pages/QuickDesign";
-import Nav from "./components/Navbar";
+// import Nav from "./components/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import MainProfile from "./pages/MainProfile";
@@ -29,14 +28,13 @@ function App() {
 },[]);
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
         <Router>
           <Switch>
             <Route exact path={["/", "/home"]} activeClassName="active" eventKey="/" component={Home}/>
             <Route path="/register" component={Register}/>
             <Route path="/login" component={Login}/>
             <Route path="/userForm" component={UserForm}/>
-            <Route path="/dashboard" component={Dashboard}/>
             <Route path="/quickdesign" component={QuickDesign}/>
             <Route path="/mainprofile" component={MainProfile} />
             <Route path={portfolio} component={TempOne} />
