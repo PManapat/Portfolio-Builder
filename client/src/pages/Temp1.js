@@ -4,14 +4,18 @@ import Navbar from '../tOneComp/Nav';
 import About from '../tOneComp/About';
 import Projects from '../tOneComp/Projects';
 import Footer from '../tOneComp/Footer';
+import Nav from '../components/UserNav';
 
 export default function () {
   return (
-    <div id="tempBorder">
-      <Navbar />
-      <About />
-      <Projects />
-      <Footer />
+    <div>
+      <Nav />
+      <div id="tempBorder">
+        <Navbar />
+        <About />
+        <Projects />
+        <Footer />
+      </div>
     </div>
   );
 };
