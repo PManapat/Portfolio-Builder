@@ -45,16 +45,11 @@ export default function () {
   }, []);
   // `url(${navImage.navImage})`
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <Jumbotron className="Jumbo" style={{
-=======
     <div className="Container">
       {/* <Jumbotron className="Jumbo" style={{
         backgroundImage: `url("https://www.nicesnippets.com/image/imgpsh_fullsize.png")` }}>
         <Container> */}
         <Jumbotron className="Jumbo" style={{
->>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
         backgroundImage: `url(${navImage.navImage})` }}>
         <Container>
           <h1>{introTitle.introTitle}</h1>

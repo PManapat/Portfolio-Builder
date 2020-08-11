@@ -60,11 +60,7 @@ export default function () {
               alt="250x200"
             /> 
           </Nav>
-<<<<<<< HEAD
-          <p>{ProjectOneText.ProjectOneText}</p>
-=======
           <p> {ProjectOneText.ProjectOneText} </p>
->>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
           <Nav.Link id="projects" href={ProjectOneUrl.ProjectOneUrl}>{ProjectOneTitle.ProjectOneTitle}</Nav.Link>
         </Tab>
         <Tab eventKey="project2" title={ProjectTwoTitle.ProjectTwoTitle} href={ProjectTwoUrl.ProjectTwoUrl}>
@@ -78,11 +74,7 @@ export default function () {
               alt="250x200"
             />
           </Nav>
-<<<<<<< HEAD
-          <p>{ProjectTwoText.ProjectTwoText}</p>
-=======
           <p> {ProjectTwoText.ProjectTwoText} </p>
->>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
           <Nav.Link id="projects" href={ProjectTwoUrl.ProjectTwoUrl}>{ProjectTwoTitle.ProjectTwoTitle}</Nav.Link>
         </Tab>
         <Tab eventKey="project3" title={ProjectThreeTitle.ProjectThreeTitle} href={ProjectThreeUrl.ProjectThreeUrl}>
@@ -96,11 +88,7 @@ export default function () {
               alt="250x200"
             />
           </Nav>
-<<<<<<< HEAD
-          <p>{ProjectThreeText.ProjectThreeText}</p>
-=======
           <p> {ProjectThreeText.ProjectThreeText} </p>
->>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
           <Nav.Link id="projects" href={ProjectThreeUrl.ProjectThreeUrl}>{ProjectThreeTitle.ProjectThreeTitle}</Nav.Link>
         </Tab>
       </Tabs>

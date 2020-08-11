@@ -12,10 +12,7 @@ console.log(props);
   }
   return(
     <Jumbotron id="jumbo">
-<<<<<<< HEAD
-=======
        <h1>Welcome  {props.firstName}</h1>
->>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
       <h1> Create and Customize a Portfolio </h1>
       <p>
         Beautiful designs, powerful features, and the freedom to build anything you want. 
