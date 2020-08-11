@@ -89,15 +89,6 @@ export class NavBarDetails extends Component {
               size="small"
               onClick={this.continue}
             >Continue</Button>
-
-              <Button
-                color="primary"
-                variant="contained"
-                size="small"
-                onClick={this.continue}
-              >
-                Continue
-              </Button>
             </Dialog>
           </>
         </MuiThemeProvider>
