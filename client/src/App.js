@@ -14,7 +14,6 @@ import UserForm from "./components/UserForm";
 import TempOne from "./pages/Temp1";
 // import TempTwo from "./pages/Temp2";
 import { home } from "./utils/api";
-// import { login } from "./utils/api";
 
 function App() {
   const[portfolio, setPortfolio]=useState("/template");
@@ -22,32 +21,23 @@ function App() {
   const[navbar, SetNavbar]=useState(Nav);
   const userInfo = window.localStorage.user;
 
-  useEffect(() => {
+useEffect(() => {
     home()
     .then(res => {
         // console.log(res);
-        const { firstName, lastName } = res;
-        // console.log({firstName});
-        // console.log(`"/${firstName}"`);
-        setPortfolio(`/${firstName}${lastName}`);
-        // setPortfolioTwo(`/${firstName}${lastName}2`);
-        // console.log(firstName);
+        if(userInfo != undefined){
+          const { firstName, lastName } = res;
+          setPortfolio(`/${firstName}${lastName}`);
+          SetNavbar(UserNav);
+          console.log("window object", window.location.reload);
+        }
+        else return;
     })
     .catch(err => console.log(err));
-    // console.log({portfolio})
 },[]);
-
-useEffect(() => {
-      if(userInfo != undefined){
-        SetNavbar(UserNav);
-        console.log(window.localStorage);
-      }
-      else return;
-  }, []);
 
   return (
     <div>
-      
         <Router>
           {navbar}
           <Switch>

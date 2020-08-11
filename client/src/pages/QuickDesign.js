@@ -1,7 +1,7 @@
 import React from "react";
 import "./QuickDesign.css";
 import { Card } from "react-bootstrap";
-import Nav from "../components/UserNav";
+// import Nav from "../components/UserNav";
 
 const QuickDesign = () => {
   const cardInfo = [
@@ -75,7 +75,7 @@ const QuickDesign = () => {
 
   return (
     <div>
-        <Nav />
+        {/* <Nav /> */}
       <div className="grid">
         {cardInfo.map(renderCard)}
       </div>

@@ -18,7 +18,7 @@ export default () => {
         .then(res => {
             console.log(res);
             const{firstName, lastName}=res;
-            console.log({firstName});
+            // console.log({firstName});
             setFirstName({firstName});
             setLastName({lastName});
             // setPortfolio(`/${firstName}`);
