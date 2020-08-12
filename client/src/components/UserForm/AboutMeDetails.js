@@ -140,13 +140,13 @@ export default class AboutMeDetails extends Component {
             fullWidth
           />
           <br />
-          <div className="row">
-            <div className="col-9">
-              <Button color="secondary" variant="contained" onClick={this.back}>
+          <div className="row" style={{marginLeft: 'auto', marginRight: 'auto'}}>
+            <div>
+              <Button color="secondary" justify="center" variant="contained" onClick={this.back}>
                 Back
               </Button>
             </div>
-            <div className="col-2">
+            <div style={{marginLeft: '10px', marginRight: '10px'}}>
               <Button
                 color="primary"
                 variant="contained"
@@ -155,8 +155,8 @@ export default class AboutMeDetails extends Component {
                 Continue
               </Button>
             </div>
-            <br />
-          </div>
+            </div>
+          <br />
         </Dialog>
       </MuiThemeProvider>
     );

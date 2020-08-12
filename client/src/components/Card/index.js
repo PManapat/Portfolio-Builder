@@ -1,17 +1,9 @@
-import React, { useState } from "react";
-import ReactCardFlip from "react-card-flip";
+import React from "react";
 import "./style.css"
 
-function CardFlip ({onClick}) {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [frontText, setFrontText] = useState("");
-
-  function handleClick () {
-    setIsFlipped(!isFlipped);
-  };
-
+function CardFlip (props) {
+  // console.log(props);
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" id="container">
       <div
         style={{
           backgroundColor: "light Pink",
@@ -23,23 +15,8 @@ function CardFlip ({onClick}) {
           alignItems: "center"
         }}
       >
-        <button className="link mr-4 btn btn-info" onClick={handleClick}>Learn more</button>
+        <button onClick={props.onClick} className="link mr-4 btn btn-info">{props.children}</button>
       </div>
-
-      <div id="backOfCard"
-        style={{
-          backgroundColor: "white",
-          height: 300,
-          color: "#fff",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
-        }}>
-          <h3>Sign Up to start creating</h3>
-        <button className="link mr-4 btn btn-info" onClick={handleClick}>Close</button>
-        <button className="link mr-4 btn btn-info" onClick={onClick}>Create Portfolio!</button>
-      </div>
-    </ReactCardFlip>
   );
 };
 
