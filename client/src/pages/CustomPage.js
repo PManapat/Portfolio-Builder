@@ -20,16 +20,16 @@ function CustomPage()
 {return ( 
        <div>
 <div className="img11">
-<JumbotronP />
-</div>
-<div className="MyCard50">
-<Card />
-</div>
-<div className="MyCard50">
-<Card />
+<JumbotronR />
 </div>
 <div className="MyCom90 mx-y">
-<CarouselP />
+<CarouselR />
+</div>
+<div className="MyCom90 mx-y">
+<Table />
+</div>
+<div className="MyCom90">
+<TransferList />
 </div>
 
        </div>
