@@ -208,10 +208,7 @@ function CustomTemplate() {
                     <input type="checkbox" id="jumbotronr" name="jumbotronr" value="Jumbotronr" />
                     <label for="jumbotronr">Jumbotron (Restaurant)</label>
                 </li>
-                <li>
-                    <input type="checkbox" id="accordion" name="accordion" value="accordion" />
-                    <label for="accordion">Accordion</label>
-                </li>
+                
                 <li>
                     <input type="checkbox" id="carousel" name="carousel" value="accordion" />
                     <label for="carousel"> Carousel</label>
@@ -226,6 +223,10 @@ function CustomTemplate() {
                             <label for="carousel"> Carousel (Restaurant)</label>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <input type="checkbox" id="accordion" name="accordion" value="accordion" />
+                    <label for="accordion">Accordion</label>
                 </li>
                 <li>
                     <input type="checkbox" id="stepper" name="stepper" value="stepper" />

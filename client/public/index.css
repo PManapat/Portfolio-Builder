@@ -35,16 +35,17 @@
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
     transition: transform .2s; /* Animation */
 }
+
+/* jumbotron */
 .MyCard:hover{
     transform: scale(1.20);
 
 }
 
-
 div{
     font-family: 'Italiana', serif;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 904297359aec6aa3a7928df8dad35947e4baf341
+
+
+
+

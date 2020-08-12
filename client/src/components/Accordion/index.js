@@ -7,10 +7,12 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { cyan } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    // color: 'cyan',
   },
 });
 
@@ -31,7 +33,7 @@ export default function ActionsInAccordionSummary() {
             onClick={(event) => event.stopPropagation()}
             onFocus={(event) => event.stopPropagation()}
             control={<Checkbox />}
-            label="I acknowledge that I should stop the click event propagation"
+            label="Read the Terms & Conditions placing the Order Online"
           />
         </AccordionSummary>
         <AccordionDetails>
@@ -53,7 +55,7 @@ export default function ActionsInAccordionSummary() {
             onClick={(event) => event.stopPropagation()}
             onFocus={(event) => event.stopPropagation()}
             control={<Checkbox />}
-            label="I acknowledge that I should stop the focus event propagation"
+            label="Read COVID 19 precautionary steps"
           />
         </AccordionSummary>
         <AccordionDetails>
@@ -75,7 +77,7 @@ export default function ActionsInAccordionSummary() {
             onClick={(event) => event.stopPropagation()}
             onFocus={(event) => event.stopPropagation()}
             control={<Checkbox />}
-            label="I acknowledge that I should provide an aria-label on each action that I add"
+            label="Read Q & A's"
           />
         </AccordionSummary>
         <AccordionDetails>
