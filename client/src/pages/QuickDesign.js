@@ -1,9 +1,11 @@
 import React from "react";
 import "./QuickDesign.css";
 import { Card } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 // import Nav from "../components/UserNav";
 
 const QuickDesign = () => {
+  let history = useHistory();
   const cardInfo = [
     {
       image: "https://images.creativemarket.com/0.1.0/ps/4005388/580/387/m1/fpnw/wm0/01_frontcover-.jpg?1518611018&s=a2954e5d75bb23ad2ac167bd03284b72",
@@ -41,7 +43,7 @@ const QuickDesign = () => {
 
   const renderCard = (card, index) => {
     return (
-      <Card style={{ width: "18rem" }} key={index} className="box">
+      <Card onClick={()=>{history.push("/userForm")}} style={{ width: "18rem" }} key={index} className="box">
         <Card.Img variant="top" src="holder.js/100px180" src={card.image} />
         <Card.Body>
           <Card.Title>{card.title}</Card.Title>

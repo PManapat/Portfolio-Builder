@@ -82,13 +82,15 @@ export class NavBarDetails extends Component {
             />
         
            <br/>
-     
+           <div className="row" style={{marginLeft: 'auto', marginRight: 'auto'}}>
             <Button
               color="primary"
               variant="contained"
               size="small"
               onClick={this.continue}
             >Continue</Button>
+            </div>
+            <br/>
             </Dialog>
           </>
         </MuiThemeProvider>

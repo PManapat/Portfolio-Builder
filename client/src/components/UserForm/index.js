@@ -158,7 +158,7 @@ export class UserForm extends Component {
         );
       case 5:
         return <Success 
-        nextStep={this.props.history.push(`${firstName}${lastName}`)}
+        nextStep={this.props.history.push(`${firstName}${lastName}2`)}
         values={values}
         />;
       default:
