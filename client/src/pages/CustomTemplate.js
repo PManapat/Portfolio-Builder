@@ -27,13 +27,14 @@ function getPageTemplate(){
     "import Footer from \"../components/Footer\"; \n" + 
     "import BtnClear from \"../components/BtnClear\"; \n" +
     "function CustomPage() \n{" +
-        "return ( \n" +
-            "       <div>\n" +
+        "return ( \n" + '<div>\n' +
+            "       <div id='tempBorder'>\n" +
             "Insert_Custom_Page_Here\n" +
             `<div>\n
-            <BtnClear />\n
         </div>\n` +
             "       </div>\n" +
+        '<BtnClear />\n'
+        + '</div>' +
         ")\n" +
     "}\n" + 
     "export default CustomPage;";

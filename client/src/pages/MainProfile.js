@@ -3,7 +3,7 @@ import "./MainProfile.css";
 import { home } from "../utils/api.js";
 import Dashboard from '../components/Dashboard';
 // import { useHistory } from "react-router-dom";
-// import { Button } from 'react-bootstrap';
+import Button from '../components/Button';
 // import Nav from '../components/UserNav';
 
 
@@ -38,7 +38,7 @@ export default () => {
                     <div className="col-sm-8 mx-auto">
                         <h2 className="text-center">Hello {firstName.firstName} {" "}{lastName.lastName}</h2>
                         <h5>This page is limited. We will be updating features.</h5>
-                        {/* <Button onClick={handleClick} name="Check your Portfolio!">Check portfolio</Button> */}
+                        <Button className="btn btn-info" name="Check your portfolio" onClick="">Check portfolio</Button>
                     </div>
                 </div>
                 <Dashboard />
