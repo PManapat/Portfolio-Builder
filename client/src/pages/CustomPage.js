@@ -16,24 +16,12 @@ import TransferList from "../components/TransferList";
 import Table from "../components/Table"; 
 import Button from "../components/Button"; 
 import Footer from "../components/Footer"; 
+import BtnClear from "../components/BtnClear"; 
 function CustomPage() 
 {return ( 
        <div>
-<div className="img11">
-<JumbotronP />
-</div>
-<div className="MyCard50">
-<Card />
-</div>
-<div className="MyCard50">
-<Card />
-</div>
-<div className="MyCom90 mx-y">
-<CarouselP />
-</div>
 
        </div>
 )
 }
-
 export default CustomPage;
