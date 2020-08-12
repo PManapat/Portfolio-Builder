@@ -1,6 +1,7 @@
 import React from 'react';
 import { register } from "../../utils/api.js";
 import { Link } from 'react-router-dom';
+import Nav from "../Navbar";
 
 class Register extends React.Component{
   constructor(props){
@@ -92,6 +93,7 @@ class Register extends React.Component{
   render(){
   return(
     <div>
+    <Nav />
       <div className="container">
         <div className="card card-login mx-auto mt-5">
           <div className="card-header text-primary text-center">Register here</div>

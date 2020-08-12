@@ -4,7 +4,8 @@ import { home } from "../utils/api.js";
 import Dashboard from '../components/Dashboard';
 // import { useHistory } from "react-router-dom";
 import Button from '../components/Button';
-// import Nav from '../components/UserNav';
+import Nav from "../components/Navbar";
+import UserNav from "../components/UserNav";
 
 
 export default () => {
@@ -12,6 +13,8 @@ export default () => {
     const[firstName, setFirstName]=useState("");
     const[lastName, setLastName]=useState("");
     // const[portfolio, setPortfolio]=useState("/template");
+    const[navbar, SetNavbar]=useState(Nav);
+    const userInfo = window.localStorage.user;
 
     useEffect(() => {
         home()
@@ -25,6 +28,14 @@ export default () => {
         }).catch(err => console.log(err));
     },[])
 
+    useEffect(() => {
+        // console.log(res);
+        if(userInfo != undefined){
+          SetNavbar(UserNav);
+        }
+        else return;
+      },[]);
+
     // function handleClick(){
     //     console.log(`${firstName}${lastName}`)
     //     return (history.push(`${firstName}${lastName}`))
@@ -32,7 +43,7 @@ export default () => {
 
     return (
         <div>
-            {/* <Nav /> */}
+            {navbar}
             <div className="container" id="container">
                 <div className="jumbotron mt-5">
                     <div className="col-sm-8 mx-auto">

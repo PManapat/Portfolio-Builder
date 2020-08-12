@@ -3,11 +3,15 @@ import "./QuickDesign.css";
 import { Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { home } from "../utils/api";
+import Nav from "../components/Navbar";
+import UserNav from "../components/UserNav";
 
 const QuickDesign = (props) => {
   let history = useHistory();
   const[portfolio, setPortfolio]=useState("/template");  
   const[portfolioTwo, setPortfolioTwo]=useState("/template");
+  const[navbar, SetNavbar]=useState(Nav);
+  const userInfo = window.localStorage.user;
 
   const cardInfo = [
     {
@@ -55,6 +59,14 @@ const QuickDesign = (props) => {
     .catch(err => console.log(err));
 },[]);
 
+  useEffect(() => {
+    // console.log(res);
+    if(userInfo != undefined){
+      SetNavbar(UserNav);
+    }
+    else return;
+  },[]);
+
   const renderCard = (card, index) => {
 
     function handleClick(){
@@ -80,7 +92,7 @@ const QuickDesign = (props) => {
 
   return (
     <div>
-        {/* <Nav /> */}
+        {navbar}
       <div className="grid">
         {cardInfo.map(renderCard)}
       </div>
