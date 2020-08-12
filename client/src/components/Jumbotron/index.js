@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 function Jumbrotron (props){
   let history = useHistory();
 // console.log(props);
+
 	function handleClick() {
 		return (history.push("/login"))
   }
