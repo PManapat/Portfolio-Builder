@@ -11,15 +11,20 @@ function getPageTemplate(){
     "import Card from \"../components/Card\"; \n" +
     "import Lovecard from \"../components/Lovecard\";\n" +
     "import Mediacard from \"../components/Mediacard\";\n" +
-    // "import Navbar from \"../components/Navbar\"; \n" +
-    // "import Colorpicker from \"../components/Colorpicker\"; \n" +
+    "import Navbar from \"../components/Navbar\"; \n" +
+    "import Colorpicker from \"../components/Colorpicker\"; \n" +
     "import Carousel from \"../components/Carousel\"; \n" +
     "import CarouselP from \"../components/CarouselP\"; \n" +
     "import CarouselR from \"../components/CarouselR\"; \n" +
     "import Jumbotron from \"../components/Jumbotron\"; \n" +
-    // "import JumbotronP from \"../components/JumbotronP\"; \n" +
-    // "import JumbotronR from \"../components/JumbotronR\"; \n" +
-    // "import Footer from \"../components/Footer\"; \n" +
+    "import JumbotronP from \"../components/JumbotronP\"; \n" +
+    "import JumbotronR from \"../components/JumbotronR\"; \n" +
+    "import Accordion from \"../components/Accordion\"; \n" +
+    "import Stepper from \"../components/Stepper\"; \n" +
+    "import TransferList from \"../components/TransferList\"; \n" +
+    "import Table from \"../components/Table\"; \n" +
+    "import Button from \"../components/Button\"; \n" +
+    "import Footer from \"../components/Footer\"; \n" +
     "function CustomPage() \n{" +
         "return ( \n" +
             "       <div>\n" +
@@ -51,20 +56,19 @@ function generatePage(){
         "</div>\n";
 
     }
-    // if(document.getElementById("jumbotronp").checked){
+    if(document.getElementById("jumbotronp").checked){
 
-    //     customPage = customPage + 
-    //     "<div className=\"img11\">\n" +
-    //         "<JumbotronP />\n" +
-    //     "</div>\n";
-    // }
-    // if(document.getElementById("jumbotronr").checked){
-
-    //     customPage = customPage + 
-    //     "<div className=\"img11\">\n" +
-    //         "<JumbotronR />\n" +
-    //     "</div>\n";
-    // }
+        customPage = customPage + 
+        "<div className=\"img11\">\n" +
+            "<JumbotronP />\n" +
+        "</div>\n";
+    }
+    if(document.getElementById("jumbotronr").checked){
+        customPage = customPage + 
+        "<div className=\"img11\">\n" +
+            "<JumbotronR />\n" +
+        "</div>\n";
+    }
     if(document.getElementById("card").checked){
 
         customPage = customPage + 
@@ -75,6 +79,20 @@ function generatePage(){
             "<Card />\n" +
         "</div>\n";
     }
+    if(document.getElementById("lovecard").checked){
+
+        customPage = customPage + 
+        "<div className=\"Classes.root mx-y\">\n" +
+            "<Lovecard />\n" +
+        "</div>\n";
+    }
+    if(document.getElementById("mediacard").checked){
+
+        customPage = customPage + 
+        "<div className=\"Classes.root mx-y\">\n" +
+            "<Mediacard />\n" +
+        "</div>\n";
+    }
     if(document.getElementById("Colorpicker").checked){
 
         customPage = customPage + 
@@ -83,18 +101,18 @@ function generatePage(){
             "<Colorpicker />\n" +
         "</div>\n";
     }
-    if(document.getElementById("lovecard").checked){
+    if(document.getElementById("accordion").checked){
 
         customPage = customPage + 
-        "<div className=\"Classes.root\">\n" +
-            "<Lovecard />\n" +
+        "<div className=\"MyCom90 mx-y\">\n" +
+            "<Accordion />\n" +
         "</div>\n";
     }
-    if(document.getElementById("mediacard").checked){
+    if(document.getElementById("stepper").checked){
 
         customPage = customPage + 
-        "<div className=\"MyCard50\">\n" +
-            "<Mediacard />\n" +
+        "<div className=\"MyCom90\">\n" +
+            "<Stepper />\n" +
         "</div>\n";
     }
     if(document.getElementById("carousel").checked){
@@ -107,15 +125,36 @@ function generatePage(){
     if(document.getElementById("carouselp").checked){
 
         customPage = customPage + 
-        "<div className=\"MyCom90\">\n" +
+        "<div className=\"MyCom90 mx-y\">\n" +
             "<CarouselP />\n" +
         "</div>\n";
     }
     if(document.getElementById("carouselr").checked){
 
         customPage = customPage + 
-        "<div className=\"MyCom90\">\n" +
+        "<div className=\"MyCom90 mx-y\">\n" +
             "<CarouselR />\n" +
+        "</div>\n";
+    }
+    if(document.getElementById("table").checked){
+
+        customPage = customPage + 
+        "<div className=\"MyCom90 mx-y\">\n" +
+            "<Table />\n" +
+        "</div>\n";
+    }
+    if(document.getElementById("transferlist").checked){
+
+        customPage = customPage + 
+        "<div className=\"MyCom90\">\n" +
+            "<TransferList />\n" +
+        "</div>\n";
+    }
+    if(document.getElementById("button").checked){
+
+        customPage = customPage + 
+        "<div className=\"MyCom90\">\n" +
+            "<Button />\n" +
         "</div>\n";
     }
     if(document.getElementById("footer").checked){
@@ -161,18 +200,15 @@ function CustomTemplate() {
                     <input type="checkbox" id="jumbotron" name="jumbotron" value="Jumbotron" />
                     <label for="jumbotron">Jumbotron</label>
                 </li>
-                {/* <li>                
+                <li>                
                     <input type="checkbox" id="jumbotronp" name="jumbotronp" value="Jumbotronp" />
                     <label for="jumbotronp">Jumbotron (Photography)</label>
                 </li>
                 <li>                
                     <input type="checkbox" id="jumbotronr" name="jumbotronr" value="Jumbotronr" />
                     <label for="jumbotronr">Jumbotron (Restaurant)</label>
-                </li> */}
-                <li>
-                    <input type="checkbox" id="accordion" name="accordion" value="accordion" />
-                    <label for="accordion">Accordion</label>
                 </li>
+                
                 <li>
                     <input type="checkbox" id="carousel" name="carousel" value="accordion" />
                     <label for="carousel"> Carousel</label>
@@ -189,12 +225,12 @@ function CustomTemplate() {
                     </ul>
                 </li>
                 <li>
-                    <input type="checkbox" id="appbar" name="appbar" value="appbar" />
-                    <label for="appbar">Appbar</label>
+                    <input type="checkbox" id="accordion" name="accordion" value="accordion" />
+                    <label for="accordion">Accordion</label>
                 </li>
                 <li>
                     <input type="checkbox" id="stepper" name="stepper" value="stepper" />
-                    <label for="stepper">Navbar</label>
+                    <label for="stepper">Stepper</label>
                 </li>
                 <li>
                     <input type="checkbox" id="table" name="table" value="table" />
@@ -202,11 +238,15 @@ function CustomTemplate() {
                 </li>
                 <li>
                     <input type="checkbox" id="transferlist" name="transferlist" value="transferlist" />
-                    <label for="transferlist"> Table</label>
+                    <label for="transferlist"> TransferList</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="button" name="button" value="button" />
+                    <label for="button"> Button</label>
                 </li>
                 <li>
                     <input type="checkbox" id="Colorpicker" name="Color-Picker" value="Color Picker" />
-                    <label for="Color-Picker"> Color Picker</label>
+                    <label for="Color-Picker">Color Picker</label>
                 </li>
                 <li>                
                     {/* <input type="checkbox" id="card" name="card" value="Card" /> */}

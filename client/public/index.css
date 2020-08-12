@@ -4,6 +4,10 @@
     margin:auto;
     width:98%;
 }
+.mx-y{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 .MyCard50{
     width: 40%; float: left; margin: 5%; height:300px;
     border: 1px solid #999;
@@ -31,11 +35,12 @@
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
     transition: transform .2s; /* Animation */
 }
+
+/* jumbotron */
 .MyCard:hover{
     transform: scale(1.20);
 
 }
-
 
 div{
     font-family: 'Italiana', serif;
