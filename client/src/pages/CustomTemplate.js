@@ -24,11 +24,15 @@ function getPageTemplate(){
     "import TransferList from \"../components/TransferList\"; \n" +
     "import Table from \"../components/Table\"; \n" +
     "import Button from \"../components/Button\"; \n" +
-    "import Footer from \"../components/Footer\"; \n" +
+    "import Footer from \"../components/Footer\"; \n" + 
+    "import BtnClear from \"../components/BtnClear\"; \n" +
     "function CustomPage() \n{" +
         "return ( \n" +
             "       <div>\n" +
             "Insert_Custom_Page_Here\n" +
+            `<div>\n
+            <BtnClear />\n
+        </div>\n` +
             "       </div>\n" +
         ")\n" +
     "}\n" + 
