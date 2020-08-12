@@ -1,9 +1,16 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./QuickDesign.css";
 import { Card } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import { home } from "../utils/api";
 // import Nav from "../components/UserNav";
 
 const QuickDesign = () => {
+  let history = useHistory();
+  const[portfolio, setPortfolio]=useState("/template");  
+  const[portfolioTwo, setPortfolioTwo]=useState("/template");
+  // const[firstName,setFirstName]=useState("");
+  // const[lastName,setLastName]=useState("");
   const cardInfo = [
     {
       image: "https://images.creativemarket.com/0.1.0/ps/4005388/580/387/m1/fpnw/wm0/01_frontcover-.jpg?1518611018&s=a2954e5d75bb23ad2ac167bd03284b72",
@@ -39,9 +46,33 @@ const QuickDesign = () => {
     },
   ];
 
+  useEffect(() => {
+    home()
+    .then(res => {
+        // console.log(res);
+          const { firstName, lastName } = res;
+          setPortfolio(`/${firstName}${lastName}`);
+          setPortfolioTwo(`/${firstName}${lastName}2`);
+    })
+    .catch(err => console.log(err));
+},[]);
+
   const renderCard = (card, index) => {
+
+    function handleClick(){
+      // console.log("cardinfo", cardInfo[1].title);
+      // console.log("portfolios", portfolio, portfolioTwo);
+      if(cardInfo[0].title === "Template 1"){
+        history.push(portfolio);
+        console.log("What is portfolio here", portfolio)
+      } else {
+        history.push(portfolioTwo)
+        console.log("What is portfolio2", portfolioTwo)
+      }
+    }
+
     return (
-      <Card style={{ width: "18rem" }} key={index} className="box">
+      <Card onClick={handleClick} style={{ width: "18rem" }} key={index} className="box">
         <Card.Img variant="top" src="holder.js/100px180" src={card.image} />
         <Card.Body>
           <Card.Title>{card.title}</Card.Title>

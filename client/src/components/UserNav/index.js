@@ -13,7 +13,7 @@ export default () => {
         </Nav>
         <Nav>
           <Nav.Link href="/mainprofile" activeclassname="active">Profile</Nav.Link>
-          <Nav.Link href="/" activeClassName="active" onClick={logout}> Log Out</Nav.Link>
+          <Nav.Link href="/" activeclassname="active" onClick={logout}> Log Out</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
