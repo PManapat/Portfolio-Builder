@@ -19,6 +19,12 @@ import Footer from "../components/Footer";
 function CustomPage() 
 {return ( 
        <div>
+<div>
+<Navbar />
+</div>
+<div className="img11">
+<Jumbotron />
+</div>
 <div className="img11">
 <JumbotronP />
 </div>
@@ -28,12 +34,35 @@ function CustomPage()
 <div className="MyCard50">
 <Card />
 </div>
+<div className="MyCom90">
+<Colorpicker />
+</div>
+<div className="MyCom90 mx-y">
+<Accordion />
+</div>
+<div className="MyCom90">
+<Stepper />
+</div>
+<div className="MyCom90">
+<Carousel />
+</div>
 <div className="MyCom90 mx-y">
 <CarouselP />
+</div>
+<div className="MyCom90 mx-y">
+<Table />
+</div>
+<div className="MyCom90">
+<TransferList />
+</div>
+<div className="MyCom90">
+<Button />
+</div>
+<div>
+<Footer />
 </div>
 
        </div>
 )
 }
-
 export default CustomPage;
