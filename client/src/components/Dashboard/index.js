@@ -17,7 +17,7 @@ function Dashboard() {
         <h1> Select the level of portfolio customization below </h1>
       </div>
       <div className="MyCard50 img12">
-  <Card onClick={handleClickOne}>Quick Design</Card>
+  <Card onClick={handleClickOne}>Template Design</Card>
       </div>
       <div className="MyCard50 img11">
         <Card onClick={handleClickTwo}>Custom Design</Card>
@@ -26,5 +26,6 @@ function Dashboard() {
     </div>
   );
 }
+
 
 export default Dashboard;
