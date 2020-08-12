@@ -1,7 +1,7 @@
 import React from 'react' ;
 // import "./style.css";
 import Button from '../Button';
-// import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 
@@ -14,7 +14,7 @@ function JumbotronR (){
   }
   
     return(
-      <JumbotronR>
+      <Jumbotron>
           <h1> Welcome to Punjab Grill!!</h1>
           <p>
           Punjab Grill welcomes its guests to experience the region’s legendary and unrivaled hospitality, offered generously to every visitor, and borne out of a love of bringing people together to enjoy time-honored traditions of refined diversion. 
@@ -29,7 +29,7 @@ function JumbotronR (){
     <Button onClick={handleClick} className="btn btn-info btn-lg" name="Get Started"></Button>
         </p>
 
-      </JumbotronR>
+      </Jumbotron>
     )
 }
 
