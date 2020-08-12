@@ -10,6 +10,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
+import { lightBlue } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(0.5, 0),
   },
+  Color:lightBlue,
 }));
 
 function not(a, b) {
@@ -44,8 +46,8 @@ function union(a, b) {
 export default function TransferList() {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([]);
-  const [left, setLeft] = React.useState([0, 1, 2, 3]);
-  const [right, setRight] = React.useState([4, 5, 6, 7]);
+  const [left, setLeft] = React.useState(['Paneer Tikka Masala', 'Tandoori Naan', "Chicken Tandoori", 'Butter Naan']);
+  const [right, setRight] = React.useState(["Kulfi", "Shakes", "Coke", "Pepsi"]);
 
   const leftChecked = intersection(checked, left);
   const rightChecked = intersection(checked, right);
