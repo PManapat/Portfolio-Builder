@@ -57,7 +57,6 @@ useEffect(() => {
           </Switch>
           <Footer />
         </Router>
-      
   </div>
   );
 };
