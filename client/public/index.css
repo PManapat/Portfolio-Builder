@@ -4,6 +4,10 @@
     margin:auto;
     width:98%;
 }
+.mx-y{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 .MyCard50{
     width: 40%; float: left; margin: 5%; height:300px;
     border: 1px solid #999;
