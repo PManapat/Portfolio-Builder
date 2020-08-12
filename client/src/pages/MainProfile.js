@@ -3,7 +3,7 @@ import "./MainProfile.css";
 import { home } from "../utils/api.js";
 import Dashboard from '../components/Dashboard';
 // import { useHistory } from "react-router-dom";
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 // import Nav from '../components/UserNav';
 
 
@@ -16,7 +16,7 @@ export default () => {
     useEffect(() => {
         home()
         .then(res => {
-            console.log(res);
+            // console.log(res);
             const{firstName, lastName}=res;
             // console.log({firstName});
             setFirstName({firstName});

@@ -11,8 +11,8 @@ export default () => {
         <Nav className="mr-auto">
         </Nav>
         <Nav>
-          <Nav.Link href="/login" activeClassName="active">Log In</Nav.Link>
-          <Nav.Link href="/register" activeClassName="active" style={{backgroundColor: '#fff', color: 'black'}}>Sign Up</Nav.Link>
+          <Nav.Link href="/login" activeclassname="active">Log In</Nav.Link>
+          <Nav.Link href="/register" activeclassname="active" style={{backgroundColor: '#fff', color: 'black'}}>Sign Up</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

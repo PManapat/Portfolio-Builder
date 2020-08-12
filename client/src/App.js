@@ -32,7 +32,7 @@ useEffect(() => {
           setPortfolio(`/${firstName}${lastName}`);
           setPortfolioTwo(`/${firstName}${lastName}2`);
           SetNavbar(UserNav);
-          console.log("window object", window.location.reload);
+          // console.log("window object", window.location.reload);
         }
         else return;
     })
