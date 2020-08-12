@@ -47,7 +47,7 @@ export default () => {
       .catch((err) => console.log(err));
   }, []);
     return (
-<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+<Navbar style={{borderTopLeftRadius: '20px', borderTopRightRadius: '20px'}} collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Navbar.Brand href="#home">{navText.navText}</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
