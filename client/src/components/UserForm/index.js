@@ -158,7 +158,7 @@ export class UserForm extends Component {
         );
       case 5:
         return <Success 
-        nextStep={this.props.history.push(`/userform`)}
+        nextStep={this.props.history.push(`/quickdesign`)}
         values={values}
         />;
       default:
