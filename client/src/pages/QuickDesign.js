@@ -3,14 +3,12 @@ import "./QuickDesign.css";
 import { Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { home } from "../utils/api";
-// import Nav from "../components/UserNav";
 
-const QuickDesign = () => {
+const QuickDesign = (props) => {
   let history = useHistory();
   const[portfolio, setPortfolio]=useState("/template");  
   const[portfolioTwo, setPortfolioTwo]=useState("/template");
-  // const[firstName,setFirstName]=useState("");
-  // const[lastName,setLastName]=useState("");
+
   const cardInfo = [
     {
       image: "https://images.creativemarket.com/0.1.0/ps/4005388/580/387/m1/fpnw/wm0/01_frontcover-.jpg?1518611018&s=a2954e5d75bb23ad2ac167bd03284b72",
@@ -60,14 +58,12 @@ const QuickDesign = () => {
   const renderCard = (card, index) => {
 
     function handleClick(){
-      // console.log("cardinfo", cardInfo[1].title);
-      // console.log("portfolios", portfolio, portfolioTwo);
-      if(cardInfo[0].title === "Template 1"){
+      if(card.title === "Template 1"){
         history.push(portfolio);
-        console.log("What is portfolio here", portfolio)
+      } else if (card.title === "Template 2"){
+        history.push(portfolioTwo);
       } else {
-        history.push(portfolioTwo)
-        console.log("What is portfolio2", portfolioTwo)
+        history.push('/template');
       }
     }
 

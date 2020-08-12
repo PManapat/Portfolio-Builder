@@ -46,7 +46,7 @@ export const home = (user) => {
       }
     })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       return response.data;
     })
     .catch((err) => {
@@ -64,7 +64,7 @@ export const mainProfile = (user) => {
       }
     })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       return response.data;
     })
     .catch((err) => {

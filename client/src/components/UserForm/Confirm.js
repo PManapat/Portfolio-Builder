@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
-import Nav from "../UserNav";
-import { cyan, grey } from "@material-ui/core/colors";
+// import Nav from "../UserNav";
+import { grey } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
   palette: {
@@ -104,7 +104,7 @@ export class Confirm extends Component {
       // if (res) {
       //   this.props.history.push(`/mainprofile`)
       // }
-      console.log(res);
+      // console.log(res);
     });
 
     this.props.nextStep();

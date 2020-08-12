@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
-import Nav from "../UserNav";
+// import Nav from "../UserNav";
 import MenuItem from "@material-ui/core/MenuItem";
-import { cyan, grey } from "@material-ui/core/colors";
+import { grey } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
   palette: {

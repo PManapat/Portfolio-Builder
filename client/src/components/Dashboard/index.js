@@ -22,7 +22,7 @@ function Dashboard() {
       <div className="MyCard50 img11">
         <Card onClick={handleClickTwo}>Custom Design</Card>
       </div>
-      <div class="clearfix"></div>
+      <div className="clearfix"></div>
     </div>
   );
 }

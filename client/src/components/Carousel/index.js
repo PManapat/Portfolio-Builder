@@ -14,15 +14,15 @@ export default function () {
                 <div>
                     <Carousel>
                         <Carousel.Item>
-                            <img style={{ "height": "500px" }}
+                            <img alt="" style={{ "height": "500px" }}
                                 className="d-block w-100"
                                 src={'assets/img/img1.jpg'} />
                             <Carousel.Caption>
-                                <h3></h3>
+                                <h3>Sample Customer Portfolio</h3>
                             </Carousel.Caption>
                         </Carousel.Item >
                         <Carousel.Item >
-                            <img style={{ "height": "500px" }}
+                            <img alt="" style={{ "height": "500px" }}
                                 className="d-block w-100"
                                 src={'assets/img/img2.jpg'} />
                             <Carousel.Caption>
@@ -30,7 +30,7 @@ export default function () {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item >
-                            <img style={{ "height": "500px" }}
+                            <img alt="" style={{ "height": "500px" }}
                                 className="d-block w-100"
                                 src={'assets/img/img3.jpg'} />
                             <Carousel.Caption>
@@ -38,7 +38,7 @@ export default function () {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item >
-                            <img style={{ "height": "500px" }}
+                            <img alt="" style={{ "height": "500px" }}
                                 className="d-block w-100"
                                 src={'assets/img/img4.jpeg'} />
                             <Carousel.Caption>
@@ -46,7 +46,7 @@ export default function () {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item >
-                            <img style={{ "height": "500px" }}
+                            <img alt="" style={{ "height": "500px" }}
                                 className="d-block w-100"
                                 src={'assets/img/img5.jpeg'} />
                             <Carousel.Caption>
@@ -54,7 +54,7 @@ export default function () {
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item >
-                            <img style={{ "height": "500px" }}
+                            <img alt="" style={{ "height": "500px" }}
                                 className="d-block w-100"
                                 src={'assets/img/img6.jpeg'} />
                             <Carousel.Caption>
