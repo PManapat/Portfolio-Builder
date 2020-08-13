@@ -1,4 +1,4 @@
 {
-    "MONGO_URL": "mongodb+srv://suraj1:suraj1@userdata.sgs1u.mongodb.net/user?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://suraj1:suraj1@userdata.sgs1u.mongodb.net/user?retryWrites=true&w=majority",
     "jwtSecret": "mysecrettoken"
 }
