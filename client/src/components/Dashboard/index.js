@@ -6,10 +6,10 @@ function Dashboard() {
   let history = useHistory();
 
   function handleClickOne() {
-    return (history.push("/quickdesign"))
+    return (history.push("/userform"))
   };
   function handleClickTwo() {
-    return (history.push("/userForm"))
+    return (history.push("/customtemplate"))
   };
   return (
     <div>
@@ -17,14 +17,15 @@ function Dashboard() {
         <h1> Select the level of portfolio customization below </h1>
       </div>
       <div className="MyCard50 img12">
-        <Card onClick={handleClickOne} />
+  <Card onClick={handleClickOne}>Template Design</Card>
       </div>
       <div className="MyCard50 img11">
-        <Card onClick={handleClickTwo} />
+        <Card onClick={handleClickTwo}>Custom Design</Card>
       </div>
-      <div class="clearfix"></div>
+      <div className="clearfix"></div>
     </div>
   );
 }
+
 
 export default Dashboard;

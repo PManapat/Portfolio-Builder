@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
-import Nav from "../UserNav";
-import { cyan, grey } from "@material-ui/core/colors";
+// import Nav from "../UserNav";
+import { grey } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
   palette: {
@@ -144,8 +144,8 @@ export class ProjectDetails extends Component {
 
             <br />
 
-            <div className="row">
-              <div className="col-9">
+            <div className="row" style={{marginLeft: 'auto', marginRight: 'auto'}}>
+              <div>
                 <Button
                   color="secondary"
                   variant="contained"
@@ -154,7 +154,7 @@ export class ProjectDetails extends Component {
                   Back
                 </Button>
               </div>
-              <div className="col-2">
+              <div style={{marginLeft: '10px', marginRight: '10px'}}>
                 <Button
                   color="primary"
                   variant="contained"
@@ -164,6 +164,7 @@ export class ProjectDetails extends Component {
                 </Button>
               </div>
             </div>
+            <br />
           </Dialog>
         </>
       </MuiThemeProvider>

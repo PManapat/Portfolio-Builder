@@ -9,8 +9,8 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import MenuItem from "@material-ui/core/MenuItem";
 import Icon from "@material-ui/core/Icon";
-import Nav from "../UserNav";
-import { cyan, grey } from "@material-ui/core/colors"
+// import Nav from "../UserNav";
+import { grey } from "@material-ui/core/colors"
 
 const theme = createMuiTheme({
   palette: {
@@ -82,13 +82,15 @@ export class NavBarDetails extends Component {
             />
         
            <br/>
-     
+           <div className="row" style={{marginLeft: 'auto', marginRight: 'auto'}}>
             <Button
               color="primary"
               variant="contained"
               size="small"
               onClick={this.continue}
             >Continue</Button>
+            </div>
+            <br/>
             </Dialog>
           </>
         </MuiThemeProvider>

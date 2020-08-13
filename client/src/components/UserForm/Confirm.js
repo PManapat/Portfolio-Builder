@@ -12,8 +12,9 @@ import { Link } from "react-router-dom";
 import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
-import Nav from "../UserNav";
-import { cyan, grey } from "@material-ui/core/colors";
+// import Nav from "../UserNav";
+import { grey } from "@material-ui/core/colors";
+import { withStyles } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   palette: {
@@ -104,7 +105,7 @@ export class Confirm extends Component {
       // if (res) {
       //   this.props.history.push(`/mainprofile`)
       // }
-      console.log(res);
+      // console.log(res);
     });
 
     this.props.nextStep();
@@ -141,6 +142,23 @@ export class Confirm extends Component {
         footer,
       },
     } = this.props;
+
+    const StyledButton = withStyles({
+      root: {
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        borderRadius: 3,
+        border: 0,
+        color: 'white',
+        height: 36,
+        size: 'large',
+        padding: '0 30px',
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+      },
+      label: {
+        textTransform: 'capitalize',
+      },
+    })(Button);
+
     return (
       <MuiThemeProvider theme={theme}>
         <>
@@ -261,8 +279,8 @@ export class Confirm extends Component {
             </List>
             <br />
 
-            <div className="row">
-              <div className="col-9">
+            <div className="row" style={{marginLeft: 'auto', marginRight: 'auto'}}>
+              <div>
                 <Button
                   color="secondary"
                   variant="contained"
@@ -271,16 +289,11 @@ export class Confirm extends Component {
                   Back
                 </Button>
               </div>
-              <div className="col-2">
-                <Button
-                  color="primary"
-                  variant="contained"
-                  onClick={this.continue}
-                >
-                  Continue
-                </Button>
+              <div style={{marginLeft: '10px', marginRight: '10px'}}>
+              <StyledButton variant="contained" onClick={this.continue}>CONFIRM</StyledButton>
               </div>
             </div>
+          <br />
           </Dialog>
         </>
       </MuiThemeProvider>

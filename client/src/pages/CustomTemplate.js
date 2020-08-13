@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {generatepage} from "../../src/utils/api.js";
 // import Card from "../components/Card";
 import styles from "./CustomTemplate.css";
 import { red } from "@material-ui/core/colors";
 import { rgbToHex } from "@material-ui/core";
+import Nav from "../components/Navbar";
+import UserNav from "../components/UserNav";
 
 function getPageTemplate(){
 
-    var page =  "import React from \"react\"; \n" +
+    var page =  "import React, { useState, useEffect } from \"react\"; \n" +
     "import Card from \"../components/Card\"; \n" +
     "import Lovecard from \"../components/Lovecard\";\n" +
     "import Mediacard from \"../components/Mediacard\";\n" +
@@ -24,12 +26,30 @@ function getPageTemplate(){
     "import TransferList from \"../components/TransferList\"; \n" +
     "import Table from \"../components/Table\"; \n" +
     "import Button from \"../components/Button\"; \n" +
-    "import Footer from \"../components/Footer\"; \n" +
+    "import Footer from \"../components/Footer\"; \n" + 
+    "import BtnClear from \"../components/BtnClear\"; \n" +
+    "import Nav from \"../components/Navbar\"; \n" +
+    "import UserNav from \"../components/UserNav\"; \n" +
     "function CustomPage() \n{" +
-        "return ( \n" +
-            "       <div>\n" +
+    "const[navbar, SetNavbar]=useState(Nav); \n" +
+    "const userInfo = window.localStorage.user; \n" +
+  
+    "useEffect(() => { \n" +
+          "// console.log(res); \n" +
+          "if(userInfo != undefined){ \n" +
+            "SetNavbar(UserNav); \n" +
+          "} \n" +
+          "else return; \n" +
+        "},[]); \n" +
+  
+        "return ( \n" + '<div>\n {navbar}' +
+            "       <div id='tempBorder'>\n" +
             "Insert_Custom_Page_Here\n" +
+            `<div>\n
+        </div>\n` +
             "       </div>\n" +
+        '<BtnClear />\n'
+        + '</div>' +
         ")\n" +
     "}\n" + 
     "export default CustomPage;";
@@ -185,8 +205,19 @@ function generatePage(){
 }
 
 function CustomTemplate() {
+    const[navbar, SetNavbar]=useState(Nav);
+    const userInfo = window.localStorage.user;
+
+    useEffect(() => {
+        // console.log(res);
+        if(userInfo != undefined){
+          SetNavbar(UserNav);
+        }
+        else return;
+      },[]);
   return (
     <div>
+        {navbar}
         <div className="PageTitle">
             <h1>Select components you want in your page? </h1>
         </div>

@@ -4,7 +4,7 @@ const config = require('config');
 
 const auth = require('../../middleware/auth');
 //importing module
-const Profile = require("../../models/Profile.js")
+const Profile = require("../../models/profile.js")
 const User = require("../../models/Users.js")
 //  router.get("/me",(req,res)=> res.send("i am hit"));
 

@@ -1,9 +1,18 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./QuickDesign.css";
 import { Card } from "react-bootstrap";
-// import Nav from "../components/UserNav";
+import { useHistory } from "react-router-dom";
+import { home } from "../utils/api";
+import Nav from "../components/Navbar";
+import UserNav from "../components/UserNav";
 
-const QuickDesign = () => {
+const QuickDesign = (props) => {
+  let history = useHistory();
+  const[portfolio, setPortfolio]=useState("/template");  
+  const[portfolioTwo, setPortfolioTwo]=useState("/template");
+  const[navbar, SetNavbar]=useState(Nav);
+  const userInfo = window.localStorage.user;
+
   const cardInfo = [
     {
       image: "https://images.creativemarket.com/0.1.0/ps/4005388/580/387/m1/fpnw/wm0/01_frontcover-.jpg?1518611018&s=a2954e5d75bb23ad2ac167bd03284b72",
@@ -39,9 +48,39 @@ const QuickDesign = () => {
     },
   ];
 
+  useEffect(() => {
+    home()
+    .then(res => {
+        // console.log(res);
+          const { firstName, lastName } = res;
+          setPortfolio(`/${firstName}${lastName}`);
+          setPortfolioTwo(`/${firstName}${lastName}2`);
+    })
+    .catch(err => console.log(err));
+},[]);
+
+  useEffect(() => {
+    // console.log(res);
+    if(userInfo != undefined){
+      SetNavbar(UserNav);
+    }
+    else return;
+  },[]);
+
   const renderCard = (card, index) => {
+
+    function handleClick(){
+      if(card.title === "Template 1"){
+        history.push(portfolio);
+      } else if (card.title === "Template 2"){
+        history.push(portfolioTwo);
+      } else {
+        history.push('/template');
+      }
+    }
+
     return (
-      <Card style={{ width: "18rem" }} key={index} className="box">
+      <Card onClick={handleClick} style={{ width: "18rem" }} key={index} className="box">
         <Card.Img variant="top" src="holder.js/100px180" src={card.image} />
         <Card.Body>
           <Card.Title>{card.title}</Card.Title>
@@ -53,7 +92,7 @@ const QuickDesign = () => {
 
   return (
     <div>
-        {/* <Nav /> */}
+        {navbar}
       <div className="grid">
         {cardInfo.map(renderCard)}
       </div>
