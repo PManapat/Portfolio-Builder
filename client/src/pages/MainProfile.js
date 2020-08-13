@@ -49,7 +49,6 @@ export default () => {
                     <div className="col-sm-8 mx-auto">
                         <h2 className="text-center">Hello {firstName.firstName} {" "}{lastName.lastName}</h2>
                         <h5>This page is limited. We will be updating features.</h5>
-                        <Button className="btn btn-info" name="Check your portfolio" onClick="">Check portfolio</Button>
                     </div>
                 </div>
                 <Dashboard />
