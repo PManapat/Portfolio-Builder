@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {generatepage} from "../../src/utils/api.js";
 // import Card from "../components/Card";
-import styles from "./CustomTemplate.css";
+import "./CustomTemplate.css";
 import { red } from "@material-ui/core/colors";
 import { rgbToHex } from "@material-ui/core";
 import Nav from "../components/Navbar";
@@ -216,8 +216,10 @@ function CustomTemplate() {
         else return;
       },[]);
   return (
-    <div>
-        {navbar}
+      <div>
+          {navbar}
+    <div className="customTemplate">
+        
         <div className="PageTitle">
             <h1>Select components you want in your page? </h1>
         </div>
@@ -312,6 +314,7 @@ function CustomTemplate() {
             </ul>
             <button onClick={generatePage}>Generate New Page</button>
         </div>
+    </div>
     </div>
     )
 }
