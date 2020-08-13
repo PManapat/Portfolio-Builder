@@ -3,7 +3,7 @@ import { login } from "../../utils/api.js";
 import { Link } from 'react-router-dom';
 // import { useHistory} from 'react-router-dom';
 
-// import Nav from "../Navbar";
+import Nav from "../Navbar";
 
 class Login extends React.Component {
   constructor(props) {
@@ -72,7 +72,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        {/* <Nav /> */}
+        <Nav />
           <div className="container">
             <div className="card card-login mx-auto mt-5">
               <div className="card-header text-primary text-center">Login</div>

@@ -4,7 +4,7 @@ import { Nav } from 'react-bootstrap';
 
 export default function (){
   return(
-    <Nav className="justify-content-center navbar" activeKey="/home">
+    <Nav style={{borderTopLeftRadius: '20px', borderTopRightRadius: '20px'}} className="justify-content-center navbar" activeKey="/home">
      <Nav.Item>
       <Nav.Link href="#about">About</Nav.Link>
     </Nav.Item>

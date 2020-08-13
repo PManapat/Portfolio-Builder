@@ -4,8 +4,8 @@ import Home from "./pages/Home";
 import QuickDesign from "./pages/QuickDesign";
 import CustomTemplate from "./pages/CustomTemplate";
 import CustomPage from "./pages/CustomPage";
-import Nav from "./components/Navbar";
-import UserNav from "./components/UserNav";
+// import Nav from "./components/Navbar";
+// import UserNav from "./components/UserNav";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import MainProfile from "./pages/MainProfile";
@@ -18,8 +18,8 @@ import { home } from "./utils/api";
 function App() {
   const[portfolio, setPortfolio]=useState("/template");  
   const[portfolioTwo, setPortfolioTwo]=useState("/template");
-  const[navbar, SetNavbar]=useState(Nav);
-  const userInfo = window.localStorage.user;
+  // const[navbar, SetNavbar]=useState(Nav);
+  // const userInfo = window.localStorage.user;
   
 
 
@@ -27,14 +27,13 @@ useEffect(() => {
     home()
     .then(res => {
         // console.log(res);
-        if(userInfo != undefined){
+        // if(userInfo != undefined){
           const { firstName, lastName } = res;
           setPortfolio(`/${firstName}${lastName}`);
           setPortfolioTwo(`/${firstName}${lastName}2`);
-          SetNavbar(UserNav);
-          // console.log("window object", window.location.reload);
-        }
-        else return;
+          // SetNavbar(UserNav);
+        // }
+        // else return;
     })
     .catch(err => console.log(err));
 },[]);
@@ -42,7 +41,7 @@ useEffect(() => {
   return (
     <div>
         <Router>
-          {navbar}
+          {/* {navbar} */}
           <Switch>
             <Route exact path={["/", "/home"]} activeClassName="active" eventKey="/" component={Home}/>
             <Route path="/register" component={Register}/>
