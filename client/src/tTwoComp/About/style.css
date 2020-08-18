@@ -7,3 +7,15 @@
     margin-bottom: 20px;
     background-position: center;
 }
+
+#resume-btn{
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 40px;
+}
+
+#aboutme{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}

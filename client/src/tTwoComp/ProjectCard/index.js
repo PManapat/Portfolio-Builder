@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { mainProfile } from "../../utils/api.js";
+import Image from "react-bootstrap/Image";
+import "./style.css";
 
 const ProjectCard = () => {
   const [firstName, setFirstName] = useState("");
@@ -40,12 +42,18 @@ const ProjectCard = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className="col-md-12">
+    <div className="col-md-12" id="project-img">
       <div className="card shadow-lg p-3 mb-5 bg-white rounded">
         <div className="card-body">
           <h5 className="card-title">{ProjectOneTitle.ProjectOneTitle}</h5>
-          <p className="card-text">{ProjectOneText.ProjectOneText}</p>
-          <a
+          <Image src="https://c0.wallpaperflare.com/preview/60/281/296/job-work-employee-business-man.jpg" fluid width={250}
+              height={200}
+              alt="250x200"/>
+              <p className="card-text">{ProjectOneText.ProjectOneText}</p>
+          <hr />
+          <p className="card-text">
+            <span className="text-dark card-link mr-4">
+            <a
             className="btn btn-outline-secondary mr-3"
             href={ProjectOneUrl.ProjectOneUrl}
           >
@@ -57,10 +65,6 @@ const ProjectCard = () => {
           >
             <i /> Repo
           </a>
-          <hr />
-          <p className="card-text">
-            <span className="text-dark card-link mr-4">
-                Card Footer Text
             </span>
           </p>
         </div>
@@ -68,8 +72,14 @@ const ProjectCard = () => {
       <div className="card shadow-lg p-3 mb-5 bg-white rounded">
         <div className="card-body">
           <h5 className="card-title">{ProjectTwoTitle.ProjectTwoTitle}</h5>
+          <Image src="https://cdn3.vectorstock.com/i/1000x1000/75/07/man-silhouette-sitting-in-office-vector-20167507.jpg" fluid width={250}
+              height={200}
+              alt="250x200"/>
           <p className="card-text">{ProjectTwoText.ProjectTwoText}</p>
-          <a
+          <hr />
+          <p className="card-text">
+            <span className="text-dark card-link mr-4">
+            <a
             className="btn btn-outline-secondary mr-3"
             href={ProjectTwoUrl.ProjectTwoUrl}
           >
@@ -81,10 +91,6 @@ const ProjectCard = () => {
           >
             <i /> Repo
           </a>
-          <hr />
-          <p className="card-text">
-            <span className="text-dark card-link mr-4">
-                Card Footer Text
             </span>
           </p>
         </div>
@@ -92,8 +98,14 @@ const ProjectCard = () => {
       <div className="card shadow-lg p-3 mb-5 bg-white rounded">
         <div className="card-body">
           <h5 className="card-title">{ProjectThreeTitle.ProjectThreeTitle}</h5>
+          <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT20EKrBEKFrzUEN_tkrNP70qXpdtNXYRKJ9w&usqp=CAU" fluid width={250}
+              height={200}
+              alt="250x200"/>
           <p className="card-text">{ProjectThreeText.ProjectThreeText}</p>
-          <a
+          <hr />
+          <p className="card-text">
+            <span className="text-dark card-link mr-4">
+            <a
             className="btn btn-outline-secondary mr-3"
             href={ProjectThreeUrl.ProjectThreeUrl}
           >
@@ -105,10 +117,6 @@ const ProjectCard = () => {
           >
             <i /> Repo
           </a>
-          <hr />
-          <p className="card-text">
-            <span className="text-dark card-link mr-4">
-                Card Footer Text
             </span>
           </p>
         </div>
