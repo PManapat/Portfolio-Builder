@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; 
+import React from "react"; 
 import Card from "../components/Card"; 
 import Lovecard from "../components/Lovecard";
 import Mediacard from "../components/Mediacard";
@@ -17,27 +17,11 @@ import Table from "../components/Table";
 import Button from "../components/Button"; 
 import Footer from "../components/Footer"; 
 import BtnClear from "../components/BtnClear"; 
-import Nav from "../components/Navbar"; 
-import UserNav from "../components/UserNav"; 
 function CustomPage() 
-{const[navbar, SetNavbar]=useState(Nav); 
-const userInfo = window.localStorage.user; 
-useEffect(() => { 
-// console.log(res); 
-if(userInfo != undefined){ 
-SetNavbar(UserNav); 
-} 
-else return; 
-},[]); 
-return ( 
-<div>
- {navbar}       <div id='tempBorder'>
+{return ( 
+       <div>
 
-<div>
-
-        </div>
        </div>
-<BtnClear />
-</div>)
+)
 }
 export default CustomPage;

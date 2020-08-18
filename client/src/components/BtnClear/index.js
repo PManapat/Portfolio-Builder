@@ -1,7 +1,6 @@
 import React from 'react';
-import {generatepage} from "../../utils/api.js";
+import { generatepage } from "../../utils/api.js";
 import { Button } from "react-bootstrap";
-
 
 function getPageTemplate(){
 
@@ -37,7 +36,6 @@ function getPageTemplate(){
 }
 
 function clearPage(){
-
     var customPage = "";
 
         //  -------    Code to generate page here  --------

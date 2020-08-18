@@ -7,12 +7,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { cyan } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    // color: 'cyan',
   },
 });
 

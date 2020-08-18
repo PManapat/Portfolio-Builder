@@ -1,4 +1,3 @@
-  
 import React, { Component } from 'react';
 import logo from '../../../public/favicon.ico';
 export default class Header extends Component {
