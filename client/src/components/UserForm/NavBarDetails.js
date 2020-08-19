@@ -64,11 +64,11 @@ export class NavBarDetails extends Component {
             onChange={handleChange('navColor')}
             defaultValue={values.navColor}
             select>
-           <MenuItem value="#008000">Green</MenuItem>
-           <MenuItem value="#FF0000">Red</MenuItem>
-           <MenuItem value="#647ba1">Blue</MenuItem>
-           <MenuItem value="#ada965">Lemon</MenuItem>
-           <MenuItem value="#4b5669">Grey</MenuItem>
+           <MenuItem value="#A9A8A5">Silver Chalice</MenuItem>
+           <MenuItem value="#821717">Crimson Red</MenuItem>
+           <MenuItem value="#11306A">Royal Blue Dark</MenuItem>
+           <MenuItem value="#FAE779">Yellow Crayola</MenuItem>
+           <MenuItem value="#2A2C2E">Jet Black</MenuItem>
            </TextField>
            <br/>
            <TextField 

@@ -12,7 +12,7 @@ function Home() {
 
   useEffect(() => {
         // console.log(res);
-        if(userInfo != undefined){
+        if(userInfo !== undefined){
           SetNavbar(UserNav);
         }
         else return;

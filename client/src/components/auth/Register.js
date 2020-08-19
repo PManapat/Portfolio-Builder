@@ -12,7 +12,7 @@ class Register extends React.Component{
     this.submitForm = this.submitForm.bind(this);
   }
   validateEmail(email){
-    const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
+    const pattern = /[a-zA-Z0-9]+[.]?([a-zA-Z0-9]+)?[@][a-z]{3,9}[.][a-z]{2,5}/g;
     const result = pattern.test(email);
     if(result===true){
       this.setState({

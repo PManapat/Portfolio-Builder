@@ -16,7 +16,7 @@ export default function () {
 
   useEffect(() => {
     // console.log(res);
-    if(userInfo != undefined){
+    if(userInfo !== undefined){
       SetNavbar(UserNav);
     }
     else return;
