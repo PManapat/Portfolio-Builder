@@ -35,7 +35,7 @@ export default function () {
     <div id="footer">
       <Nav className="justify-content-center navbar" activeKey="/home">
         <Nav.Item>
-          <Nav.Link href={email.email}>{email.email}</Nav.Link>
+          <Nav.Link  href={`mailto:${email.email}`}>{email.email}</Nav.Link>
         </Nav.Item>
         <Nav.Item id="resume">
           <Nav.Link href={resumeUrl.resumeUrl}>Resume</Nav.Link>

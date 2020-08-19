@@ -37,6 +37,7 @@ router.post("/", auth,
 
 async (req,res)=> {
   console.log(req.user);
+  console.log(req.body);
 
 //object destructing
 const {  
@@ -48,15 +49,18 @@ const {
   bio,
   aboutBgColor,
   profileImage,
-  ProjectOneTitle,
-  ProjectOneText,
-  ProjectOneUrl,
-  ProjectTwoTitle,
-  ProjectTwoText,
-  ProjectTwoUrl,
-  ProjectThreeTitle,
-  ProjectThreeText,
-  ProjectThreeUrl,
+  projectOneTitle,
+  projectOneText,
+  projectOneUrl,
+  projectOneImage,
+  projectTwoTitle,
+  projectTwoText,
+  projectTwoUrl,
+  projectTwoImage,
+  projectThreeTitle,
+  projectThreeText,
+  projectThreeUrl,
+  projectThreeImage,
   resumeUrl,
   githubLink,
   linkdin,
@@ -73,15 +77,18 @@ const profileFields = {
   bio,
   aboutBgColor,
   profileImage,
-  ProjectOneTitle,
-  ProjectOneText,
-  ProjectOneUrl,
-  ProjectTwoTitle,
-  ProjectTwoText,
-  ProjectTwoUrl,
-  ProjectThreeTitle,
-  ProjectThreeText,
-  ProjectThreeUrl,
+  projectOneTitle,
+  projectOneText,
+  projectOneUrl,
+  projectOneImage,
+  projectTwoTitle,
+  projectTwoText,
+  projectTwoUrl,
+  projectTwoImage,
+  projectThreeTitle,
+  projectThreeText,
+  projectThreeUrl,
+  projectThreeImage,
   resumeUrl,
   githubLink,
   linkdin,
@@ -97,6 +104,7 @@ let profile = await Profile.findOneAndUpdate(
   { new: true, upsert: true }
 );
 res.json(profile);
+console.log("from backend profile ",profile);
 
 }catch(err){
     console.error(err);
