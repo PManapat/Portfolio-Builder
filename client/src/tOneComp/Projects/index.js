@@ -6,38 +6,45 @@ import { mainProfile } from "../../utils/api.js";
 export default function () {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [ProjectOneText, SetProjectOneText] = useState("");
-  const [ProjectOneTitle, SetProjectOneTitle] = useState("");
-  const [ProjectOneUrl, SetProjectOneUrl] = useState("");
-  const [ProjectTwoText, SetProjectTwoText] = useState("");
-  const [ProjectTwoTitle, SetProjectTwoTitle] = useState("");
-  const [ProjectTwoUrl, SetProjectTwoUrl] = useState("");
-  const [ProjectThreeText, SetProjectThreeText] = useState("");
-  const [ProjectThreeTitle, SetProjectThreeTitle] = useState("");
-  const [ProjectThreeUrl, SetProjectThreeUrl] = useState("");
+  const [projectOneText, SetProjectOneText] = useState("");
+  const [projectOneTitle, SetProjectOneTitle] = useState("");
+  const [projectOneUrl, SetProjectOneUrl] = useState("");
+  const [projectTwoText, SetProjectTwoText] = useState("");
+  const [projectTwoTitle, SetProjectTwoTitle] = useState("");
+  const [projectTwoUrl, SetProjectTwoUrl] = useState("");
+  const [projectThreeText, SetProjectThreeText] = useState("");
+  const [projectThreeTitle, SetProjectThreeTitle] = useState("");
+  const [projectThreeUrl, SetProjectThreeUrl] = useState("");
+  const [projectOneImage, SetProjectOneImage] = useState("");
+  const [projectTwoImage, SetProjectTwoImage] = useState("");
+  const [projectThreeImage, SetProjectThreeImage] = useState("");
   
   useEffect(() => {
     mainProfile()
       .then((res) => {
         const {
-          ProjectOneText,ProjectOneTitle,ProjectOneUrl,
-          ProjectTwoText,ProjectTwoTitle,ProjectTwoUrl,
-          ProjectThreeText,ProjectThreeTitle,ProjectThreeUrl,
+          projectOneText,projectOneTitle,projectOneUrl,
+          projectTwoText,projectTwoTitle,projectTwoUrl,
+          projectThreeText,projectThreeTitle,projectThreeUrl,
+          projectOneImage,projectTwoImage,projectThreeImage,
           user: { firstName, lastName },
         } = res;
         console.log(firstName);
         console.log(res.navColor);
         setFirstName({ firstName });
         setLastName({ lastName });
-        SetProjectOneText({ ProjectOneText });
-        SetProjectOneTitle({ ProjectOneTitle });
-        SetProjectOneUrl({ ProjectOneUrl });
-        SetProjectTwoText({ ProjectTwoText });
-        SetProjectTwoTitle({ ProjectTwoTitle });
-        SetProjectTwoUrl({ ProjectTwoUrl} );
-        SetProjectThreeText({ ProjectThreeText });
-        SetProjectThreeTitle({ ProjectThreeTitle });
-        SetProjectThreeUrl({ ProjectThreeUrl });
+        SetProjectOneText({ projectOneText });
+        SetProjectOneTitle({ projectOneTitle });
+        SetProjectOneUrl({ projectOneUrl });
+        SetProjectTwoText({ projectTwoText });
+        SetProjectTwoTitle({ projectTwoTitle });
+        SetProjectTwoUrl({ projectTwoUrl} );
+        SetProjectThreeText({ projectThreeText });
+        SetProjectThreeTitle({ projectThreeTitle });
+        SetProjectThreeUrl({ projectThreeUrl });
+        SetProjectOneImage({ projectOneImage });
+        SetProjectTwoImage({ projectTwoImage });
+        SetProjectThreeImage({ projectThreeImage });
       })
       .catch((err) => console.log(err));
   }, []);
@@ -49,47 +56,47 @@ export default function () {
         transition={false}
         id="projects"
       >
-        <Tab eventKey="project1" title={ProjectOneTitle.ProjectOneTitle} href={ProjectOneUrl.ProjectOneUrl}>
+        <Tab eventKey="project1" title={projectOneTitle.projectOneTitle} href={projectOneUrl.projectOneUrl}>
           <div id="tabdiv"></div>
           <Nav className="justify-content-center">
             <Image
-              src="https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2017Q2/project-planning-header@2x.png"
+             src={projectOneImage.projectOneImage}
               fluid
               width={250}
               height={200}
               alt="250x200"
             /> 
           </Nav>
-          <p> {ProjectOneText.ProjectOneText} </p>
-          <Nav.Link id="projects" href={ProjectOneUrl.ProjectOneUrl}>{ProjectOneTitle.ProjectOneTitle}</Nav.Link>
+          <p> {projectOneText.projectOneText} </p>
+          <Nav.Link id="projects" href={projectOneUrl.projectOneUrl}>{projectOneTitle.projectOneTitle}</Nav.Link>
         </Tab>
-        <Tab eventKey="project2" title={ProjectTwoTitle.ProjectTwoTitle} href={ProjectTwoUrl.ProjectTwoUrl}>
+        <Tab eventKey="project2" title={projectTwoTitle.projectTwoTitle} href={projectTwoUrl.projectTwoUrl}>
           <div id="tabdiv"></div>
           <Nav className="justify-content-center">
             <Image
-              src="https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2017Q2/project-planning-header@2x.png"
+             src={projectTwoImage.projectTwoImage}
               fluid
               width={250}
               height={200}
               alt="250x200"
             />
           </Nav>
-          <p> {ProjectTwoText.ProjectTwoText} </p>
-          <Nav.Link id="projects" href={ProjectTwoUrl.ProjectTwoUrl}>{ProjectTwoTitle.ProjectTwoTitle}</Nav.Link>
+          <p> {projectTwoText.projectTwoText} </p>
+          <Nav.Link id="projects" href={projectTwoUrl.projectTwoUrl}>{projectTwoTitle.projectTwoTitle}</Nav.Link>
         </Tab>
-        <Tab eventKey="project3" title={ProjectThreeTitle.ProjectThreeTitle} href={ProjectThreeUrl.ProjectThreeUrl}>
+        <Tab eventKey="project3" title={projectThreeTitle.projectThreeTitle} href={projectThreeUrl.projectThreeUrl}>
           <div id="tabdiv"></div>
           <Nav className="justify-content-center">
             <Image
-              src="https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2017Q2/project-planning-header@2x.png"
+              src={projectThreeImage.projectThreeImage}
               fluid
               width={250}
               height={200}
               alt="250x200"
             />
           </Nav>
-          <p> {ProjectThreeText.ProjectThreeText} </p>
-          <Nav.Link id="projects" href={ProjectThreeUrl.ProjectThreeUrl}>{ProjectThreeTitle.ProjectThreeTitle}</Nav.Link>
+          <p> {projectThreeText.projectThreeText} </p>
+          <Nav.Link id="projects" href={projectThreeUrl.projectThreeUrl}>{projectThreeTitle.projectThreeTitle}</Nav.Link>
         </Tab>
       </Tabs>
     </div>

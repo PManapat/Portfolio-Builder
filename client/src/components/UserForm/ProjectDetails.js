@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
-// import Nav from "../UserNav";
 import { grey } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
@@ -56,8 +55,8 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectOneTitle"
                 label="Project One Title"
-                onChange={handleChange("ProjectOneTitle")}
-                defaultValue={values.ProjectOneTitle}
+                onChange={handleChange("projectOneTitle")}
+                defaultValue={values.projectOneTitle}
                 margin="normal"
                 fullWidth
               />
@@ -65,8 +64,8 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectOneText"
                 label="Project One Text"
-                onChange={handleChange("ProjectOneText")}
-                defaultValue={values.ProjectOneText}
+                onChange={handleChange("projectOneText")}
+                defaultValue={values.projectOneText}
                 margin="normal"
                 fullWidth
               />
@@ -74,8 +73,17 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectOneUrl"
                 label="Project One Link"
-                onChange={handleChange("ProjectOneUrl")}
-                defaultValue={values.ProjectOneUrl}
+                onChange={handleChange("projectOneUrl")}
+                defaultValue={values.projectOneUrl}
+                margin="normal"
+                fullWidth
+              />
+               <br />
+              <TextField
+                placeholder="projectOneImage"
+                label="Project One Image"
+                onChange={handleChange("projectOneImage")}
+                defaultValue={values.projectOneImage}
                 margin="normal"
                 fullWidth
               />
@@ -87,8 +95,8 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectTwoTitle"
                 label="Project Two Title"
-                onChange={handleChange("ProjectTwoTitle")}
-                defaultValue={values.ProjectTwoTitle}
+                onChange={handleChange("projectTwoTitle")}
+                defaultValue={values.projectTwoTitle}
                 margin="normal"
                 fullWidth
               />
@@ -96,8 +104,8 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectTwoText"
                 label="Project Two Text"
-                onChange={handleChange("ProjectTwoText")}
-                defaultValue={values.ProjectTwoText}
+                onChange={handleChange("projectTwoText")}
+                defaultValue={values.projectTwoText}
                 margin="normal"
                 fullWidth
               />
@@ -105,8 +113,16 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectTwoUrl"
                 label="Project Two Link"
-                onChange={handleChange("ProjectTwoUrl")}
-                defaultValue={values.ProjectTwoUrl}
+                onChange={handleChange("projectTwoUrl")}
+                defaultValue={values.projectTwoUrl}
+                margin="normal"
+                fullWidth
+              />
+                <TextField
+                placeholder="projectTwoImage"
+                label="Project Two Image"
+                onChange={handleChange("projectTwoImage")}
+                defaultValue={values.projectTwoImage}
                 margin="normal"
                 fullWidth
               />
@@ -117,8 +133,8 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectThreeTitle"
                 label="Project Three Title"
-                onChange={handleChange("ProjectThreeTitle")}
-                defaultValue={values.ProjectThreeTitle}
+                onChange={handleChange("projectThreeTitle")}
+                defaultValue={values.projectThreeTitle}
                 margin="normal"
                 fullWidth
               />
@@ -126,8 +142,8 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectThreeText"
                 label="Project Three Text"
-                onChange={handleChange("ProjectThreeText")}
-                defaultValue={values.ProjectThreeText}
+                onChange={handleChange("projectThreeText")}
+                defaultValue={values.projectThreeText}
                 margin="normal"
                 fullWidth
               />
@@ -135,8 +151,16 @@ export class ProjectDetails extends Component {
               <TextField
                 placeholder="ProjectThreeUrl"
                 label="Project Three Link"
-                onChange={handleChange("ProjectThreeUrl")}
-                defaultValue={values.ProjectThreeUrl}
+                onChange={handleChange("projectThreeUrl")}
+                defaultValue={values.projectThreeUrl}
+                margin="normal"
+                fullWidth
+              />
+                <TextField
+                placeholder="projectThreeImage"
+                label="Project Three Image"
+                onChange={handleChange("projectThreeImage")}
+                defaultValue={values.projectThreeImage}
                 margin="normal"
                 fullWidth
               />

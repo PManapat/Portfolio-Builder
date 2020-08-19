@@ -1,37 +1,43 @@
+.Container{
+	margin-right: 10px;
+	margin-left: 10px;
+}
 .Jumbo{
 	background-image: url(https://cdn-media-1.freecodecamp.org/images/1*zVDcaM6mqhi9m0LP_Sq4Ag.jpeg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: bottom;
 	background-size: cover; 
-	color: white;
-	/* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+	color: black
 }
-
 .About{
-	text-decoration-color: white;
+	color: black;
 	text-align: center;
 	font-size: 24px;
 	background-size: cover;
+}
+#about{
+	color: black;
+
 }
 p{
 	padding: 2rem;
 	font-size: 15px;
 }
 #profilePic{
-	color: white;
+	color: black;
 	border-radius: 50%;
+	border: solid 2px;
+	border-color: black;
     width: 200px;
 	height: 250px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-
 #figure-caption{
-	color: white;
+	color: black;
 	padding: 2rem;
 }
-
 .name{
 	margin-top: 150px;
 	margin-right: 200px;

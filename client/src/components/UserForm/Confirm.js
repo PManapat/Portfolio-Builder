@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
-// import Nav from "../UserNav";
 import { grey } from "@material-ui/core/colors";
 import { withStyles } from '@material-ui/core/styles';
 
@@ -31,8 +30,6 @@ export class Confirm extends Component {
   continue = (e) => {
     e.preventDefault();
     // PROCESS FORM //
-    //let history = useHistory();
-    // let history = useHistory();
     const {
       values: {
         navColor,
@@ -43,28 +40,24 @@ export class Confirm extends Component {
         bio,
         aboutBgColor,
         profileImage,
-        ProjectOneTitle,
-        ProjectOneText,
-        ProjectOneUrl,
-        ProjectTwoTitle,
-        ProjectTwoText,
-        ProjectTwoUrl,
-        ProjectThreeTitle,
-        ProjectThreeText,
-        ProjectThreeUrl,
+        projectOneTitle,
+        projectOneText,
+        projectOneUrl,
+        projectOneImage,
+        projectTwoTitle,
+        projectTwoText,
+        projectTwoUrl,
+        projectTwoImage,
+        projectThreeTitle,
+        projectThreeText,
+        projectThreeUrl,
+        projectThreeImage,
         resumeUrl,
         githubLink,
         linkdin,
         footer,
       },
     } = this.props;
-    // console.log(this.props);
-    // console.log(this.props.values.firstName);
-    // console.log(this.props.values.lastName);
-    // console.log(this.props.values.email);
-    // console.log(this.props.values.occupation);
-    // console.log(this.props.values.city);
-    // console.log(this.props.values.bio);
 
     const newUser = {
       navColor: navColor,
@@ -74,39 +67,30 @@ export class Confirm extends Component {
       introTitle: introTitle,
       bio: bio,
       aboutBgColor: aboutBgColor,
-      profileImage: profileImage,
-      ProjectOneTitle: ProjectOneTitle,
-      ProjectOneText: ProjectOneText,
-      ProjectOneUrl: ProjectOneUrl,
-      ProjectTwoTitle: ProjectTwoTitle,
-      ProjectTwoText: ProjectTwoText,
-      ProjectTwoUrl: ProjectTwoUrl,
-      ProjectThreeTitle: ProjectThreeTitle,
-      ProjectThreeText: ProjectThreeText,
-      ProjectThreeUrl: ProjectThreeUrl,
+     profileImage:profileImage,
+     projectOneTitle:projectOneTitle,
+     projectOneText:projectOneText,
+     projectOneUrl:projectOneUrl,
+     projectOneImage:projectOneImage,
+     projectTwoTitle:projectTwoTitle,
+     projectTwoText:projectTwoText,
+     projectTwoUrl:projectTwoUrl,
+     projectTwoImage:projectTwoImage,
+     projectThreeTitle:projectThreeTitle,
+     projectThreeText:projectThreeText,
+     projectThreeUrl:projectThreeUrl,
+     projectThreeImage:projectThreeImage,
       resumeUrl: resumeUrl,
       githubLink: githubLink,
       linkdin: linkdin,
       footer: footer,
     };
-    //we can do this also
-    //   const newUser = {
-    //   firstName: this.props.values.firstName,
-    // email: this.props.values.email,
-    // lastName: this.props.values.lastName,
-    // occupation: this.props.values.occupation,
-    // city:this.props.values.city,
-    // bio: this.props.values.bio,
-    // }
-
+    console.log("from confirm page front end",newUser);
     profile(newUser).then(function (res) {
-      // let history = useHistory();
-      // return history.push("/mainprofile")
-      // if (res) {
-      //   this.props.history.push(`/mainprofile`)
-      // }
-      // console.log(res);
+     
+      console.log(res);
     });
+
 
     this.props.nextStep();
   };
@@ -127,15 +111,18 @@ export class Confirm extends Component {
         bio,
         aboutBgColor,
         profileImage,
-        ProjectOneTitle,
-        ProjectOneText,
-        ProjectOneUrl,
-        ProjectTwoTitle,
-        ProjectTwoText,
-        ProjectTwoUrl,
-        ProjectThreeTitle,
-        ProjectThreeText,
-        ProjectThreeUrl,
+        projectOneTitle,
+        projectOneText,
+        projectOneUrl,
+        projectOneImage,
+        projectTwoTitle,
+        projectTwoText,
+        projectTwoUrl,
+        projectTwoImage,
+        projectThreeTitle,
+        projectThreeText,
+        projectThreeUrl,
+        projectThreeImage,
         resumeUrl,
         githubLink,
         linkdin,
@@ -213,55 +200,74 @@ export class Confirm extends Component {
               <ListItem>
                 <ListItemText
                   primary="Project One Title"
-                  secondary={ProjectOneTitle}
+                  secondary={projectOneTitle}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Project One Text"
-                  secondary={ProjectOneText}
+                  secondary={projectOneText}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Project One Url"
-                  secondary={ProjectOneUrl}
+                  secondary={projectOneUrl}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
+                  primary="Project One Image"
+                  secondary={projectOneImage}
+                />
+              </ListItem>
+              
+              <ListItem>
+                <ListItemText
                   primary="Project Two Title"
-                  secondary={ProjectTwoTitle}
+                  secondary={projectTwoTitle}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Project Two Text"
-                  secondary={ProjectTwoText}
+                  secondary={projectTwoText}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Project Two Url"
-                  secondary={ProjectTwoUrl}
+                  secondary={projectTwoUrl}
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary="Project Two Image"
+                  secondary={projectTwoImage}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Project Three Title"
-                  secondary={ProjectThreeTitle}
+                  secondary={projectThreeTitle}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Project Three Text"
-                  secondary={ProjectThreeText}
+                  secondary={projectThreeText}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Project Three Url"
-                  secondary={ProjectThreeUrl}
+                  secondary={projectThreeUrl}
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary="Project Three Image"
+                  secondary={projectThreeImage}
                 />
               </ListItem>
               <ListItem>

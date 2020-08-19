@@ -4,14 +4,11 @@ import AboutMeDetails from './AboutMeDetails';
 import ProjectDetails from './ProjectDetails';
 import Confirm from './Confirm';
 import Success from './Success';
-// import Nav from "../Navbar";
 import UserNav from "../UserNav";
-// import {home} from '../../utils/api';
 
 export class UserForm extends Component {
   state = {
     step: 1,
-    // navbar: '',
     firstName: '',
     lastName: '',
     navColor:'',
@@ -22,22 +19,25 @@ export class UserForm extends Component {
     bio: '',
     aboutBgColor:'',
     profileImage:'',
-    ProjectOneTitle:'',
-    ProjectOneText:'',
-    ProjectOneUrl:'',
-    ProjectTwoTitle:'',
-    ProjectTwoText:'',
-    ProjectTwoUrl:'',
-    ProjectThreeTitle:'',
-    ProjectThreeText:'',
-    ProjectThreeUrl:'',
+    projectOneTitle:'',
+    projectOneText:'',
+    projectOneUrl:'',
+    projectOneImage: '',
+    projectTwoTitle:'',
+    projectTwoText:'',
+    projectTwoUrl:'',
+    projectTwoImage: '',
+    projectThreeTitle:'',
+    projectThreeText:'',
+    projectThreeUrl:'',
+    projectThreeImage: '',
     resumeUrl:'',
     githubLink:'',
     linkdin:'',
     footer: ''
 };
 
-  // Proceed to next step
+  // proceed to next step
   nextStep = () => {
     const { step } = this.state;
     this.setState({
@@ -58,33 +58,10 @@ export class UserForm extends Component {
     this.setState({ [input]: e.target.value });
   };
 
-  // componentDidMount(){
-  //   home()
-  //         .then(res => {
-  //             console.log("from userform component didmount",res);
-  //             console.log(this.state);
-  //             const{firstName, lastName}=res;
-  //             console.log({firstName});
-  //             this.setState({firstName});
-  //             this.setState({lastName});
-  //             console.log(this.state);
-  //             // setPortfolio(`/${firstName}`);
-  //         }).catch(err => console.log(err));
-  // }
-
-//   componentDidMount(){
-//     console.log("from userform component didmount", this.state);
-//     const firstName = "boo"
-//                   this.setState({firstName});
-//               // this.setState({lastName});
-//               console.log(this.state);
-// }
-
   render() {
     
     const { step } = this.state;
     const { 
-      // Nav,
       firstName,
       lastName,
       navColor,
@@ -95,22 +72,24 @@ export class UserForm extends Component {
       bio,
       aboutBgColor,
       profileImage,
-      ProjectOneTitle,
-      ProjectOneText,
-      ProjectOneUrl,
-      ProjectTwoTitle,
-      ProjectTwoText,
-      ProjectTwoUrl,
-      ProjectThreeTitle,
-      ProjectThreeText,
-      ProjectThreeUrl,
+      projectOneTitle,
+      projectOneText,
+      projectOneUrl,
+      projectOneImage,
+      projectTwoTitle,
+      projectTwoText,
+      projectTwoUrl,
+      projectTwoImage,
+      projectThreeTitle,
+      projectThreeText,
+      projectThreeUrl,
+      projectThreeImage,
       resumeUrl,
       githubLink,
       linkdin,
       footer
     } = this.state;
     const values = {
-      // Nav,
       firstName,
       lastName,
       navColor,
@@ -121,15 +100,18 @@ export class UserForm extends Component {
       bio,
       aboutBgColor,
       profileImage,
-      ProjectOneTitle,
-      ProjectOneText,
-      ProjectOneUrl,
-      ProjectTwoTitle,
-      ProjectTwoText,
-      ProjectTwoUrl,
-      ProjectThreeTitle,
-      ProjectThreeText,
-      ProjectThreeUrl,
+      projectOneTitle,
+      projectOneText,
+      projectOneUrl,
+      projectOneImage,
+      projectTwoTitle,
+      projectTwoText,
+      projectTwoUrl,
+      projectTwoImage,
+      projectThreeTitle,
+      projectThreeText,
+      projectThreeUrl,
+      projectThreeImage,
       resumeUrl,
       githubLink,
       linkdin,
@@ -177,7 +159,6 @@ export class UserForm extends Component {
           <div>
             <UserNav />
           <Confirm
-            // nextStep={this.props.history.push('/mainprofile')}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             values={values}

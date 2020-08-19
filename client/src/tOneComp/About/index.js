@@ -43,12 +43,8 @@ export default function () {
       })
       .catch((err) => console.log(err));
   }, []);
-  // `url(${navImage.navImage})`
   return (
     <div className="Container mb-5">
-      {/* <Jumbotron className="Jumbo" style={{
-        backgroundImage: `url("https://www.nicesnippets.com/image/imgpsh_fullsize.png")` }}>
-        <Container> */}
         <Jumbotron className="Jumbo" style={{
         backgroundImage: `url(${navImage.navImage})` }}>
         <Container>
@@ -60,14 +56,14 @@ export default function () {
       </Jumbotron>
       <Container className="About" id="about" style={{ backgroundColor: navColor.navColor}}>
         <Figure>
-          <Figure className="name">
+          <Figure className="name" id="about">
             <h1>{firstName.firstName}{' '}{lastName.lastName}</h1>
           </Figure>
           <Figure.Image
             id="profilePic"
             src={profileImage.profileImage}
           />
-          <h4 className="bio">{bio.bio}</h4>
+          <h6 className="bio" id="about">{bio.bio}</h6>
         </Figure>
       </Container>
     </div>

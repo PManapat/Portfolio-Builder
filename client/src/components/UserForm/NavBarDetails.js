@@ -9,7 +9,6 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import MenuItem from "@material-ui/core/MenuItem";
 import Icon from "@material-ui/core/Icon";
-// import Nav from "../UserNav";
 import { grey } from "@material-ui/core/colors"
 
 const theme = createMuiTheme({

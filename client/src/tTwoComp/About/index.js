@@ -44,7 +44,8 @@ const AboutMe = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div id="aboutme" className="jumbotron jumbotron-fluid m-0" >
+    <div id="aboutme" className="jumbotron jumbotron-fluid m-0" style={{
+      backgroundImage: `url(${navImage.navImage})` }}>
       <div className="container container-fluid p-5">
         <div className="row">
           {(
@@ -58,10 +59,11 @@ const AboutMe = () => {
           )}
             <h1 className="display-4 mb-5 text-center">{introTitle.introTitle}</h1>
           <p className="lead text-center">{introText.introText}</p>
+          <h5>{bio.bio}</h5>
             {(
-              <p className="lead text-center">
+              <p className="lead" id="resume-btn">
                 <a
-                  className="btn btn-outline-dark btn-lg"
+                  className="btn btn-outline-dark btn-lg text-center"
                   href={resumeUrl.resumeUrl} id="resume"
                 >
                   Resume
