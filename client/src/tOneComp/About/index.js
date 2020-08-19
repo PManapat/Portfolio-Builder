@@ -60,14 +60,14 @@ export default function () {
       </Jumbotron>
       <Container className="About" id="about" style={{ backgroundColor: navColor.navColor}}>
         <Figure>
-          <Figure className="name">
+          <Figure className="name" id="about">
             <h1>{firstName.firstName}{' '}{lastName.lastName}</h1>
           </Figure>
           <Figure.Image
             id="profilePic"
             src={profileImage.profileImage}
           />
-          <h4 className="bio">{bio.bio}</h4>
+          <h6 className="bio" id="about">{bio.bio}</h6>
         </Figure>
       </Container>
     </div>
