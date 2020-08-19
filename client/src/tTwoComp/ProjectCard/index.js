@@ -6,38 +6,45 @@ import "./style.css";
 const ProjectCard = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [ProjectOneText, SetProjectOneText] = useState("");
-  const [ProjectOneTitle, SetProjectOneTitle] = useState("");
-  const [ProjectOneUrl, SetProjectOneUrl] = useState("");
-  const [ProjectTwoText, SetProjectTwoText] = useState("");
-  const [ProjectTwoTitle, SetProjectTwoTitle] = useState("");
-  const [ProjectTwoUrl, SetProjectTwoUrl] = useState("");
-  const [ProjectThreeText, SetProjectThreeText] = useState("");
-  const [ProjectThreeTitle, SetProjectThreeTitle] = useState("");
-  const [ProjectThreeUrl, SetProjectThreeUrl] = useState("");
+  const [projectOneText, SetProjectOneText] = useState("");
+  const [projectOneTitle, SetProjectOneTitle] = useState("");
+  const [projectOneUrl, SetProjectOneUrl] = useState("");
+  const [projectTwoText, SetProjectTwoText] = useState("");
+  const [projectTwoTitle, SetProjectTwoTitle] = useState("");
+  const [projectTwoUrl, SetProjectTwoUrl] = useState("");
+  const [projectThreeText, SetProjectThreeText] = useState("");
+  const [projectThreeTitle, SetProjectThreeTitle] = useState("");
+  const [projectThreeUrl, SetProjectThreeUrl] = useState("");
+  const [projectOneImage, SetProjectOneImage] = useState("");
+  const [projectTwoImage, SetProjectTwoImage] = useState("");
+  const [projectThreeImage, SetProjectThreeImage] = useState("");
   
   useEffect(() => {
     mainProfile()
       .then((res) => {
         const {
-          ProjectOneText,ProjectOneTitle,ProjectOneUrl,
-          ProjectTwoText,ProjectTwoTitle,ProjectTwoUrl,
-          ProjectThreeText,ProjectThreeTitle,ProjectThreeUrl,
+          projectOneText,projectOneTitle,projectOneUrl,
+          projectTwoText,projectTwoTitle,projectTwoUrl,
+          projectThreeText,projectThreeTitle,projectThreeUrl,
+          projectOneImage,projectTwoImage,projectThreeImage,
           user: { firstName, lastName },
         } = res;
         console.log(firstName);
         console.log(res.navColor);
         setFirstName({ firstName });
         setLastName({ lastName });
-        SetProjectOneText({ ProjectOneText });
-        SetProjectOneTitle({ ProjectOneTitle });
-        SetProjectOneUrl({ ProjectOneUrl });
-        SetProjectTwoText({ ProjectTwoText });
-        SetProjectTwoTitle({ ProjectTwoTitle });
-        SetProjectTwoUrl({ ProjectTwoUrl} );
-        SetProjectThreeText({ ProjectThreeText });
-        SetProjectThreeTitle({ ProjectThreeTitle });
-        SetProjectThreeUrl({ ProjectThreeUrl });
+        SetProjectOneText({ projectOneText });
+        SetProjectOneTitle({ projectOneTitle });
+        SetProjectOneUrl({ projectOneUrl });
+        SetProjectTwoText({ projectTwoText });
+        SetProjectTwoTitle({ projectTwoTitle });
+        SetProjectTwoUrl({ projectTwoUrl} );
+        SetProjectThreeText({ projectThreeText });
+        SetProjectThreeTitle({ projectThreeTitle });
+        SetProjectThreeUrl({ projectThreeUrl });
+        SetProjectOneImage({ projectOneImage });
+        SetProjectTwoImage({ projectTwoImage });
+        SetProjectThreeImage({ projectThreeImage });
       })
       .catch((err) => console.log(err));
   }, []);
@@ -45,17 +52,17 @@ const ProjectCard = () => {
     <div className="col-md-12" id="project-img">
       <div className="card shadow-lg p-3 mb-5 bg-white rounded">
         <div className="card-body">
-          <h5 className="card-title">{ProjectOneTitle.ProjectOneTitle}</h5>
-          <Image src="https://c0.wallpaperflare.com/preview/60/281/296/job-work-employee-business-man.jpg" fluid width={250}
+          <h5 className="card-title">{projectOneTitle.projectOneTitle}</h5>
+          <Image src={projectOneImage.projectOneImage} fluid width={250}
               height={200}
               alt="250x200"/>
-              <p className="card-text">{ProjectOneText.ProjectOneText}</p>
+              <p className="card-text">{projectOneText.projectOneText}</p>
           <hr />
           <p className="card-text">
             <span className="text-dark card-link mr-4">
             <a
             className="btn btn-outline-secondary mr-3"
-            href={ProjectOneUrl.ProjectOneUrl}
+            href={projectOneUrl.projectOneUrl}
           >
             <i/> Project Demo
           </a>
@@ -71,17 +78,17 @@ const ProjectCard = () => {
       </div>
       <div className="card shadow-lg p-3 mb-5 bg-white rounded">
         <div className="card-body">
-          <h5 className="card-title">{ProjectTwoTitle.ProjectTwoTitle}</h5>
-          <Image src="https://cdn3.vectorstock.com/i/1000x1000/75/07/man-silhouette-sitting-in-office-vector-20167507.jpg" fluid width={250}
+          <h5 className="card-title">{projectTwoTitle.projectTwoTitle}</h5>
+          <Image src={projectTwoImage.projectTwoImage} fluid width={250}
               height={200}
               alt="250x200"/>
-          <p className="card-text">{ProjectTwoText.ProjectTwoText}</p>
+          <p className="card-text">{projectTwoText.projectTwoText}</p>
           <hr />
           <p className="card-text">
             <span className="text-dark card-link mr-4">
             <a
             className="btn btn-outline-secondary mr-3"
-            href={ProjectTwoUrl.ProjectTwoUrl}
+            href={projectTwoUrl.projectTwoUrl}
           >
             <i /> Project Demo
           </a>
@@ -97,17 +104,17 @@ const ProjectCard = () => {
       </div>
       <div className="card shadow-lg p-3 mb-5 bg-white rounded">
         <div className="card-body">
-          <h5 className="card-title">{ProjectThreeTitle.ProjectThreeTitle}</h5>
-          <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT20EKrBEKFrzUEN_tkrNP70qXpdtNXYRKJ9w&usqp=CAU" fluid width={250}
+          <h5 className="card-title">{projectThreeTitle.projectThreeTitle}</h5>
+          <Image src={projectThreeImage.projectThreeImage} fluid width={250}
               height={200}
               alt="250x200"/>
-          <p className="card-text">{ProjectThreeText.ProjectThreeText}</p>
+          <p className="card-text">{projectThreeText.projectThreeText}</p>
           <hr />
           <p className="card-text">
             <span className="text-dark card-link mr-4">
             <a
             className="btn btn-outline-secondary mr-3"
-            href={ProjectThreeUrl.ProjectThreeUrl}
+            href={projectThreeUrl.projectThreeUrl}
           >
             <i /> Project Demo
           </a>
