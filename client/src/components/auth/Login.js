@@ -1,8 +1,6 @@
 import React from 'react';
 import { login } from "../../utils/api.js";
 import { Link } from 'react-router-dom';
-// import { useHistory} from 'react-router-dom';
-
 import Nav from "../Navbar";
 
 class Login extends React.Component {
@@ -57,15 +55,12 @@ class Login extends React.Component {
   }
   submitForm(e) {
     e.preventDefault();
-    // let history = useHistory();
     const data = {
       email: this.state.email,
       password: this.state.password
     }
     login(data).then(res => {
-      // console.log("looking backend error in register", res)
       // When user logs in they will be directed to mainprofile page
-      // this.props.push('./mainprofile');
       this.props.history.push('/mainprofile');
     });
   }
