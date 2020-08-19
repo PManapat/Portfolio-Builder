@@ -10,7 +10,6 @@
 	background-size: cover; 
 	color: black
 }
-
 .About{
 	color: black;
 	text-align: center;
@@ -35,12 +34,10 @@ p{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-
 #figure-caption{
 	color: black;
 	padding: 2rem;
 }
-
 .name{
 	margin-top: 150px;
 	margin-right: 200px;

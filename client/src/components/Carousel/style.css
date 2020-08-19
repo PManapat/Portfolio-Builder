@@ -1,13 +1,6 @@
 .MyCarousel{
-    /* border: 1px solid #999;
-    border: inset 1px solid #333;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 255, 255, 0.4);
-    -moz-box-shadow: 0px 0px 8px rgba(0, 255, 255, 0.4);
-    box-shadow: 0px 0px 8px rgba(0, 255, 255, 0.8); */
     align-content: center;
 }
-
 h3{
     border-radius: 50px;
     color: black;

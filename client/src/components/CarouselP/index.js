@@ -2,14 +2,6 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 import "./style.css";
 
-// function Data(props) {
-//     console.log("Propss are", props);
-//     // console.log("Props are", props.image);
-//     return (
-
-//     )
-// }
-
 export default function() {
         return (
             <div className="carousel container pb-4 pt-4">

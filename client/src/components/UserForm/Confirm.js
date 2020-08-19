@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import Icon from "@material-ui/core/Icon";
 import TypoGraphy from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
-// import Nav from "../UserNav";
 import { grey } from "@material-ui/core/colors";
 import { withStyles } from '@material-ui/core/styles';
 
@@ -31,8 +30,6 @@ export class Confirm extends Component {
   continue = (e) => {
     e.preventDefault();
     // PROCESS FORM //
-    //let history = useHistory();
-    // let history = useHistory();
     const {
       values: {
         navColor,
@@ -58,13 +55,6 @@ export class Confirm extends Component {
         footer,
       },
     } = this.props;
-    // console.log(this.props);
-    // console.log(this.props.values.firstName);
-    // console.log(this.props.values.lastName);
-    // console.log(this.props.values.email);
-    // console.log(this.props.values.occupation);
-    // console.log(this.props.values.city);
-    // console.log(this.props.values.bio);
 
     const newUser = {
       navColor: navColor,
@@ -89,24 +79,6 @@ export class Confirm extends Component {
       linkdin: linkdin,
       footer: footer,
     };
-    //we can do this also
-    //   const newUser = {
-    //   firstName: this.props.values.firstName,
-    // email: this.props.values.email,
-    // lastName: this.props.values.lastName,
-    // occupation: this.props.values.occupation,
-    // city:this.props.values.city,
-    // bio: this.props.values.bio,
-    // }
-
-    profile(newUser).then(function (res) {
-      // let history = useHistory();
-      // return history.push("/mainprofile")
-      // if (res) {
-      //   this.props.history.push(`/mainprofile`)
-      // }
-      // console.log(res);
-    });
 
     this.props.nextStep();
   };
