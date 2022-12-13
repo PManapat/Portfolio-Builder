@@ -23,7 +23,7 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.0",
     "config": "^3.3.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-validator": "^6.6.0",
     "gravatar": "^1.8.1",
     "gravator": "^1.0.2",
